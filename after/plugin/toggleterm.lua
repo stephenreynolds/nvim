@@ -81,7 +81,7 @@ function init()
         add_exec(opts)
     end
 
-    vim.keymap.set("n", "<Leader>gG", function()
+    vim.keymap.set("n", "<Leader>gg", function()
        lazygit_toggle() 
     end, { desc = "Lazygit", noremap = true, silent = true })
 end
