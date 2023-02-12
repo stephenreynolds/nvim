@@ -16,6 +16,13 @@ wk.register({
         p = { "<cmd>BufferLineTogglePin<cr>", "Toggle pin" }
     },
     c = { "<cmd>bd<cr>", "Close buffer" },
+    C = {
+      name = "Copilot",
+      c = { "<cmd>Copilot panel<cr>", "Panel" },
+      d = { "<cmd>Copilot disable<cr>", "Disable" },
+      e = { "<cmd>Copilot enable<cr>", "Enable" },
+      s = { "<cmd>Copilot status<cr>", "Status" },
+    },
     d = "Delete",
     y = "Copy to clipboard",
     Y = "Copy line to clipboard",
@@ -67,7 +74,7 @@ wk.register({
         name = "Search",
         b = { "<cmd>Telescope git_branches<cr>", "Checkout" },
         c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
-        f = { "<cmd>Telescope find_files<cr>", "Find File" },
+        f = { "<cmd>Telescope find_files<cr>", "Fine File" },
         h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
         H = { "<cmd>Telescope highlights<cr>", "Find highlight groups" },
         M = { "<cmd>Telescope man_pages<cr>", "Manpages" },
@@ -77,7 +84,7 @@ wk.register({
         k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
         C = { "<cmd>Telescope commands<cr>", "Commands" },
         p = { "<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>", "Colorscheme with Preview" }
- ,   },
+    },
     u = { "<cmd>UndotreeToggle | UndotreeFocus<cr>", "Undo tree" },
     w = { "<cmd>w<cr>", "Save" },
     q = { "<cmd>q<cr>", "Quit" }
