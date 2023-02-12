@@ -3,6 +3,7 @@ require("lualine").setup {
         disabled_filetypes = { 
             "packer",
             "Undotree"
-        }
+        },
+        globalstatus = true
     }
 }
