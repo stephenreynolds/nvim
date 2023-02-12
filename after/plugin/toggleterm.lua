@@ -80,6 +80,26 @@ function init()
 
         add_exec(opts)
     end
+
+    vim.keymap.set("n", "<Leader>gG", function()
+       lazygit_toggle() 
+    end, { desc = "Lazygit", noremap = true, silent = true })
+end
+
+function lazygit_toggle()
+    local Terminal = require("toggleterm.terminal").Terminal
+    local lazygit = Terminal:new {
+            cmd = "lazygit",
+            hidden = true,
+            direction = "float",
+            on_open = function(_)
+                vim.cmd "startinsert!"
+            end,
+            on_close = function(_)
+            end,
+            count = 99
+        }
+    lazygit:toggle()
 end
 
 init()
