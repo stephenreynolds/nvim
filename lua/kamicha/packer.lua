@@ -96,4 +96,9 @@ return require('packer').startup(function(use)
   use {
       'lewis6991/gitsigns.nvim',
   }
+
+  use {"akinsho/toggleterm.nvim", tag = '*'}
+
+  -- GitHub Copilot
+  use {'github/copilot.vim'}
 end)
