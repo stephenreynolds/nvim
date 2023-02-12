@@ -34,3 +34,6 @@ vim.opt.colorcolumn = "80"
 
 -- Leader key
 vim.g.mapleader = " "
+
+-- Do not show mode
+vim.opt.showmode = false
