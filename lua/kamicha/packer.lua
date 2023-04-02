@@ -75,7 +75,7 @@ return require('packer').startup(function(use)
   use('nvim-tree/nvim-web-devicons')
 
   -- bufferline: A buffer line with tabpage integration.
-  use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
+  -- use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
 
   -- null-ls: Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua.
   use({
