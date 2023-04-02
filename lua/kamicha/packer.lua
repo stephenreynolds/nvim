@@ -101,4 +101,7 @@ return require('packer').startup(function(use)
 
   -- GitHub Copilot
   use {'github/copilot.vim'}
+
+  -- peek: Markdown preview
+  use({ 'toppair/peek.nvim', run = 'deno task --quiet build:fast' })
 end)
