@@ -101,4 +101,7 @@ return require('packer').startup(function(use)
 
   -- GitHub Copilot
   use {'github/copilot.vim'}
+
+  -- yuck.vim: Support for eww configuration language yuck
+  use {'elkowar/yuck.vim'}
 end)
