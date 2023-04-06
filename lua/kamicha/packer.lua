@@ -27,6 +27,9 @@ return require('packer').startup(function(use)
   -- nvim-treesitter: Treesitter confiurations and abstraction layer.
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 
+  -- nvim-treesitter-context: Context aware code folding.
+  use('nvim-treesitter/nvim-treesitter-context')
+
   -- Treesitter Playground: View treesitter information.
   use('nvim-treesitter/playground')
 
