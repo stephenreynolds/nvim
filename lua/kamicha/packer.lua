@@ -42,6 +42,9 @@ return require('packer').startup(function(use)
   -- vim-fugitive: Git wrapper
   use('tpope/vim-fugitive')
 
+  -- gv.vim: Git commit browser
+  use('junegunn/gv.vim')
+
   -- lsp-zero: Easy setup of LSP.
   use {
 	  'VonHeikemen/lsp-zero.nvim',

@@ -29,10 +29,10 @@ wk.register({
     f = "Find file",
     g = {
         name = "Git",
-        g = "Lazygit",
-        G = { "<cmd>Git<cr>", "Fugitive" },
+        g = { "<cmd>tab Git<cr>", "Fugitive" },
         d = { "<cmd>Git diff<cr>", "Diff" },
-        l = { "<cmd>git blame<cr>", "Blame" },
+        v = { "<cmd>GV<cr>", "Commits" },
+        l = { "<cmd>Git blame<cr>", "Blame" },
     },
     h = { "<cmd>nohl<cr", "No highlight" },
     l = {
