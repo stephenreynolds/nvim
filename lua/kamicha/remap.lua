@@ -5,7 +5,7 @@ vim.keymap.set("v", "<S-up>", ":m '<-2<cr>gv=gv")
 vim.keymap.set("v", "<S-down>", ":m '>+1<cr>gv=gv")
 
 -- Keep cursor in place when joining lines.
-vim.keymap.set("n", "J", "mzJ`z")
+vim.keymap.set("n", "<S-down>", "mzJ`z")
 
 -- Keep cursor centered vertically when jumping half page.
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
