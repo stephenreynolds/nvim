@@ -16,7 +16,7 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 -- Paste over and delete selection, instead of copying the selection.
-vim.keymap.set("x", "<leader>p", "\"_dP")
+vim.keymap.set("x", "<leader>P", "\"_dP")
 
 -- Yank to system clipboard
 vim.keymap.set("n", "<leader>y", "\"+y")
