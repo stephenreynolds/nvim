@@ -32,3 +32,6 @@ vim.keymap.set("n", "Q", "<nop>")
 
 -- Replace all instances of a word in the buffer.
 vim.keymap.set("n", "<leader>rw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+-- Make the current file executable.
+vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
