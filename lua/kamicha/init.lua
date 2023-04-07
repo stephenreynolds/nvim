@@ -20,3 +20,10 @@ vim.api.nvim_create_autocmd("ColorScheme", {
     end,
   })
   vim.opt.fillchars = "eob: "
+vim.api.nvim_exec([[
+    augroup highlight_yank
+    autocmd!
+    augroup END
+]], false)
+
+vim.api.nvim_command("autocmd TextYankPost * silent! lua vim.highlight.on_yank({higroup='Visual', timeout=200})")
