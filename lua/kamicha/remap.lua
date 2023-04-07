@@ -1,8 +1,8 @@
 vim.g.mapleader = " "
 
 -- Move selection in and out of code blocks.
-vim.keymap.set("v", "J", ":m '>+1<cr>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<cr>gv=gv")
+vim.keymap.set("v", "<S-up>", ":m '<-2<cr>gv=gv")
+vim.keymap.set("v", "<S-down>", ":m '>+1<cr>gv=gv")
 
 -- Keep cursor in place when joining lines.
 vim.keymap.set("n", "J", "mzJ`z")
