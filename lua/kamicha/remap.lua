@@ -27,6 +27,12 @@ vim.keymap.set("n", "<leader>Y", "\"+Y")
 vim.keymap.set("n", "<leader>d", "\"_d")
 vim.keymap.set("v", "<leader>d", "\"_d")
 
+-- Move to next/previous error in quickfix list.
+vim.keymap.set("n", "<C-up>", "<cmd>cnext<CR>zz")
+vim.keymap.set("n", "<C-down>", "<cmd>cprev<CR>zz")
+vim.keymap.set("n", "<M-up>", "<cmd>lnext<CR>zz")
+vim.keymap.set("n", "<M-down>", "<cmd>lprev<CR>zz")
+
 -- Make Q do nothing
 vim.keymap.set("n", "Q", "<nop>")
 
