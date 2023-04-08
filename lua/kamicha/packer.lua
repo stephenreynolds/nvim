@@ -110,4 +110,7 @@ return require('packer').startup(function(use)
 
   -- yuck.vim: Support for eww configuration language yuck
   use {'elkowar/yuck.vim'}
+
+  -- git-worktree: Git worktree support for Neovim.
+  use('ThePrimeagen/git-worktree.nvim')
 end)

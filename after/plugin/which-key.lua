@@ -33,6 +33,11 @@ wk.register({
         d = { "<cmd>Git diff<cr>", "Diff" },
         v = { "<cmd>GV<cr>", "Commits" },
         l = { "<cmd>Git blame<cr>", "Blame" },
+        w = {
+            name = "Worktree",
+            c = { "<cmd>lua require('telescope').extensions.git_worktree.create_git_worktree()<cr>", "Create worktree" },
+            l = { "<cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<cr>", "List worktrees" },
+        }
     },
     h = { "<cmd>nohl<cr", "No highlight" },
     l = {
