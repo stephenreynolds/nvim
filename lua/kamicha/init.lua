@@ -2,6 +2,9 @@ require("kamicha.remap")
 require("kamicha.set")
 require("kamicha.packer")
 
+local autocmd = vim.api.nvim_create_autocmd
+local augroup = vim.api.nvim_create_augroup
+
 vim.api.nvim_create_autocmd("ColorScheme", {
     pattern = "*",
     callback = function()
@@ -21,13 +24,20 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 })
 vim.opt.fillchars = "eob: "
 
-vim.api.nvim_exec([[
-    augroup highlight_yank
-    autocmd!
-    augroup END
-]], false)
+-- Highlight on yank
+local yank_group = augroup('HighlightYank', {})
+autocmd('TextYankPost', {
+    group = yank_group,
+    pattern = '*',
+    callback = function()
+        vim.highlight.on_yank({
+            higroup = 'IncSearch',
+            timeout = 40,
+        })
+    end
+})
 
-vim.api.nvim_command("autocmd TextYankPost * silent! lua vim.highlight.on_yank({higroup='Visual', timeout=200})")
+
 -- Use the current window to open a file in netrw
 vim.g.netrw_browse_split = 0
 -- Hide the netrw banner
