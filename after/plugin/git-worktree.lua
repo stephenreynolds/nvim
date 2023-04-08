@@ -8,3 +8,6 @@ Worktree.on_tree_change(function(op, metadata)
         print("Switched from " .. metadata.prev_path .. " to " .. metadata.path)
     end
 end)
+
+vim.keymap.set("n", "<leader>gc", "<cmd>lua require('telescope').extensions.git_worktree.create_git_worktree()<cr>>")
+vim.keymap.set("n", "<leader>gl", "<cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<cr>")

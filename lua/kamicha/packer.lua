@@ -1,6 +1,12 @@
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
+vim.keymap.set("n", "<leader>pc", "<cmd>PackerCompile<cr>")
+vim.keymap.set("n", "<leader>pi", "<cmd>PackerInstall<cr>")
+vim.keymap.set("n", "<leader>ps", "<cmd>PackerSync<cr>")
+vim.keymap.set("n", "<leader>pS", "<cmd>PackerStatus<cr>")
+vim.keymap.set("n", "<leader>pu", "<cmd>PackerUpdate<cr>")
+
 return require('packer').startup(function(use)
     -- Packer: Package manager for Neovim.
     use 'wbthomason/packer.nvim'
@@ -121,7 +127,8 @@ return require('packer').startup(function(use)
         'lewis6991/gitsigns.nvim',
     }
 
-    use { "akinsho/toggleterm.nvim", tag = '*' }
+    -- trouble: A pretty list of diagnostics.
+    use { 'folke/trouble.nvim' }
 
     -- GitHub Copilot
     use { 'github/copilot.vim' }
