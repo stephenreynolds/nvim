@@ -1,11 +1,11 @@
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
-vim.keymap.set("n", "<leader>pc", "<cmd>PackerCompile<cr>")
-vim.keymap.set("n", "<leader>pi", "<cmd>PackerInstall<cr>")
-vim.keymap.set("n", "<leader>ps", "<cmd>PackerSync<cr>")
-vim.keymap.set("n", "<leader>pS", "<cmd>PackerStatus<cr>")
-vim.keymap.set("n", "<leader>pu", "<cmd>PackerUpdate<cr>")
+vim.keymap.set("n", "<leader>pc", "<cmd>PackerCompile<cr>", { desc = "Compile" })
+vim.keymap.set("n", "<leader>pi", "<cmd>PackerInstall<cr>", { desc = "Install" })
+vim.keymap.set("n", "<leader>ps", "<cmd>PackerSync<cr>", { desc = "Sync" })
+vim.keymap.set("n", "<leader>pS", "<cmd>PackerStatus<cr>", { desc = "Status" })
+vim.keymap.set("n", "<leader>pu", "<cmd>PackerUpdate<cr>", { desc = "Update" })
 
 return require('packer').startup(function(use)
     -- Packer: Package manager for Neovim.

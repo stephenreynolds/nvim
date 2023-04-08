@@ -1,5 +1,5 @@
 local zen = require("zen-mode")
-vim.keymap.set("n", "<leader>zz", function()
+vim.keymap.set("n", "<leader>z", function()
     zen.setup {
         window = {
             width = 90,
@@ -10,4 +10,4 @@ vim.keymap.set("n", "<leader>zz", function()
     vim.wo.wrap = false
     vim.wo.number = true
     vim.wo.rnu = true
-end)
+end, { desc = "Toggle Zen Mode" })
