@@ -113,4 +113,5 @@ return require('packer').startup(function(use)
 
   -- git-worktree: Git worktree support for Neovim.
   use('ThePrimeagen/git-worktree.nvim')
+          vim.cmd('highlight TelescopeNormal guibg=none')
 end)
