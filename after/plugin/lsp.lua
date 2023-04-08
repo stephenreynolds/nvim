@@ -7,8 +7,7 @@ lsp.ensure_installed({
 	'eslint',
 	'lua_ls',
 	'rust_analyzer',
-    'clangd',
-    'clang-format'
+    'clangd'
 })
 
 local cmp = require('cmp')
