@@ -17,6 +17,18 @@ return require('packer').startup(function(use)
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
 
+    -- telescope-frecency: Frecency/MRU for telescope.
+    use {
+        "nvim-telescope/telescope-frecency.nvim",
+        config = function()
+            require "telescope".load_extension("frecency")
+        end,
+        requires = { "kkharji/sqlite.lua" }
+    }
+
+    -- auto-session: Automatically save and restore sessions.
+    use { 'rmagatti/auto-session' }
+
     -- tokyonight: A theme that celebrates the lights of Downtown Tokyo at night.
     use({
         'folke/tokyonight.nvim',

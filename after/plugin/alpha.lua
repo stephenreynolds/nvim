@@ -77,11 +77,11 @@ local buttons = {
     val = {
         button("f", "  Find file", "<cmd>Telescope find_files<CR>"),
         button("n", "  New file", "<cmd>ene <CR>"),
-        button("r", "  Recent files"),
-        button("q", "  Frecency/MRU"),
-        button("w", "  Find word"),
-        button("b", "  Bookmarks"),
-        button("l", "  Last session"),
+        button("r", "  Recent files", "<cmd>Telescope oldfiles<CR>"),
+        button("q", "  Frecency/MRU", "<cmd>Telescope frecency<CR>"),
+        button("w", "  Find word", "<cmd>Telescope live_grep<CR>"),
+        button("b", "  Bookmarks", "<cmd>Telescope marks<CR>"),
+        button("l", "  Last session", "<cmd>RestoreSession<CR>")
     },
     opts = {
         spacing = 1,
