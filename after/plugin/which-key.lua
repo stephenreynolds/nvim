@@ -92,5 +92,9 @@ wk.register({
     },
     u = { "<cmd>UndotreeToggle | UndotreeFocus<cr>", "Undo tree" },
     w = { "<cmd>w<cr>", "Save" },
-    q = { "<cmd>q<cr>", "Quit" }
+    q = { "<cmd>q<cr>", "Quit" },
+    z = {
+        name = "Zen Mode",
+        z = { "<cmd>ZenMode<cr>", "Toggle Zen Mode" },
+    }
 }, { prefix = "<leader>" })

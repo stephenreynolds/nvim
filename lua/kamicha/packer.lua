@@ -128,4 +128,7 @@ return require('packer').startup(function(use)
 
     -- yuck.vim: Support for eww configuration language yuck
     use { 'elkowar/yuck.vim' }
+
+    -- zen-mode: Distraction free writing.
+    use { 'folke/zen-mode.nvim' }
 end)
