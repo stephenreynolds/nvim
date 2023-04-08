@@ -30,7 +30,7 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "80"
 
 -- Disable mouse
-vim.opt.mouse = ""
+--vim.opt.mouse = ""
 
 -- Leader key
 vim.g.mapleader = " "
