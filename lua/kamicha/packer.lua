@@ -2,116 +2,118 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-  -- Packer: Package manager for Neovim.
-  use 'wbthomason/packer.nvim'
+    -- Packer: Package manager for Neovim.
+    use 'wbthomason/packer.nvim'
 
-  -- vim-closer: Automatically closes brackets.
-  use 'rstacruz/vim-closer'
+    use('nvim-lua/plenary.nvim')
 
-  -- Telescope: Highly extendable fuzzy finder.
-  use {
-	  'nvim-telescope/telescope.nvim', tag = '0.1.0',
-	  -- or                            , branch = '0.1.x',
-	  requires = { {'nvim-lua/plenary.nvim'} }
-  }
+    -- vim-closer: Automatically closes brackets.
+    use 'rstacruz/vim-closer'
 
-  -- tokyonight: A theme that celebrates the lights of Downtown Tokyo at night.
-  use({
-	  'folke/tokyonight.nvim',
-	  as = 'tokyonight',
-	  config = function()
-		  vim.cmd('colorscheme tokyonight-night')
-	  end
-  })
+    -- Telescope: Highly extendable fuzzy finder.
+    use {
+        'nvim-telescope/telescope.nvim', tag = '0.1.0',
+        -- or                            , branch = '0.1.x',
+        requires = { { 'nvim-lua/plenary.nvim' } }
+    }
 
-  -- nvim-treesitter: Treesitter confiurations and abstraction layer.
-  use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+    -- tokyonight: A theme that celebrates the lights of Downtown Tokyo at night.
+    use({
+        'folke/tokyonight.nvim',
+        as = 'tokyonight',
+        config = function()
+            vim.cmd('colorscheme tokyonight-night')
+            vim.cmd('highlight TelescopeNormal guibg=none')
+        end
+    })
 
-  -- nvim-treesitter-context: Context aware code folding.
-  use('nvim-treesitter/nvim-treesitter-context')
+    -- nvim-treesitter: Treesitter confiurations and abstraction layer.
+    use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
 
-  -- Treesitter Playground: View treesitter information.
-  use('nvim-treesitter/playground')
+    -- nvim-treesitter-context: Context aware code folding.
+    use('nvim-treesitter/nvim-treesitter-context')
 
-  -- Harpoon: Getting you where you want with the fewest keystrokes.
-  use('ThePrimeagen/harpoon')
+    -- Treesitter Playground: View treesitter information.
+    use('nvim-treesitter/playground')
 
-  -- undotree: Undo history visualizer.
-  use('mbbill/undotree')
+    -- Harpoon: Getting you where you want with the fewest keystrokes.
+    use('ThePrimeagen/harpoon')
 
-  -- vim-fugitive: Git wrapper
-  use('tpope/vim-fugitive')
+    -- git-worktree: Git worktree support for Neovim.
+    use('ThePrimeagen/git-worktree.nvim')
 
-  -- gv.vim: Git commit browser
-  use('junegunn/gv.vim')
+    -- undotree: Undo history visualizer.
+    use('mbbill/undotree')
 
-  -- lsp-zero: Easy setup of LSP.
-  use {
-	  'VonHeikemen/lsp-zero.nvim',
-	  requires = {
-		  -- LSP Support
-		  {'neovim/nvim-lspconfig'},
-		  {'williamboman/mason.nvim'},
-		  {'williamboman/mason-lspconfig.nvim'},
+    -- vim-fugitive: Git wrapper
+    use('tpope/vim-fugitive')
 
-		  -- Autocompletion
-		  {'hrsh7th/nvim-cmp'},
-		  {'hrsh7th/cmp-buffer'},
-		  {'hrsh7th/cmp-path'},
-		  {'saadparwaiz1/cmp_luasnip'},
-		  {'hrsh7th/cmp-nvim-lsp'},
-		  {'hrsh7th/cmp-nvim-lua'},
+    -- gv.vim: Git commit browser
+    use('junegunn/gv.vim')
 
-		  -- Snippets
-		  {'L3MON4D3/LuaSnip'},
-		  {'rafamadriz/friendly-snippets'},
-	  }
-  }
+    -- lsp-zero: Easy setup of LSP.
+    use {
+        'VonHeikemen/lsp-zero.nvim',
+        requires = {
+            -- LSP Support
+            { 'neovim/nvim-lspconfig' },
+            { 'williamboman/mason.nvim' },
+            { 'williamboman/mason-lspconfig.nvim' },
 
-  -- Which Key: Popup that displays possible key bindings of the command you started typing.
-  use ("folke/which-key.nvim")
+            -- Autocompletion
+            { 'hrsh7th/nvim-cmp' },
+            { 'hrsh7th/cmp-buffer' },
+            { 'hrsh7th/cmp-path' },
+            { 'saadparwaiz1/cmp_luasnip' },
+            { 'hrsh7th/cmp-nvim-lsp' },
+            { 'hrsh7th/cmp-nvim-lua' },
 
-  -- lualine: A status bar
-  use {
-      'nvim-lualine/lualine.nvim',
-      requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  }
+            -- Snippets
+            { 'L3MON4D3/LuaSnip' },
+            { 'rafamadriz/friendly-snippets' },
+        }
+    }
 
-  -- nvim-web-devicons: Useful icons
-  use('nvim-tree/nvim-web-devicons')
+    -- Which Key: Popup that displays possible key bindings of the command you started typing.
+    use("folke/which-key.nvim")
 
-  -- bufferline: A buffer line with tabpage integration.
-  -- use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
+    -- lualine: A status bar
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
 
-  -- null-ls: Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua.
-  use({
-      "jose-elias-alvarez/null-ls.nvim",
-      config = function()
-          require("null-ls").setup()
-      end,
-      requires = { "nvim-lua/plenary.nvim" },
-  })
+    -- nvim-web-devicons: Useful icons
+    use('nvim-tree/nvim-web-devicons')
 
-  -- alpha: A fast and fully programmable greeter for neovim.
-  use {
-      'goolord/alpha-nvim',
-      requires = { 'nvim-tree/nvim-web-devicons' }
-  }
+    -- bufferline: A buffer line with tabpage integration.
+    -- use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
 
-  -- gitsigns: Super fast git decorations.
-  use {
-      'lewis6991/gitsigns.nvim',
-  }
+    -- null-ls: Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua.
+    use({
+        "jose-elias-alvarez/null-ls.nvim",
+        config = function()
+            require("null-ls").setup()
+        end,
+        requires = { "nvim-lua/plenary.nvim" },
+    })
 
-  use {"akinsho/toggleterm.nvim", tag = '*'}
+    -- alpha: A fast and fully programmable greeter for neovim.
+    use {
+        'goolord/alpha-nvim',
+        requires = { 'nvim-tree/nvim-web-devicons' }
+    }
 
-  -- GitHub Copilot
-  use {'github/copilot.vim'}
+    -- gitsigns: Super fast git decorations.
+    use {
+        'lewis6991/gitsigns.nvim',
+    }
 
-  -- yuck.vim: Support for eww configuration language yuck
-  use {'elkowar/yuck.vim'}
+    use { "akinsho/toggleterm.nvim", tag = '*' }
 
-  -- git-worktree: Git worktree support for Neovim.
-  use('ThePrimeagen/git-worktree.nvim')
-          vim.cmd('highlight TelescopeNormal guibg=none')
+    -- GitHub Copilot
+    use { 'github/copilot.vim' }
+
+    -- yuck.vim: Support for eww configuration language yuck
+    use { 'elkowar/yuck.vim' }
 end)

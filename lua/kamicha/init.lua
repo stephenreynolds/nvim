@@ -15,12 +15,12 @@ autocmd("ColorScheme", {
             "TelescopeBorder",
             "NvimTreeNormal",
             "EndOfBuffer",
-            "MsgArea",
+            "MsgArea"
         }
         for _, name in ipairs(hl_groups) do
             vim.cmd(string.format("highlight %s ctermbg=none guibg=none", name))
         end
-    end,
+    end
 })
 vim.opt.fillchars = "eob: "
 
