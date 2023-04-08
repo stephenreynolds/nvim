@@ -9,7 +9,7 @@ vim.keymap.set("n", "<leader>pu", "<cmd>PackerUpdate<cr>")
 
 return require('packer').startup(function(use)
     -- Packer: Package manager for Neovim.
-    use 'wbthomason/packer.nvim'
+    use('wbthomason/packer.nvim')
 
     use('nvim-lua/plenary.nvim')
 
@@ -91,6 +91,12 @@ return require('packer').startup(function(use)
             { 'rafamadriz/friendly-snippets' },
         }
     }
+
+    -- nvim-dap-ui: Debugger interface
+    use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+
+    -- mason-nvim-dap: Automatically set up DAPs with Mason
+    use('jay-babu/mason-nvim-dap.nvim')
 
     -- Which Key: Popup that displays possible key bindings of the command you started typing.
     use("folke/which-key.nvim")

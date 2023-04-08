@@ -15,7 +15,7 @@ wk.register({
         e = "Enable",
         s = "Status",
     },
-    d = "Delete",
+    d = "Debugger",
     y = "Copy to clipboard",
     Y = "Copy line to clipboard",
     f = "Find file",
