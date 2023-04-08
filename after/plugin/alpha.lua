@@ -75,7 +75,7 @@ end
 local buttons = {
     type = "group",
     val = {
-        button("f", "  Find file"),
+        button("f", "  Find file", "<cmd>Telescope find_files<CR>"),
         button("n", "  New file", "<cmd>ene <CR>"),
         button("r", "  Recent files"),
         button("q", "  Frecency/MRU"),
