@@ -37,6 +37,13 @@ autocmd('TextYankPost', {
     end
 })
 
+-- Remove trailing whitespace on write
+local kamicha_group = augroup('kamicha', {})
+autocmd({"BufWritePre"}, {
+    group = kamicha_group,
+    pattern = "*",
+    command = [[%s/\s\+$//e]],
+})
 
 -- Use the current window to open a file in netrw
 vim.g.netrw_browse_split = 0
