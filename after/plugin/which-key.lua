@@ -25,6 +25,7 @@ wk.register({
         d = "Diff",
         v = "Commits",
         l = "Blame",
+        b = { "<cmd>Telescope git_branches<cr>", "Checkout" },
         w = {
             name = "Worktree",
             c = "Create worktree",
@@ -68,7 +69,6 @@ wk.register({
     },
     s = {
         name = "Search",
-        b = { "<cmd>Telescope git_branches<cr>", "Checkout" },
         B = { "<cmd>Telescope buffers<cr>", "Buffers" },
         c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
         f = { "<cmd>Telescope find_files<cr>", "Find File" },
