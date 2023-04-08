@@ -1,3 +1,5 @@
 vim.keymap.set("n", "<leader>gg", "<cmd>tab Git<cr>")
 vim.keymap.set("n", "<leader>gd", "<cmd>Git diff<cr>")
 vim.keymap.set("n", "<leader>gl", "<cmd>Git blame<cr>")
+vim.keymap.set("n", "<leader>gp", "<cmd>Git pull<cr>")
+vim.keymap.set("n", "<leader>gP", "<cmd>Git push<cr>")
