@@ -4,10 +4,6 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", { desc = "Write" })
 vim.keymap.set("n", "<leader>q", "<cmd>q<cr>", { desc = "Quit" })
 
--- Vertical split
-vim.keymap.set("n", "<leader>bh", "<cmd>split<cr>", { desc = "Horizontal split" })
-vim.keymap.set("n", "<leader>bv", "<cmd>vsplit<cr>", { desc = "Vertical split" })
-
 -- Move selection in and out of code blocks.
 vim.keymap.set("v", "<S-up>", ":m '<-2<cr>gv=gv", { desc = "Move up out of block" })
 vim.keymap.set("v", "<S-down>", ":m '>+1<cr>gv=gv", { desc = "Move down out of block" })

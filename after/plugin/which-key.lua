@@ -1,9 +1,6 @@
 local wk = require("which-key")
 
 wk.register({
-    b = {
-        name = "Buffer"
-    },
     C = {
         name = "Copilot"
     },
