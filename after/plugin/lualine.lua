@@ -5,5 +5,8 @@ require("lualine").setup {
             "Undotree"
         },
         globalstatus = true
+    },
+    sections = {
+        lualine_c = { {"filename", path = 1} }
     }
 }
