@@ -56,7 +56,7 @@ end, { desc = "Set exception breakpoints" })
 vim.keymap.set("n", "<leader>dC", function()
     dap.clear_breakpoints()
     print("Breakpoints cleared.")
-end, { desc = "Toggle breakpoint" })
+end, { desc = "Clear breakpoints" })
 -- Variable hover
 vim.keymap.set("n", "<leader>di", function()
     require("dap.ui.widgets").hover(function()
