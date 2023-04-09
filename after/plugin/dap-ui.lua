@@ -34,11 +34,11 @@ vim.keymap.set("n", "<leader>dd", dapui.toggle, { desc = "Toggle debugger" })
 -- Continue
 vim.keymap.set("n", "<F5>", dap.continue, { desc = "Continue" })
 -- Step over
-vim.keymap.set("n", "<F8>", dap.step_over, { desc = "Step over" })
+vim.keymap.set("n", "<F10>", dap.step_over, { desc = "Step over" })
 -- Step into
-vim.keymap.set("n", "<F7>", dap.step_into, { desc = "Step into" })
+vim.keymap.set("n", "<F11>", dap.step_into, { desc = "Step into" })
 -- Step out
-vim.keymap.set("n", "<S-F8>", dap.step_out, { desc = "Step out" })
+vim.keymap.set("n", "<F12>", dap.step_out, { desc = "Step out" })
 -- Run last session
 vim.keymap.set("n", "<leader>dr", dap.run_last, { desc = "Run last" })
 -- Run to cursor
