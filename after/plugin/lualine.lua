@@ -1,6 +1,6 @@
 require("lualine").setup {
     options = {
-        disabled_filetypes = { 
+        disabled_filetypes = {
             "packer",
             "Undotree"
         },
