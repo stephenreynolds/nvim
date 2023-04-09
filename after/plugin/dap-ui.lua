@@ -9,9 +9,13 @@ mason_dap.setup({
     ensure_installed = {
         "codelldb"
     },
-    automatic_setup = true
+    automatic_setup = true,
+    handlers = {
+        function(config)
+            mason_dap.default_setup(config)
+        end
+    }
 })
-mason_dap.setup_handlers()
 
 vim.fn.sign_define("DapBreakpoint", { text = "🔴" })
 vim.fn.sign_define("DapBreakpointRejected", { text = "🔵" })
