@@ -66,3 +66,5 @@ vim.keymap.set("n", "<leader>di", function()
 end, { desc = "Hover" })
 -- Scopes
 vim.keymap.set("n", "<leader>ds", function() widgets.centered_float(widgets.scopes) end, { desc = "Scopes" })
+-- Frames
+vim.keymap.set("n", "<leader>df", function() widgets.centered_float(widgets.frames) end, { desc = "Frames" })
