@@ -1,6 +1,7 @@
 local dap = require("dap")
 local dapui = require("dapui")
 local mason_dap = require("mason-nvim-dap")
+local widgets = require("dap.ui.widgets")
 
 require("mason").setup()
 dapui.setup()
@@ -63,7 +64,5 @@ vim.keymap.set("n", "<leader>di", function()
         return vim.fn.expand("<cexpr>")
     end)
 end, { desc = "Hover" })
--- Visual hover
-vim.keymap.set("v", "<leader>di", function() require("dap.ui.widgets").visual_hover() end, { desc = "Visual hover" })
 -- Scopes
-vim.keymap.set("n", "<leader>d?", function() require("dap.ui.widgets").scopes() end, { desc = "Scopes" })
+vim.keymap.set("n", "<leader>ds", function() widgets.centered_float(widgets.scopes) end, { desc = "Scopes" })
