@@ -27,7 +27,7 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 -- Column ruler
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "80,120"
 
 -- Disable mouse
 --vim.opt.mouse = ""
