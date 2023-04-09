@@ -10,8 +10,10 @@ autocmd("ColorScheme", {
     callback = function()
         local hl_groups = {
             "Normal",
+            "NormalFloat",
             "SignColumn",
             "NormalNC",
+            "TelescopeNormal",
             "TelescopeBorder",
             "NvimTreeNormal",
             "EndOfBuffer",
