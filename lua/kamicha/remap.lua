@@ -53,3 +53,6 @@ end, { desc = "Source file" })
 
 -- Terminal mode
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal" })
+
+-- Open file explorer
+vim.keymap.set("n", "<leader>e", "<cmd>Ex<cr>", { desc = "Open file explorer" })
