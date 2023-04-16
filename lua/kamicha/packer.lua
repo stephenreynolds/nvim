@@ -56,6 +56,9 @@ return require("packer").startup(function(use)
     -- undotree: Undo history visualizer.
     use("mbbill/undotree")
 
+    -- vim-commentary: Comment stuff out.
+    use("tpope/vim-commentary")
+
     -- vim-fugitive: Git wrapper
     use("tpope/vim-fugitive")
 
