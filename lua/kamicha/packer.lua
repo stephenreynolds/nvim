@@ -56,6 +56,9 @@ return require("packer").startup(function(use)
     -- undotree: Undo history visualizer.
     use("mbbill/undotree")
 
+    -- sleuth.vim: Automatically set the 'shiftwidth' and 'tabstop' options.
+    use("tpope/vim-sleuth")
+
     -- vim-commentary: Comment stuff out.
     use("tpope/vim-commentary")
 
