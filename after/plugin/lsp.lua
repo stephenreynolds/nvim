@@ -56,3 +56,26 @@ end)
 
 lsp.setup()
 
+local null_ls = require("null-ls")
+local null_opts = lsp.build_options("null-ls", {})
+
+local formatting = null_ls.builtins.formatting
+local diagnostics = null_ls.builtins.diagnostics
+local completion = null_ls.builtins.completion
+
+null_ls.setup({
+    on_attach = function(client, bufnr)
+        null_opts.on_attach(client, bufnr)
+    end,
+    sources = {
+        diagnostics.eslint,
+        completion.spell,
+        formatting.stylua,
+        formatting.prettierd,
+        formatting.clang_format,
+        formatting.jq,
+        formatting.mdformat,
+        formatting.rustfmt,
+        formatting.shfmt
+    }
+})

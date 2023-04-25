@@ -56,9 +56,6 @@ return require("packer").startup(function(use)
     -- undotree: Undo history visualizer.
     use("mbbill/undotree")
 
-    -- sleuth.vim: Automatically set the 'shiftwidth' and 'tabstop' options.
-    use("tpope/vim-sleuth")
-
     -- vim-commentary: Comment stuff out.
     use("tpope/vim-commentary")
 
@@ -115,10 +112,7 @@ return require("packer").startup(function(use)
     -- null-ls: Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua.
     use({
         "jose-elias-alvarez/null-ls.nvim",
-        config = function()
-            require("null-ls").setup()
-        end,
-        requires = { "nvim-lua/plenary.nvim" },
+        requires = { "nvim-lua/plenary.nvim" }
     })
 
     -- alpha: A fast and fully programmable greeter for neovim.
@@ -143,4 +137,6 @@ return require("packer").startup(function(use)
 
     -- zen-mode: Distraction free writing.
     use { "folke/zen-mode.nvim" }
+
+    use { "ellisonleao/glow.nvim", config = function() require("glow").setup() end }
 end)
