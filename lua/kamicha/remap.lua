@@ -44,7 +44,11 @@ vim.keymap.set("n", "Q", "<nop>", { desc = "[disabled]" })
 vim.keymap.set("n", "<leader>rw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Replace word" })
 
 -- Make the current file executable.
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc = "Make executable" })
+vim.keymap.set("n", "<leader>x", function()
+  vim.cmd("silent !chmod +x " .. vim.fn.expand("%"))
+  local filename = vim.fn.expand("%:t")
+  print("Made " .. filename .. " executable.")
+end, { silent = true, desc = "Make executable" })
 
 -- Source the current file.
 vim.keymap.set("n", "<leader>S", function()
