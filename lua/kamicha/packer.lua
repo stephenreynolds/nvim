@@ -161,4 +161,7 @@ return require("packer").startup(function(use)
             "rcarriga/nvim-notify"
         }
     })
+
+    -- colorizer: A high-performance color highlighter.
+    use { "norcalli/nvim-colorizer.lua" }
 end)
