@@ -17,8 +17,6 @@ vim.keymap.set("n", "<leader>sp", "<cmd>lua require('telescope.builtin').colorsc
 vim.keymap.set('n', '<leader>gb', "<cmd>Telescope git_branches<cr>", { desc = "Checkout" })
 
 vim.keymap.set("n", "<leader>ld", "<cmd>Telescope diagnostics bufnr=0 theme=get_ivy<cr>", { desc = "Buffer Diagnostics" })
-vim.keymap.set("n", "<leader>lw", "<cmd>Telescope diagnostics<cr>", { desc = "Diagnostics" })
 vim.keymap.set("n", "<leader>lI", "<cmd>Mason<cr>", { desc = "Mason Info" })
-vim.keymap.set("n", "<leader>ls", "<cmd>Telescope lsp_document_symbols<cr>", { desc = "Document Symbols" })
-vim.keymap.set("n", "<leader>lS", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", { desc = "Workspace Symbols" })
-vim.keymap.set("n", "<leader>le", "<cmd>Telescope quickfix<cr>", { desc = "Quickfix" })
+vim.keymap.set("n", "<leader>ls", "<cmd>Telescope lsp_document_symbols<cr>", { desc = "Document symbols" })
+vim.keymap.set("n", "<leader>lws", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", { desc = "Workspace symbols" })

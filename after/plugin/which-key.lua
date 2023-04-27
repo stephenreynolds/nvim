@@ -15,7 +15,10 @@ wk.register({
         }
     },
     l = {
-        name = "LSP"
+        name = "LSP",
+        w = {
+            name = "Workspace"
+        }
     },
     p = {
         name = "Packer"

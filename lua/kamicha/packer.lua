@@ -127,7 +127,10 @@ return require("packer").startup(function(use)
     }
 
     -- trouble: A pretty list of diagnostics.
-    use { "folke/trouble.nvim" }
+    use {
+        "folke/trouble.nvim",
+        requires = "nvim-tree/nvim-web-devicons"
+    }
 
     -- GitHub Copilot
     use { "github/copilot.vim" }
