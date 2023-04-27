@@ -81,7 +81,7 @@ local buttons = {
         button("q", "  Frecency/MRU", "<cmd>Telescope frecency<CR>"),
         button("w", "  Find word", "<cmd>Telescope live_grep<CR>"),
         button("b", "  Bookmarks", "<cmd>Telescope marks<CR>"),
-        button("l", "  Last session", "<cmd>RestoreSession<CR>")
+        button("l", "  Last session", "<cmd>SessionRestore<CR>")
     },
     opts = {
         spacing = 1,
