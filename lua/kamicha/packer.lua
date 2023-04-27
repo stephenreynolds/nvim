@@ -152,4 +152,13 @@ return require("packer").startup(function(use)
             "nvim-telescope/telescope.nvim"
         }
     })
+
+    -- noice: Highly experimental plugin that completely replaces the UI for messages, cmdline and the popupmenu.
+    use({
+        "folke/noice.nvim",
+        requires = {
+            "MunifTanjim/nui.nvim",
+            "rcarriga/nvim-notify"
+        }
+    })
 end)
