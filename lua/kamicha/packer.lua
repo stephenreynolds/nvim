@@ -138,5 +138,15 @@ return require("packer").startup(function(use)
     -- zen-mode: Distraction free writing.
     use { "folke/zen-mode.nvim" }
 
+    -- glow: Markdown previewer
     use { "ellisonleao/glow.nvim", config = function() require("glow").setup() end }
+
+    use({
+        "jackMort/ChatGPT.nvim",
+        requires = {
+            "MunifTanjim/nui.nvim",
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope.nvim"
+        }
+    })
 end)
