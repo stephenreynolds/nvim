@@ -38,6 +38,9 @@ return require("packer").startup(function(use)
     -- tokyonight: A theme that celebrates the lights of Downtown Tokyo at night.
     use({ "folke/tokyonight.nvim", as = "tokyonight" })
 
+    -- Rosé Pine: All natural pine, faux fur and a bit of soho vibes for the classy minimalist.
+    use({ 'rose-pine/neovim', as = 'rose-pine' })
+
     -- nvim-treesitter: Treesitter confiurations and abstraction layer.
     use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
 
