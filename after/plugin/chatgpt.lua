@@ -17,5 +17,5 @@ vim.keymap.set("v", "<leader>it", "<cmd>ChatGPTRun add_tests<cr>", { desc = "Add
 vim.keymap.set("v", "<leader>io", "<cmd>ChatGPTRun optimize_code<cr>", { desc = "Optimize" })
 vim.keymap.set("v", "<leader>is", "<cmd>ChatGPTRun summarize<cr>", { desc = "Summarize" })
 vim.keymap.set("v", "<leader>if", "<cmd>ChatGPTRun fix_bugs<cr>", { desc = "Fix bugs" })
-vim.keymap.set("v", "<leader>ie", "<cmd>ChatGPTRun explain_code<cr>", { desc = "Explain" })
+vim.keymap.set("v", "<leader>ix", "<cmd>ChatGPTRun explain_code<cr>", { desc = "Explain" })
 vim.keymap.set("v", "<leader>ir", "<cmd>ChatGPTRun code_readability_analysis<cr>", { desc = "Code readability" })
