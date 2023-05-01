@@ -39,7 +39,13 @@ return require("packer").startup(function(use)
     use({ "folke/tokyonight.nvim", as = "tokyonight" })
 
     -- Rosé Pine: All natural pine, faux fur and a bit of soho vibes for the classy minimalist.
-    use({ 'rose-pine/neovim', as = 'rose-pine' })
+    use({ "rose-pine/neovim", as = "rose-pine" })
+
+    -- Kanagawa: NeoVim dark colorscheme inspired by the colors of the famous painting by Katsushika Hokusai.
+    use({ "rebelot/kanagawa.nvim", as = "kanagawa" })
+
+    -- Catppuccin: Soothing pastel theme for (Neo)vim.
+    use { "catppuccin/nvim", as = "catppuccin" }
 
     -- nvim-treesitter: Treesitter confiurations and abstraction layer.
     use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })

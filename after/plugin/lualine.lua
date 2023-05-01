@@ -16,6 +16,7 @@ require("lualine").setup({
 			"Undotree",
 		},
 		globalstatus = true,
+        theme = "catppuccin"
 	},
 	sections = {
 		lualine_a = { "mode" },
