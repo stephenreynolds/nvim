@@ -1,11 +1,21 @@
--- Only required if you have packer configured as `opt`
-vim.cmd([[packadd packer.nvim]])
-
 vim.keymap.set("n", "<leader>pc", "<cmd>PackerCompile<cr>", { desc = "Compile" })
 vim.keymap.set("n", "<leader>pi", "<cmd>PackerInstall<cr>", { desc = "Install" })
 vim.keymap.set("n", "<leader>ps", "<cmd>PackerSync<cr>", { desc = "Sync" })
 vim.keymap.set("n", "<leader>pS", "<cmd>PackerStatus<cr>", { desc = "Status" })
 vim.keymap.set("n", "<leader>pu", "<cmd>PackerUpdate<cr>", { desc = "Update" })
+
+local ensure_packer = function()
+	local fn = vim.fn
+	local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+	if fn.empty(fn.glob(install_path)) > 0 then
+		fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path })
+		vim.cmd([[packadd packer.nvim]])
+		return true
+	end
+	return false
+end
+
+local packer_bootstrap = ensure_packer()
 
 return require("packer").startup(function(use)
 	-- Packer: Package manager for Neovim.
@@ -189,4 +199,8 @@ return require("packer").startup(function(use)
 			"antoinemadec/FixCursorHold.nvim",
 		},
 	})
+
+	if packer_bootstrap then
+		require("packer").sync()
+	end
 end)
