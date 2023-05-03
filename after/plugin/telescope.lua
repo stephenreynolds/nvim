@@ -1,5 +1,6 @@
 local builtin = require('telescope.builtin')
 
+
 vim.keymap.set('n', '<leader>f', builtin.find_files, { desc = "Find file" })
 vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = "Find file" })
 vim.keymap.set("n", "<leader>sB", "<cmd>Telescope buffers<cr>", { desc = "Buffers" })
@@ -20,3 +21,5 @@ vim.keymap.set("n", "<leader>ld", "<cmd>Telescope diagnostics bufnr=0 theme=get_
 vim.keymap.set("n", "<leader>lI", "<cmd>Mason<cr>", { desc = "Mason Info" })
 vim.keymap.set("n", "<leader>ls", "<cmd>Telescope lsp_document_symbols<cr>", { desc = "Document symbols" })
 vim.keymap.set("n", "<leader>lws", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", { desc = "Workspace symbols" })
+
+vim.keymap.set('n', '<leader>e', "<cmd>Telescope file_browser path=%:p:h select_buffer=true<cr>", { desc = "File browser" })

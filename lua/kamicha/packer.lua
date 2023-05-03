@@ -34,6 +34,15 @@ return require("packer").startup(function(use)
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 
+	-- telescope-file-browser: A file browser extension for telescope.nvim.
+	use({
+		"nvim-telescope/telescope-file-browser.nvim",
+        config = function()
+            require("telescope").load_extension("file_browser")
+        end,
+		requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+	})
+
 	-- telescope-frecency: Frecency/MRU for telescope.
 	use({
 		"nvim-telescope/telescope-frecency.nvim",
