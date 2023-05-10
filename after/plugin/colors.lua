@@ -57,6 +57,7 @@ require("kanagawa").setup({
 
 require("catppuccin").setup({
 	flavour = "mocha",
+    transparent_background = true,
 	integrations = {
 		alpha = true,
 		gitsigns = true,
@@ -94,4 +95,3 @@ require("catppuccin").setup({
 })
 
 require("catppuccin").compile()
-
