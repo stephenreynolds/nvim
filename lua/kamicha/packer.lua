@@ -36,9 +36,9 @@ return require("packer").startup(function(use)
 	-- telescope-file-browser: A file browser extension for telescope.nvim.
 	use({
 		"nvim-telescope/telescope-file-browser.nvim",
-        config = function()
-            require("telescope").load_extension("file_browser")
-        end,
+		config = function()
+			require("telescope").load_extension("file_browser")
+		end,
 		requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
 	})
 
@@ -206,6 +206,14 @@ return require("packer").startup(function(use)
 			"nvim-treesitter/nvim-treesitter",
 			"antoinemadec/FixCursorHold.nvim",
 		},
+	})
+
+    -- guess-indent: Guess indent settings.
+	use({
+		"nmac427/guess-indent.nvim",
+		config = function()
+			require("guess-indent").setup({})
+		end,
 	})
 
 	if packer_bootstrap then
