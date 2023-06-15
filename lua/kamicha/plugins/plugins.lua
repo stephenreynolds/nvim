@@ -174,12 +174,6 @@ return {
 	-- guess-indent: Guess indent settings.
 	"nmac427/guess-indent.nvim",
 
-	-- leap: Neovim's answer to the mouse.
-	{
-		"ggandor/leap.nvim",
-		depencencies = { "tpope/vim-repeat" },
-	},
-
 	-- dressing.nvim: Neovim plugin to improve the default vim.ui interfaces
 	{ "stevearc/dressing.nvim", event = "VeryLazy" },
 
