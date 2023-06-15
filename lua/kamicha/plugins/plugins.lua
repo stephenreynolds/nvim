@@ -125,9 +125,6 @@ return {
 		event = "VeryLazy",
 	},
 
-	-- GitHub Copilot
-	"github/copilot.vim",
-
 	-- ChatGPT.nvim: ChatGPT inside Neovim.
 	{
 		"jackMort/ChatGPT.nvim",
