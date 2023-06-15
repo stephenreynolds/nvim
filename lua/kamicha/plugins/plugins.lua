@@ -67,13 +67,6 @@ return {
 		},
 	},
 
-	-- lualine: A status bar
-	{
-		"nvim-lualine/lualine.nvim",
-		dependencies = {
-			{ "nvim-tree/nvim-web-devicons", optional = true },
-		},
-	},
 
 	-- nvim-web-devicons: Useful icons
 	{
