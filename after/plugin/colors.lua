@@ -39,6 +39,7 @@ local function setup_catppuccin()
 					information = { "underline" },
 				},
 			},
+			neotest = true,
 			notify = true,
 			semantic_tokens = true,
 			treesitter = true,
