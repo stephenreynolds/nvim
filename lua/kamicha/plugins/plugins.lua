@@ -159,9 +159,6 @@ return {
 		},
 	},
 
-	-- fidget.nvim: Standalone UI for nvim-lsp progress.
-	{ "j-hui/fidget.nvim", tag = "legacy" },
-
 	-- guess-indent: Guess indent settings.
 	"nmac427/guess-indent.nvim",
 
