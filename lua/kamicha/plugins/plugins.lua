@@ -61,9 +61,6 @@ return {
 	-- vim-commentary: Comment stuff out.
 	"tpope/vim-commentary",
 
-	-- vim-fugitive: Git wrapper
-	"tpope/vim-fugitive",
-
 	-- gv.vim: Git commit browser
 	"junegunn/gv.vim",
 

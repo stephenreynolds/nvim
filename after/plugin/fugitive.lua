@@ -1,5 +1,0 @@
-vim.keymap.set("n", "<leader>gg", "<cmd>tab Git<cr>", { desc = "Fugitive" })
-vim.keymap.set("n", "<leader>gd", "<cmd>Git diff<cr>", { desc = "Diff" })
-vim.keymap.set("n", "<leader>gl", "<cmd>Git blame<cr>", { desc = "Blame" })
-vim.keymap.set("n", "<leader>gp", "<cmd>Git pull<cr>", { desc = "Pull" })
-vim.keymap.set("n", "<leader>gP", "<cmd>Git push<cr>", { desc = "Push" })
