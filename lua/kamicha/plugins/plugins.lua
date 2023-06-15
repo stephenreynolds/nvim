@@ -43,9 +43,6 @@ return {
 	-- Treesitter Playground: View treesitter information.
 	"nvim-treesitter/playground",
 
-	-- undotree: Undo history visualizer.
-	"mbbill/undotree",
-
 	-- vim-commentary: Comment stuff out.
 	"tpope/vim-commentary",
 
