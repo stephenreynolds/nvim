@@ -31,9 +31,6 @@ return {
 		dependencies = { "kkharji/sqlite.lua" },
 	},
 
-	-- auto-session: Automatically save and restore sessions.
-	"rmagatti/auto-session",
-
 	-- nvim-treesitter: Treesitter confiurations and abstraction layer.
 	{
 		"nvim-treesitter/nvim-treesitter",
