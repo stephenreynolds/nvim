@@ -1,7 +1,4 @@
 return {
-	-- plenary: A useful library of functions.
-	"nvim-lua/plenary.nvim",
-
 	-- vim-closer: Automatically closes brackets.
 	"rstacruz/vim-closer",
 
