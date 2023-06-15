@@ -3,7 +3,7 @@ COLORSCHEME = "catppuccin"
 local function setup_tokyo_night()
 	require("tokyonight").setup({
 		style = "night",
-		transparent = true
+		transparent = true,
 	})
 end
 
