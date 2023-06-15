@@ -1,5 +1,5 @@
-require("kamicha.remap")
-require("kamicha.set")
+require("kamicha.config.remap")
+require("kamicha.config.set")
 require("kamicha.lazy")
 
 vim.cmd("colorscheme " .. "catppuccin")
