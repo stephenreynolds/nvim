@@ -213,6 +213,14 @@ local function install_packages(use)
 			"tpope/vim-repeat",
 		},
 	})
+
+	-- overseer: A task runner and job management plugin for Neovim
+	use({
+		"stevearc/overseer.nvim",
+		requires = {
+			"stevearc/dressing.nvim"
+		}
+	})
 end
 
 local ensure_packer = function()

@@ -28,5 +28,8 @@ wk.register({
     },
     s = {
         name = "Search"
+    },
+    t = {
+        name = "Task Runner"
     }
 }, { prefix = "<leader>" })

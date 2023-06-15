@@ -42,6 +42,7 @@ local function setup_catppuccin()
 			},
 			neotest = true,
 			notify = true,
+			overseer = true,
 			semantic_tokens = true,
 			treesitter = true,
 			treesitter_context = true,

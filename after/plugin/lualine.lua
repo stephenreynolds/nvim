@@ -16,7 +16,7 @@ require("lualine").setup({
 			"Undotree",
 		},
 		globalstatus = true,
-        theme = "catppuccin"
+		theme = "catppuccin",
 	},
 	sections = {
 		lualine_a = { "mode" },
@@ -42,6 +42,7 @@ require("lualine").setup({
 				cond = require("noice").api.status.search.has,
 				color = { fg = "#ff9e64" },
 			},
+			"overseer",
 			"encoding",
 			"fileformat",
 			"filetype",
