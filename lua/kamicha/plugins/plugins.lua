@@ -103,11 +103,6 @@ return {
 	-- gitsigns: Super fast git decorations.
 	"lewis6991/gitsigns.nvim",
 
-	-- trouble: A pretty list of diagnostics.
-	{
-		"folke/trouble.nvim",
-		depencencies = { "nvim-tree/nvim-web-devicons" },
-	},
 
 	{ "MunifTanjim/nui.nvim", lazy = true },
 
