@@ -82,13 +82,6 @@ return {
 		},
 	},
 
-
-	-- Which Key: Popup that displays possible key bindings of the command you started typing.
-	{
-		"folke/which-key.nvim",
-		event = "VeryLazy",
-	},
-
 	-- lualine: A status bar
 	{
 		"nvim-lualine/lualine.nvim",
