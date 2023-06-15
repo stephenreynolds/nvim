@@ -88,15 +88,6 @@ return {
 		},
 	},
 
-	-- nvim-dap-ui: Debugger interface
-	{
-		"rcarriga/nvim-dap-ui",
-		dependencies = { "mfussenegger/nvim-dap" },
-		event = "VeryLazy",
-	},
-
-	-- mason-nvim-dap: Automatically set up DAPs with Mason
-	"jay-babu/mason-nvim-dap.nvim",
 
 	-- Which Key: Popup that displays possible key bindings of the command you started typing.
 	{
