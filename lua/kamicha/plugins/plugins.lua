@@ -2,8 +2,7 @@ return {
 	-- vim-closer: Automatically closes brackets.
 	"rstacruz/vim-closer",
 
-
-    -- telescope-fzf-native:  FZF sorter for telescope written in c
+	-- telescope-fzf-native:  FZF sorter for telescope written in c
 	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 
 	-- telescope-file-browser: A file browser extension for telescope.nvim.
@@ -25,7 +24,6 @@ return {
 		dependencies = { "kkharji/sqlite.lua" },
 	},
 
-
 	-- nvim-treesitter-context: Context aware code folding.
 	"nvim-treesitter/nvim-treesitter-context",
 
@@ -35,54 +33,16 @@ return {
 	-- vim-commentary: Comment stuff out.
 	"tpope/vim-commentary",
 
-	-- lsp-zero: Easy setup of LSP.
-	{
-		"VonHeikemen/lsp-zero.nvim",
-		branch = "v2.x",
-		dependencies = {
-			-- LSP Support
-			"neovim/nvim-lspconfig",
-			{
-				"williamboman/mason.nvim",
-				build = function()
-					pcall(vim.cmd, "MasonUpdate")
-				end,
-			},
-			"williamboman/mason-lspconfig.nvim",
-			-- Autocompletion
-			"hrsh7th/nvim-cmp",
-			"hrsh7th/cmp-buffer",
-			"hrsh7th/cmp-path",
-			"saadparwaiz1/cmp_luasnip",
-			"hrsh7th/cmp-nvim-lsp",
-			"hrsh7th/cmp-nvim-lua",
-			-- Snippets
-			"L3MON4D3/LuaSnip",
-			"rafamadriz/friendly-snippets",
-		},
-	},
-
-
 	-- nvim-web-devicons: Useful icons
 	{
 		"nvim-tree/nvim-web-devicons",
 		lazy = true,
 	},
 
-	-- null-ls: Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua.
-	{
-		"jose-elias-alvarez/null-ls.nvim",
-		depencencies = { "nvim-lua/plenary.nvim" },
-	},
-
-
 	-- gitsigns: Super fast git decorations.
 	"lewis6991/gitsigns.nvim",
 
-
 	{ "MunifTanjim/nui.nvim", lazy = true },
-
-
 
 	-- glow: Markdown previewer
 	{
@@ -106,7 +66,6 @@ return {
 
 	-- dressing.nvim: Neovim plugin to improve the default vim.ui interfaces
 	{ "stevearc/dressing.nvim", event = "VeryLazy" },
-
 
 	-- yuck.vim: Support for eww configuration language yuck
 	{ "elkowar/yuck.vim", enabled = false },
