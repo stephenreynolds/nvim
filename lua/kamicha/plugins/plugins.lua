@@ -136,15 +136,6 @@ return {
 	-- dressing.nvim: Neovim plugin to improve the default vim.ui interfaces
 	{ "stevearc/dressing.nvim", event = "VeryLazy" },
 
-	-- overseer: A task runner and job management plugin for Neovim
-	{
-		"stevearc/overseer.nvim",
-		depencencies = {
-			{ "stevearc/dressing.nvim", optional = true },
-			{ "nvim-telescope/telescope.nvim", optional = true },
-			{ "rcarriga/nvim-notify", optional = true },
-		},
-	},
 
 	-- yuck.vim: Support for eww configuration language yuck
 	{ "elkowar/yuck.vim", enabled = false },
