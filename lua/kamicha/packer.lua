@@ -195,6 +195,9 @@ local function install_packages(use)
 		},
 	})
 
+	-- fidget.nvim: Standalone UI for nvim-lsp progress.
+	use({ "j-hui/fidget.nvim", tag = "legacy" })
+
 	-- guess-indent: Guess indent settings.
 	use({
 		"nmac427/guess-indent.nvim",

@@ -24,6 +24,7 @@ local function setup_catppuccin()
 				enabled = true,
 				enable_ui = true,
 			},
+			fidget = true,
 			native_lsp = {
 				enabled = true,
 				virtual_text = {
