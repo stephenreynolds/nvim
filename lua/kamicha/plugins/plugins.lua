@@ -75,12 +75,6 @@ return {
 		depencencies = { "nvim-lua/plenary.nvim" },
 	},
 
-	-- alpha: A fast and fully programmable greeter for neovim.
-	{
-		"goolord/alpha-nvim",
-		depencencies = { "nvim-tree/nvim-web-devicons" },
-		event = "VimEnter",
-	},
 
 	-- gitsigns: Super fast git decorations.
 	"lewis6991/gitsigns.nvim",
