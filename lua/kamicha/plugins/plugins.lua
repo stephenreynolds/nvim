@@ -58,9 +58,6 @@ return {
 	-- vim-commentary: Comment stuff out.
 	"tpope/vim-commentary",
 
-	-- gv.vim: Git commit browser
-	"junegunn/gv.vim",
-
 	-- lsp-zero: Easy setup of LSP.
 	{
 		"VonHeikemen/lsp-zero.nvim",
