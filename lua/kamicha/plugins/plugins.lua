@@ -172,9 +172,6 @@ return {
 		},
 	},
 
-	-- neodev.nvim: Neovim setup for init.lua and plugin development with full signature help, docs and completion for the nvim lua API.
-	"folke/neodev.nvim",
-
 	-- yuck.vim: Support for eww configuration language yuck
 	{ "elkowar/yuck.vim", enabled = false },
 
