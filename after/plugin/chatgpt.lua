@@ -6,8 +6,9 @@ chatgpt.setup({
   }
 })
 
-vim.keymap.set("n", "<leader>ic", "<cmd>ChatGPT<cr>", { desc = "Chat" })
+vim.keymap.set("n", "<leader>ii", "<cmd>ChatGPT<cr>", { desc = "Chat" })
 vim.keymap.set("n", "<leader>ia", "<cmd>ChatGPTActAs<cr>", { desc = "Act as" })
+vim.keymap.set("n", "<leader>ic", "<cmd>ChatGPTCompleteCode<cr>", { desc = "Complete code" })
 vim.keymap.set("v", "<leader>ie", chatgpt.edit_with_instructions, { desc = "Edit with instructions" })
 vim.keymap.set("v", "<leader>ig", "<cmd>ChatGPTRun grammar_correction<cr>", { desc = "Grammar correction" })
 vim.keymap.set("v", "<leader>iT", "<cmd>ChatGPTRun translate<cr>", { desc = "Translate" })
