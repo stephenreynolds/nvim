@@ -112,16 +112,6 @@ return {
 	{ "MunifTanjim/nui.nvim", lazy = true },
 
 
-	-- ChatGPT.nvim: ChatGPT inside Neovim.
-	{
-		"jackMort/ChatGPT.nvim",
-		depencencies = {
-			"MunifTanjim/nui.nvim",
-			"nvim-lua/plenary.nvim",
-			"nvim-telescope/telescope.nvim",
-		},
-		event = "VeryLazy",
-	},
 
 	-- glow: Markdown previewer
 	{
