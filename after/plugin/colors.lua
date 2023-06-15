@@ -40,6 +40,7 @@ local function setup_catppuccin()
 				},
 			},
 			notify = true,
+			semantic_tokens = true,
 			treesitter = true,
 			treesitter_context = true,
 			telescope = true,
