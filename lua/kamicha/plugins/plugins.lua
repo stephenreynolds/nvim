@@ -149,9 +149,6 @@ return {
 		cmd = "Glow",
 	},
 
-	-- colorizer: A high-performance color highlighter.
-	"norcalli/nvim-colorizer.lua",
-
 	-- Neotest: A framework for interacting with tests within NeoVim.
 	{
 		"nvim-neotest/neotest",
