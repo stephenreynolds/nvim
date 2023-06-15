@@ -49,9 +49,6 @@ return {
 		depencencies = { "nvim-lua/plenary.nvim" },
 	},
 
-	-- git-worktree: Git worktree support for Neovim.
-	"ThePrimeagen/git-worktree.nvim",
-
 	-- undotree: Undo history visualizer.
 	"mbbill/undotree",
 
