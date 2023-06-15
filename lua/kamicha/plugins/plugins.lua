@@ -110,17 +110,7 @@ return {
 	},
 
 	{ "MunifTanjim/nui.nvim", lazy = true },
-	{ "rcarriga/nvim-notify", lazy = true },
 
-	-- noice: Highly experimental plugin that completely replaces the UI for messages, cmdline and the popupmenu.
-	{
-		"folke/noice.nvim",
-		depencencies = {
-			"MunifTanjim/nui.nvim",
-			"rcarriga/nvim-notify",
-		},
-		event = "VeryLazy",
-	},
 
 	-- ChatGPT.nvim: ChatGPT inside Neovim.
 	{
