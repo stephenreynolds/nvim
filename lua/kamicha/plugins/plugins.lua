@@ -133,9 +133,6 @@ return {
 		event = "VeryLazy",
 	},
 
-	-- zen-mode: Distraction free writing.
-	"folke/zen-mode.nvim",
-
 	-- glow: Markdown previewer
 	{
 		"ellisonleao/glow.nvim",
