@@ -20,9 +20,6 @@ wk.register({
             name = "Workspace"
         }
     },
-    p = {
-        name = "Packer"
-    },
     r = {
         name = "Replace"
     },
