@@ -43,12 +43,6 @@ return {
 	-- Treesitter Playground: View treesitter information.
 	"nvim-treesitter/playground",
 
-	-- Harpoon: Getting you where you want with the fewest keystrokes.
-	{
-		"ThePrimeagen/harpoon",
-		depencencies = { "nvim-lua/plenary.nvim" },
-	},
-
 	-- undotree: Undo history visualizer.
 	"mbbill/undotree",
 
