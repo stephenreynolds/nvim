@@ -25,11 +25,6 @@ return {
 		dependencies = { "kkharji/sqlite.lua" },
 	},
 
-	-- nvim-treesitter: Treesitter confiurations and abstraction layer.
-	{
-		"nvim-treesitter/nvim-treesitter",
-		build = ":TSUpdate",
-	},
 
 	-- nvim-treesitter-context: Context aware code folding.
 	"nvim-treesitter/nvim-treesitter-context",
