@@ -12,6 +12,9 @@ return {
 		depencencies = { "nvim-lua/plenary.nvim" },
 	},
 
+    -- telescope-fzf-native:  FZF sorter for telescope written in c
+	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+
 	-- telescope-file-browser: A file browser extension for telescope.nvim.
 	{
 		"nvim-telescope/telescope-file-browser.nvim",
