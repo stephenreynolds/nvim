@@ -69,16 +69,4 @@ return {
 
 	-- yuck.vim: Support for eww configuration language yuck
 	{ "elkowar/yuck.vim", enabled = false },
-
-	-- Catppuccin: Soothing pastel theme for (Neo)vim.
-	{ "catppuccin/nvim", name = "catppuccin", enabled = true, priority = 1000, lazy = false },
-
-	-- tokyonight: A theme that celebrates the lights of Downtown Tokyo at night.
-	{ "folke/tokyonight.nvim", name = "tokyonight", enabled = false, priority = 1000 },
-
-	-- Rosé Pine: All natural pine, faux fur and a bit of soho vibes for the classy minimalist.
-	{ "rose-pine/neovim", name = "rose-pine", enabled = false, priority = 1000 },
-
-	-- Kanagawa: NeoVim dark colorscheme inspired by the colors of the famous painting by Katsushika Hokusai.
-	{ "rebelot/kanagawa.nvim", name = "kanagawa", enabled = false, priority = 1000 },
 }

@@ -12,5 +12,3 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("kamicha.plugins")
-
-vim.keymap.set("n", "<leader>p", "<cmd>Lazy<cr>", { desc = "Plugins" })

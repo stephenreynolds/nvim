@@ -2,6 +2,8 @@ require("kamicha.remap")
 require("kamicha.set")
 require("kamicha.lazy")
 
+vim.cmd("colorscheme " .. "catppuccin")
+
 local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
 
