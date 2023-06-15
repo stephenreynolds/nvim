@@ -19,6 +19,7 @@ return {
 			"nvim-telescope/telescope.nvim",
 			"nvim-lua/plenary.nvim",
 		},
+		event = "VeryLazy",
 		config = function()
 			require("telescope").load_extension("file_browser")
 		end,
@@ -97,6 +98,7 @@ return {
 	{
 		"rcarriga/nvim-dap-ui",
 		dependencies = { "mfussenegger/nvim-dap" },
+		event = "VeryLazy",
 	},
 
 	-- mason-nvim-dap: Automatically set up DAPs with Mason
