@@ -2,12 +2,6 @@ return {
 	-- vim-closer: Automatically closes brackets.
 	"rstacruz/vim-closer",
 
-	-- Telescope: Highly extendable fuzzy finder.
-	{
-		"nvim-telescope/telescope.nvim",
-		version = "0.1.x",
-		depencencies = { "nvim-lua/plenary.nvim" },
-	},
 
     -- telescope-fzf-native:  FZF sorter for telescope written in c
 	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
