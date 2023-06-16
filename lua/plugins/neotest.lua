@@ -6,4 +6,11 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		"antoinemadec/FixCursorHold.nvim",
 	},
+	opts = function()
+		return {
+			consumers = {
+				overseer = require("neotest.consumers.overseer"),
+			},
+		}
+	end,
 }
