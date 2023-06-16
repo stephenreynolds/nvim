@@ -50,6 +50,7 @@
   "telescope-frecency.nvim": { "branch": "master", "commit": "3ddaaa0a6084592eed451ded5fcd279e4a60c122" },
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "9bc8237565ded606e6c366a71c64c0af25cd7a50" },
   "telescope.nvim": { "branch": "master", "commit": "776b509f80dd49d8205b9b0d94485568236d1192" },
+  "todo-comments.nvim": { "branch": "main", "commit": "09b0b17d824d2d56f02ff15967e8a2499a89c731" },
   "tokyonight": { "branch": "main", "commit": "161114bd39b990995e08dbf941f6821afbdcd666" },
   "trouble.nvim": { "branch": "main", "commit": "2af0dd9767526410c88c628f1cbfcb6cf22dd683" },
   "undotree": { "branch": "master", "commit": "485f01efde4e22cb1ce547b9e8c9238f36566f21" },
