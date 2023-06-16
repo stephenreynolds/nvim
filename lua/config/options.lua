@@ -35,5 +35,14 @@ vim.opt.colorcolumn = "80,120"
 -- Leader key
 vim.g.mapleader = " "
 
+vim.opt.fillchars = "eob: "
+
 -- Do not show mode
 vim.opt.showmode = false
+
+-- Use the current window to open a file in netrw
+vim.g.netrw_browse_split = 0
+-- Hide the netrw banner
+vim.g.netrw_banner = 0
+-- Set the width of the netrw window
+vim.g.netrw_winsize = 25

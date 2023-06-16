@@ -50,6 +50,5 @@ return {
 		local catppuccin = require("catppuccin")
 		catppuccin.setup(opts)
 		catppuccin.compile()
-        vim.cmd([[colorscheme catppuccin]])
 	end,
 }

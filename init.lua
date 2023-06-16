@@ -1,1 +1,5 @@
-require("kamicha")
+require("config.options")
+require("config.lazy")
+require("config.keymaps")
+require("config.colorscheme")
+require("autocommands")
