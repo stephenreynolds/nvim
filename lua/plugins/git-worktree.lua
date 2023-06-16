@@ -15,7 +15,7 @@ return {
 	keys = {
 		{
 			"<leader>gwc",
-			"<cmd>lua require('telescope').extensions.git_worktree.create_git_worktree()<cr>>",
+			"<cmd>lua require('telescope').extensions.git_worktree.create_git_worktree()<cr>",
 			desc = "Create worktree",
 		},
 		{
