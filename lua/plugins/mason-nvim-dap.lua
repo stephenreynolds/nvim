@@ -8,7 +8,7 @@ return {
 			ensure_installed = {
 				"codelldb",
 			},
-			automatic_setup = true,
+			automatic_installation = true,
 			handlers = {
 				function(config)
 					mason_dap.default_setup(config)
