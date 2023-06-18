@@ -109,6 +109,7 @@ return {
 					dap.clear_breakpoints()
 					print("Breakpoints cleared.")
 				end,
+				desc = "Clear breakpoints",
 			},
 			-- Variable hover
 			{
