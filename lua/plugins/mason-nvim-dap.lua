@@ -7,6 +7,8 @@ return {
 		return {
 			ensure_installed = {
 				"codelldb",
+				"go-debug-adapter",
+				"delve",
 			},
 			automatic_installation = true,
 			handlers = {
