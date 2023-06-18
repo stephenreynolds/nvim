@@ -11,7 +11,7 @@ return {
 		vim.g.copilot_assume_mapped = true
 	end,
 	keys = {
-		{ "<C-f>", 'copilot#Accept("<CR>")', mode = "i", silent = true, expr = true, desc = "Accept" },
+		{ "<C-f>", 'copilot#Accept("<CR>")', mode = "i", silent = true, expr = true, desc = "Accept", replace_keycodes = false },
 		{ "<leader>iCc", "<cmd>Copilot panel<cr>", desc = "Panel" },
 		{ "<leader>iCd", "<cmd>Copilot disable<cr>", desc = "Disable" },
 		{ "<leader>iCe", "<cmd>Copilot enable<cr>", desc = "Enable" },
