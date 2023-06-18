@@ -2,6 +2,7 @@
 return {
 	"folke/tokyonight.nvim",
 	name = "tokyonight",
+    enabled = false,
 	opts = {
 		style = "night",
 		transparent = true,

@@ -2,6 +2,7 @@
 return {
 	"rebelot/kanagawa.nvim",
 	name = "kanagawa",
+    enabled = false,
 	opts = {
 		transparent = true,
 		undercurl = true,
