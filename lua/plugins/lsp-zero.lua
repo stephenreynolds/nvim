@@ -101,7 +101,7 @@ return {
 			formatting = {
 				format = lspkind.cmp_format({
 					mode = "symbol_text",
-                    preset = "default",
+					preset = "default",
 					maxwidth = 50,
 					ellipsis_char = "...",
 					before = function(_, vim_item)
