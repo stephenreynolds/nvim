@@ -38,7 +38,6 @@ return {
 			"clangd",
 			"gopls",
 			"golangci_lint_ls",
-			"codeqlls",
 			"emmet_ls",
 			"jsonls",
 			"html",
