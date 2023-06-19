@@ -36,6 +36,19 @@ return {
 			"lua_ls",
 			"rust_analyzer",
 			"clangd",
+			"gopls",
+			"golangci_lint_ls",
+			"codeqlls",
+			"emmet_ls",
+			"jsonls",
+			"html",
+			"marksman",
+			"sqlls",
+			"taplo",
+			"tailwindcss",
+			"yamlls",
+			"dockerls",
+			"docker_compose_language_service",
 		})
 
 		local cmp = require("cmp")
