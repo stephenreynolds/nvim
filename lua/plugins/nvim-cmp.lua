@@ -97,20 +97,5 @@ return {
                 },
             },
         })
-
-        cmp.setup.filetype("gitcommit", {
-            sources = cmp.config.sources({
-                { name = "git" },
-            }, {
-                { name = "buffer" },
-            }),
-        })
-
-        cmp.setup.cmdline("/", {
-            mapping = cmp.mapping.preset.cmdline(),
-            sources = {
-                { name = "buffer" },
-            },
-        })
     end,
 }
