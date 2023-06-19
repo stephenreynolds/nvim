@@ -20,6 +20,7 @@ return {
 		"saadparwaiz1/cmp_luasnip",
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-nvim-lua",
+		"petertriho/cmp-git",
 		-- Snippets
 		"L3MON4D3/LuaSnip",
 		"rafamadriz/friendly-snippets",
@@ -54,17 +55,11 @@ return {
 			},
 		})
 
-		cmp.setup.cmdline(":", {
-			mapping = cmp.mapping.preset.cmdline(),
+		cmp.setup.filetype("gitcommit", {
 			sources = cmp.config.sources({
-				{ name = "path" },
+				{ name = "git" },
 			}, {
-				{
-					name = "cmdline",
-					option = {
-						ignore_cmds = { "Man", "!" },
-					},
-				},
+				{ name = "buffer" },
 			}),
 		})
 
