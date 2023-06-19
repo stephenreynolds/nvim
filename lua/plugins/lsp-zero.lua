@@ -61,6 +61,8 @@ return {
 			end, { "i", "s", "c" }),
 		})
 
+		local lspkind = require("lspkind")
+
 		cmp.setup.cmdline("/", {
 			mapping = cmp.mapping.preset.cmdline(),
 			sources = {
@@ -84,6 +86,17 @@ return {
 		})
 
 		lsp.setup_nvim_cmp({
+			formatting = {
+				format = lspkind.cmp_format({
+					mode = "symbol_text",
+                    preset = "default",
+					maxwidth = 50,
+					ellipsis_char = "...",
+					before = function(_, vim_item)
+						return vim_item
+					end,
+				}),
+			},
 			mapping = cmp_mappings,
 		})
 
