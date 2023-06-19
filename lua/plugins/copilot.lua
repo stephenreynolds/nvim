@@ -1,42 +1,68 @@
--- GitHub Copilot
 return {
-	"github/copilot.vim",
-	lazy = false,
-	config = function()
-		vim.g.copilot_filetypes = {
-			markdown = false,
-		}
-
-		vim.g.copilot_no_tab_map = true
-		vim.g.copilot_assume_mapped = true
-	end,
-	keys = {
-		{
-			"<C-f>",
-			'copilot#Accept("<CR>")',
-			mode = "i",
-			silent = true,
-			expr = true,
-			desc = "Accept",
-			replace_keycodes = false,
-		},
-		{ "<leader>iCc", "<cmd>Copilot panel<cr>", desc = "Panel" },
-		{
-			"<leader>iCd",
-			function()
-				vim.cmd([[Copilot disable]])
-				print("Copilot disabled")
-			end,
-			desc = "Disable",
-		},
-		{
-			"<leader>iCe",
-			function()
-				vim.cmd([[Copilot enable]])
-				print("Copilot enabled")
-			end,
-			desc = "Enable",
-		},
-		{ "<leader>iCs", "<cmd>Copilot status<cr>", desc = "Status" },
-	},
+    "zbirenbaum/copilot.lua",
+    cmd = { "Copilot" },
+    event = "InsertEnter",
+    opts = {
+        panel = {
+            enabled = true,
+            auto_refresh = false,
+            keymap = {
+                jump_prev = "[[",
+                jump_next = "]]",
+                accept = "<CR>",
+                refresh = "gr",
+                open = "<M-CR>",
+            },
+            layout = {
+                position = "right", -- | top | left | right
+                ratio = 0.4,
+            },
+        },
+        suggestion = {
+            enabled = true,
+            auto_trigger = true,
+            debounce = 75,
+            keymap = {
+                accept = "<M-l>",
+                accept_word = false,
+                accept_line = false,
+                next = "<M-]>",
+                prev = "<M-[>",
+                dismiss = "<C-]>",
+            },
+        },
+        filetypes = {
+            yaml = false,
+            markdown = false,
+            help = false,
+            gitcommit = false,
+            gitrebase = false,
+            hgcommit = false,
+            svn = false,
+            cvs = false,
+            ["."] = false,
+        },
+        copilot_node_command = "node", -- Node.js version must be > 16.x
+        server_opts_overrides = {},
+    },
+    config = function(_, opts)
+        local copilot = require("copilot")
+        copilot.setup(opts)
+    end,
+    keys = {
+        {
+            "<leader>iCc",
+            function()
+                require("copilot.panel").open()
+            end,
+            desc = "Copilot Panel",
+        },
+        {
+            "<leader>iCt",
+            function()
+                require("copilot.suggestion").toggle_auto_trigger()
+            end,
+            desc = "Toggle suggestions",
+        },
+    },
 }
