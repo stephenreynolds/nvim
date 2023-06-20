@@ -13,6 +13,7 @@ return {
 				},
 			},
 			d = "Debugger",
+            F = "File",
 			g = {
 				name = "Git",
 				w = {
@@ -39,6 +40,8 @@ return {
 			T = {
 				name = "Task Runner",
 			},
+            ["["] = "Previous",
+            ["]"] = "Next",
 		}, { prefix = "<leader>" })
 	end,
 }
