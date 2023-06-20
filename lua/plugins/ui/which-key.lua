@@ -13,7 +13,10 @@ return {
 				},
 			},
 			d = "Debugger",
-            F = "File",
+            F = {
+                name = "File",
+                y = "Copy"
+            },
 			g = {
 				name = "Git",
 				w = {
