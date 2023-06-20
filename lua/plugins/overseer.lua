@@ -27,11 +27,11 @@ return {
 		},
 	},
 	keys = {
-		{ "<leader>tr", "<cmd>OverseerRun<cr>", desc = "Run task" },
-		{ "<leader>tt", "<cmd>OverseerToggle<cr>", desc = "Toggle tasks view" },
-		{ "<leader>ta", "<cmd>OverseerTaskAction<cr>", desc = "Actions" },
-		{ "<leader>tl", "<cmd>OverseerLoadBundle<cr>", desc = "Load task bundle" },
-		{ "<leader>ti", "<cmd>OverseerInfo<cr>", desc = "Overseer info" },
-		{ "<leader>tb", "<cmd>OverseerBuild<cr>", desc = "Task builder" },
+		{ "<leader>Tr", "<cmd>OverseerRun<cr>", desc = "Run task" },
+		{ "<leader>Tt", "<cmd>OverseerToggle<cr>", desc = "Toggle tasks view" },
+		{ "<leader>Ta", "<cmd>OverseerTaskAction<cr>", desc = "Actions" },
+		{ "<leader>Tl", "<cmd>OverseerLoadBundle<cr>", desc = "Load task bundle" },
+		{ "<leader>Ti", "<cmd>OverseerInfo<cr>", desc = "Overseer info" },
+		{ "<leader>Tb", "<cmd>OverseerBuild<cr>", desc = "Task builder" },
 	},
 }
