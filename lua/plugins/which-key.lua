@@ -26,12 +26,17 @@ return {
 				},
 			},
 			r = {
-				name = "Replace",
+				name = "Refactor",
+				e = "Extract",
+				i = "Inline",
 			},
 			s = {
 				name = "Search",
 			},
 			t = {
+				name = "Tests",
+			},
+			T = {
 				name = "Task Runner",
 			},
 		}, { prefix = "<leader>" })

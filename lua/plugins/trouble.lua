@@ -11,7 +11,7 @@ return {
 			desc = "Quickfix",
 		},
 		{
-			"<leader>lrr",
+			"<leader>lr",
 			"<cmd>TroubleToggle lsp_references<cr>",
 			buffer = bufnr,
 			remap = false,
