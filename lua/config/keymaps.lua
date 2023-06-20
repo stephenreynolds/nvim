@@ -20,16 +20,16 @@ vim.keymap.set("n", "n", "nzzzv", { desc = "Jump to next search result" })
 vim.keymap.set("n", "N", "Nzzzv", { desc = "Jump to previous search result" })
 
 -- Paste over and delete selection, instead of copying the selection.
-vim.keymap.set("x", "<leader>P", "\"_dP", { desc = "Paste over selection" })
+vim.keymap.set("x", "<leader>P", '"_dP', { desc = "Paste over selection" })
 
 -- Yank to system clipboard
-vim.keymap.set("n", "<leader>y", "\"+y", { desc = "Copy to system clipboard" })
-vim.keymap.set("v", "<leader>y", "\"+y", { desc = "Copy to system clipboard" })
-vim.keymap.set("n", "<leader>Y", "\"+Y", { desc = "Copy to system clipboard" })
+vim.keymap.set("n", "<leader>y", '"+y', { desc = "Copy to system clipboard" })
+vim.keymap.set("v", "<leader>y", '"+y', { desc = "Copy to system clipboard" })
+vim.keymap.set("n", "<leader>Y", '"+Y', { desc = "Copy to system clipboard" })
 
 -- Delete to the void register
-vim.keymap.set("n", "<leader>d", "\"_d", { desc = "Delete without yanking" })
-vim.keymap.set("v", "<leader>d", "\"_d", { desc = "Delete without yanking" })
+vim.keymap.set("n", "<leader>d", '"_d', { desc = "Delete without yanking" })
+vim.keymap.set("v", "<leader>d", '"_d', { desc = "Delete without yanking" })
 
 -- Move to next/previous error in quickfix list.
 vim.keymap.set("n", "<C-up>", "<cmd>cnext<CR>zz", { desc = "Next error" })
@@ -45,14 +45,14 @@ vim.keymap.set("n", "<leader>rw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left>
 
 -- Make the current file executable.
 vim.keymap.set("n", "<leader>x", function()
-  vim.cmd("silent !chmod +x " .. vim.fn.expand("%"))
-  local filename = vim.fn.expand("%:t")
-  print("Made " .. filename .. " executable.")
+	vim.cmd("silent !chmod +x " .. vim.fn.expand("%"))
+	local filename = vim.fn.expand("%:t")
+	print("Made " .. filename .. " executable.")
 end, { silent = true, desc = "Make executable" })
 
 -- Source the current file.
 vim.keymap.set("n", "<leader>S", function()
-    vim.cmd("so")
+	vim.cmd("so")
 end, { desc = "Source file" })
 
 -- Terminal mode
