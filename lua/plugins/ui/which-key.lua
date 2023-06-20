@@ -29,6 +29,7 @@ return {
 					name = "Workspace",
 				},
 			},
+            n = "Notifications",
 			r = {
 				name = "Refactor",
 				e = "Extract",

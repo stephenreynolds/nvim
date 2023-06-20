@@ -20,6 +20,7 @@ return {
         }
     },
     keys = {
-        { "<leader>sn", "<cmd>Noice telescope<cr>", desc = "Message history" }
+        { "<leader>sn", "<cmd>Noice telescope<cr>", desc = "Message history" },
+        { "<leader>nn", "<cmd>Noice telescope<cr>", desc = "Message history" }
     }
 }
