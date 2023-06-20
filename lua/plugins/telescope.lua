@@ -15,7 +15,7 @@ return {
 			desc = "Find file",
 		},
 		{
-			"<leader>sB",
+			"<leader>sb",
 			"<cmd>Telescope buffers<cr>",
 			desc = "Buffers",
 		},
