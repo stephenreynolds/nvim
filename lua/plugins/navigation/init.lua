@@ -1,6 +1,5 @@
 return {
 	require("plugins.navigation.harpoon"),
-	require("plugins.navigation.nvim-tree"),
 	require("plugins.navigation.nvim-ufo"),
 	require("plugins.navigation.leap"),
 	require("plugins.navigation.telescope"),
