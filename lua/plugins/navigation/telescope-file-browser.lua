@@ -9,6 +9,6 @@ return {
         require("telescope").load_extension("file_browser")
     end,
     keys = {
-        { "<leader>e" },
+        { "<leader>e", "<cmd>Telescope file_browser<cr>", { noremap = true, silent = true, desc = "File browser" } },
     },
 }
