@@ -8,17 +8,26 @@ return {
 
 		dapui.setup(opts)
 
-		vim.fn.sign_define("DapBreakpoint", { text = "🔴", texthl = "DapBreakpoint", linehl = "", numhl = "" })
+		vim.fn.sign_define(
+			"DapBreakpoint",
+			{ text = "", texthl = "DapBreakpoint", linehl = "DapBreakpointLine", numhl = "DapBreakpoint" }
+		)
 		vim.fn.sign_define(
 			"DapBreakpointRejected",
-			{ text = "🔵", texthl = "DapBreakpointRejected", linehl = "", numhl = "" }
+			{ text = "", texthl = "DapBreakpointRejected", linehl = "DapBreakpointLine", numhl = "DapBreakpoint" }
 		)
-		vim.fn.sign_define("DapStopped", { text = "🟢", texthl = "DapStopped", linehl = "", numhl = "" })
+		vim.fn.sign_define(
+			"DapStopped",
+			{ text = "", texthl = "DapStopped", linehl = "DapStoppedLine", numhl = "DapStopped" }
+		)
 		vim.fn.sign_define(
 			"DapBreakpointCondition",
-			{ text = "●", texthl = "DapBreakpointCondition", linehl = "", numhl = "" }
+			{ text = "", texthl = "DapBreakpointCondition", linehl = "", numhl = "" }
 		)
-		vim.fn.sign_define("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "", numhl = "" })
+		vim.fn.sign_define(
+			"DapLogPoint",
+			{ text = "◆", texthl = "DapLogPoint", linehl = "DapLogPointLine", numhl = "DapLogPoint" }
+		)
 
 		-- Open and close when debugger is run/terminated.
 		dap.listeners.after.event_initialized["dapui_config"] = function()
@@ -101,7 +110,7 @@ return {
 		},
 		-- Toggle breakpoint
 		{
-			"<leader>db",
+			"<leader>dbb",
 			function()
 				require("dap").toggle_breakpoint()
 			end,
@@ -109,11 +118,29 @@ return {
 		},
 		-- Set exception breakpoints
 		{
-			"<leader>dx",
+			"<leader>dbx",
 			function()
 				require("dap").set_exception_breakpoints({ "all" })
 			end,
 			desc = "Set exception breakpoints",
+		},
+		-- Set log breakpoint
+		{
+			"<leader>dbl",
+			function()
+				require("dap").set_breakpoint(nil, nil, vim.fn.input("Log point message: "))
+			end,
+			desc = "Set log breakpoint",
+		},
+		-- Set conditional breakpoint
+		{
+			"<leader>dbc",
+			function()
+				vim.ui.input({ prompt = "Condition: " }, function(input)
+					require("dap").set_breakpoint(input, nil, nil)
+				end)
+			end,
+			desc = "Set conditional breakpoint",
 		},
 		-- Clear breakpoints
 		{

@@ -11,7 +11,10 @@ return {
 					name = "Copilot",
 				},
 			},
-			d = "Debugger",
+			d = {
+				name = "Debugger",
+				b = "Breakpoints",
+			},
 			F = {
 				name = "File",
 				y = "Copy",
