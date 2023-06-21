@@ -36,8 +36,8 @@ vim.opt.updatetime = 50
 -- Column ruler
 vim.opt.colorcolumn = "80,120"
 
--- Disable mouse
---vim.opt.mouse = ""
+-- Mouse
+vim.opt.mouse = "a"
 
 -- Leader key
 vim.g.mapleader = " "
