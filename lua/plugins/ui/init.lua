@@ -19,6 +19,5 @@ return {
 	require("plugins.ui.todo-comments"),
 	require("plugins.ui.trouble"),
 	require("plugins.ui.undotree"),
-	require("plugins.ui.vim-illuminate"),
 	require("plugins.ui.which-key"),
 }
