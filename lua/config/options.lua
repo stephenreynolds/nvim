@@ -47,6 +47,8 @@ vim.opt.fillchars = "eob: "
 -- Do not show mode
 vim.opt.showmode = false
 
+vim.opt.shortmess:append("sI")
+
 -- Use the current window to open a file in netrw
 vim.g.netrw_browse_split = 0
 -- Hide the netrw banner
