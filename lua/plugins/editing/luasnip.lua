@@ -6,8 +6,13 @@ return {
     },
     -- install jsregexp (optional!).
     build = "make install_jsregexp",
-    config = function()
+    opts = {
+        history = true,
+        updateevents = "TextChanged,TextChangedI",
+    },
+    config = function(_, opts)
         require("luasnip.loaders.from_vscode").lazy_load()
+        require("luasnip").setup(opts)
     end,
     keys = {
         {
