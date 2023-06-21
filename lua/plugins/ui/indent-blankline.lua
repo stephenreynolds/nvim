@@ -1,5 +1,6 @@
 return {
 	"lukas-reineke/indent-blankline.nvim",
+    event = {"BufRead", "BufWinEnter", "BufNewFile"},
 	opts = {
 		indentLine_enabled = 1,
 		filetype_exclude = {
@@ -10,6 +11,7 @@ return {
 			"TelescopePrompt",
 			"TelescopeResults",
 			"mason",
+            "alpha",
 			"",
 		},
 		buftype_exclude = { "terminal" },

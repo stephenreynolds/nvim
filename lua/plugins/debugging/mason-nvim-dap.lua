@@ -2,7 +2,7 @@
 return {
 	"jay-babu/mason-nvim-dap.nvim",
     dependencies = {"mfussenegger/nvim-dap", "williamboman/mason.nvim"},
-	event = "VeryLazy",
+    cmd = "Mason",
 	opts = function()
 		local mason_dap = require("mason-nvim-dap")
 		return {

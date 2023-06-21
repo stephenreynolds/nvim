@@ -1,7 +1,6 @@
 -- Which Key: Popup that displays possible key bindings of the command you started typing.
 return {
 	"folke/which-key.nvim",
-	event = "VeryLazy",
 	config = function()
 		local wk = require("which-key")
 
@@ -13,10 +12,10 @@ return {
 				},
 			},
 			d = "Debugger",
-            F = {
-                name = "File",
-                y = "Copy"
-            },
+			F = {
+				name = "File",
+				y = "Copy",
+			},
 			g = {
 				name = "Git",
 				w = {
@@ -29,7 +28,7 @@ return {
 					name = "Workspace",
 				},
 			},
-            n = "Notifications",
+			n = "Notifications",
 			r = {
 				name = "Refactor",
 				e = "Extract",
@@ -44,9 +43,12 @@ return {
 			T = {
 				name = "Task Runner",
 			},
-            ["["] = "Previous",
-            ["]"] = "Next",
-            ["<leader>"] = "Language"
+			["["] = "Previous",
+			["]"] = "Next",
+			["<leader>"] = "Language",
 		}, { prefix = "<leader>" })
 	end,
+	keys = {
+		{ "<leader>" },
+	},
 }

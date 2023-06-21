@@ -1,7 +1,7 @@
 -- vim-fugitive: Git wrapper
 return {
 	"tpope/vim-fugitive",
-    event = "VeryLazy",
+    cmd = "Git",
 	keys = {
 		{ "<leader>gg", "<cmd>tab Git<cr>", desc = "Fugitive" },
         { "<leader>gd", "<cmd>Git diff<cr>", desc = "Diff" },
