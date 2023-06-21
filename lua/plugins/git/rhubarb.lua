@@ -1,3 +1,5 @@
 return {
-    "tpope/vim-rhubarb"
+    "tpope/vim-rhubarb",
+    dependencies = "tpope/vim-fugitive",
+    cmd = { "GBrowse" },
 }
