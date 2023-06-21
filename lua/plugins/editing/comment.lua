@@ -17,7 +17,9 @@ return {
 		},
 	},
 	keys = {
-		{ "gc" },
-		{ "gb" },
+		{ "gcc", mode = "n" },
+		{ "gc", mode = "v" },
+		{ "gbc", mode = "n" },
+		{ "gb", mode = "v" },
 	},
 }
