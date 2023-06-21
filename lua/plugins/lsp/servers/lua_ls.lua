@@ -3,7 +3,10 @@ return {
         diagnostics = {
             globals = { "vim" },
         },
-        hint = { enable = true },
+        hint = {
+            enable = true,
+            arrayIndex = "Disable",
+        },
         workspace = {
             library = {
                 [vim.fn.expand("$VIMRUNTIME/lua")] = true,
