@@ -31,6 +31,9 @@ vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
+-- Wrap cursor around to next/previous line
+vim.opt.whichwrap:append "<>[]hl"
+
 -- Timeouts
 vim.opt.updatetime = 50
 vim.opt.timeoutlen = 400
