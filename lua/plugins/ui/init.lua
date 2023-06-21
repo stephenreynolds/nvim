@@ -13,7 +13,6 @@ return {
 	require("plugins.ui.noice"),
 	require("plugins.ui.notify"),
 	require("plugins.ui.nui"),
-	require("plugins.ui.nvim-lightbulb"),
 	require("plugins.ui.nvim-treesitter-context"),
 	require("plugins.ui.nvim-web-devicons"),
 	require("plugins.ui.todo-comments"),
