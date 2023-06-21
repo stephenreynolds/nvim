@@ -12,51 +12,49 @@ return {
 			end,
 		})
 	end,
-	keys = function()
-		local mark = require("harpoon.mark")
-		local ui = require("harpoon.ui")
-		return {
-			{
-				"<leader>a",
-				function()
-					mark.add_file()
-					print("Added to harpoon.")
-				end,
-				desc = "Add to harpoon",
-			},
-			{
-				"<C-e>",
-				ui.toggle_quick_menu,
-				desc = "Harpoon quick menu",
-			},
-			{
-				"<C-left>",
-				function()
-					ui.nav_file(1)
-				end,
-				desc = "Go to quick file 1",
-			},
-			{
-				"<C-down>",
-				function()
-					ui.nav_file(2)
-				end,
-				desc = "Go to quick file 2",
-			},
-			{
-				"<C-up>",
-				function()
-					ui.nav_file(3)
-				end,
-				desc = "Go to quick file 3",
-			},
-			{
-				"<C-right>",
-				function()
-					ui.nav_file(4)
-				end,
-				desc = "Go to quick file 4",
-			},
-		}
-	end,
+	keys = {
+		{
+			"<leader>a",
+			function()
+				require("harpoon.mark").add_file()
+				print("Added to harpoon.")
+			end,
+			desc = "Add to harpoon",
+		},
+		{
+			"<C-e>",
+			function()
+				require("harpoon.ui").toggle_quick_menu()
+			end,
+			desc = "Harpoon quick menu",
+		},
+		{
+			"<C-left>",
+			function()
+				require("harpoon.ui").nav_file(1)
+			end,
+			desc = "Go to quick file 1",
+		},
+		{
+			"<C-down>",
+			function()
+				require("harpoon.ui").nav_file(2)
+			end,
+			desc = "Go to quick file 2",
+		},
+		{
+			"<C-up>",
+			function()
+				require("harpoon.ui").nav_file(3)
+			end,
+			desc = "Go to quick file 3",
+		},
+		{
+			"<C-right>",
+			function()
+				require("harpoon.ui").nav_file(4)
+			end,
+			desc = "Go to quick file 4",
+		},
+	},
 }
