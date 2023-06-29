@@ -1,5 +1,6 @@
 return {
 	require("plugins.ui.alpha"),
+	require("plugins.ui.smoothie"),
 	require("plugins.ui.colorizer"),
 	require("plugins.ui.deadcolumn"),
 	require("plugins.ui.dressing"),
