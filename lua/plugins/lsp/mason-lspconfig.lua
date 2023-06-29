@@ -38,10 +38,6 @@ return {
 		local default_on_attach = function(client, bufnr)
 			vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
-			if vim.lsp.buf.inlay_hint and client.server_capabilities.inlayHintProvider then
-				vim.lsp.buf.inlay_hint(bufnr, true)
-			end
-
 			vim.keymap.set("n", "<leader>li", "<cmd>LspInfo<cr>", { buffer = bufnr, remap = false, desc = "Info" })
 			vim.keymap.set("n", "<leader>lh", function()
 				vim.lsp.buf.inlay_hint(bufnr)
