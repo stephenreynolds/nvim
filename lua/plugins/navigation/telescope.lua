@@ -122,11 +122,6 @@ return {
 			desc = "Mason Info",
 		},
 		{
-			"<leader>ls",
-			"<cmd>Telescope lsp_document_symbols<cr>",
-			desc = "Document symbols",
-		},
-		{
 			"<leader>lws",
 			"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
 			desc = "Workspace symbols",
