@@ -48,11 +48,7 @@ return {
                     settings = require("plugins.lsp.servers.clangd")
                 end
 
-                local function on_attach(client, bufnr)
-                    -- if vim.lsp.buf.inlay_hint and client.server_capabilities.inlayHintProvider then
-                    --     vim.lsp.buf.inlay_hint(bufnr, true)
-                    -- end
-
+                local function on_attach(_, bufnr)
                     vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
                     vim.keymap.set(
