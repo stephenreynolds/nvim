@@ -34,7 +34,10 @@ return {
 					},
 					"diagnostics",
 				},
-				lualine_c = { { "filename", path = 1 } },
+				lualine_c = {
+                    require('auto-session.lib').current_session_name,
+                    { "filename", path = 1 },
+                },
 				lualine_x = {
 					{
 						require("noice").api.status.message.get_hl,
