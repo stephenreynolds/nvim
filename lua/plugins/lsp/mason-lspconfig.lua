@@ -35,7 +35,7 @@ return {
 		local lspconfig = require("lspconfig")
 		local default_capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-		local default_on_attach = function(client, bufnr)
+		local default_on_attach = function(_, bufnr)
 			vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
 			vim.keymap.set("n", "<leader>li", "<cmd>LspInfo<cr>", { buffer = bufnr, remap = false, desc = "Info" })
@@ -82,16 +82,19 @@ return {
 				lspconfig[server_name].setup({})
 			end,
 			["clangd"] = function()
-				lspconfig.clangd.setup(require("plugins.lsp.servers.clangd"))
+				lspconfig.clangd.setup({ settings = require("plugins.lsp.servers.clangd") })
 			end,
 			["gopls"] = function()
-				lspconfig.gopls.setup(require("plugins.lsp.servers.gopls"))
+				lspconfig.gopls.setup({ settings = require("plugins.lsp.servers.gopls") })
 			end,
 			["lua_ls"] = function()
-				lspconfig.lua_ls.setup(require("plugins.lsp.servers.lua_ls"))
+				lspconfig.lua_ls.setup({ settings = require("plugins.lsp.servers.lua_ls") })
+			end,
+			["rust_analyzer"] = function()
+				lspconfig.rust_analyzer.setup({ settings = require("plugins.lsp.servers.rust-analyzer") })
 			end,
 			["tsserver"] = function()
-				lspconfig.tsserver.setup(require("plugins.lsp.servers.tsserver"))
+				lspconfig.tsserver.setup({ settings = require("plugins.lsp.servers.tsserver") })
 			end,
 		})
 	end,
