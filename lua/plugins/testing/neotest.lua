@@ -51,6 +51,9 @@ return {
 			{ "<leader>tS", "<cmd>w|lua require('neotest').summary.toggle()<cr>", desc = "Summary" },
 		},
 	},
-	{ "nvim-neotest/neotest-go" },
+	{
+        "nvim-neotest/neotest-go",
+        ft = "go",
+    },
 	{ "nvim-neotest/neotest-plenary" },
 }
