@@ -1,7 +1,7 @@
 -- ChatGPT.nvim: ChatGPT inside Neovim.
 return {
 	"jackMort/ChatGPT.nvim",
-	depencencies = {
+	dependencies = {
 		"MunifTanjim/nui.nvim",
 		"nvim-lua/plenary.nvim",
 		"nvim-telescope/telescope.nvim",

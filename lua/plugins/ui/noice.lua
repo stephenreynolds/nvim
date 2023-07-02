@@ -1,7 +1,7 @@
 -- noice: Highly experimental plugin that completely replaces the UI for messages, cmdline and the popupmenu.
 return {
     "folke/noice.nvim",
-    depencencies = {
+    dependencies = {
         "MunifTanjim/nui.nvim",
         "rcarriga/nvim-notify",
     },

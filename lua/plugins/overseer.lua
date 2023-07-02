@@ -1,7 +1,7 @@
 -- overseer: A task runner and job management plugin for Neovim
 return {
 	"stevearc/overseer.nvim",
-	depencencies = {
+	dependencies = {
 		{ "stevearc/dressing.nvim", optional = true },
 		{ "nvim-telescope/telescope.nvim", optional = true },
 		{ "rcarriga/nvim-notify", optional = true },

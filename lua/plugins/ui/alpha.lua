@@ -1,7 +1,7 @@
 -- alpha: A fast and fully programmable greeter for neovim.
 return {
 	"goolord/alpha-nvim",
-	depencencies = { "nvim-tree/nvim-web-devicons" },
+	dependencies = { "nvim-tree/nvim-web-devicons" },
 	event = "VimEnter",
 	opts = function()
 		local if_nil = vim.F.if_nil

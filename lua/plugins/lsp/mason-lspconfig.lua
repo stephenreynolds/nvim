@@ -91,7 +91,11 @@ return {
 				lspconfig.lua_ls.setup({ settings = require("plugins.lsp.servers.lua_ls") })
 			end,
 			["rust_analyzer"] = function()
-				lspconfig.rust_analyzer.setup({ settings = require("plugins.lsp.servers.rust-analyzer") })
+				lspconfig.rust_analyzer.setup({
+					settings = require("plugins.lsp.servers.rust-analyzer"),
+					filetypes = { "rust" },
+					root_dir = require("lspconfig/util").root_pattern("Cargo.toml"),
+				})
 			end,
 			["tsserver"] = function()
 				lspconfig.tsserver.setup({ settings = require("plugins.lsp.servers.tsserver") })

@@ -4,7 +4,7 @@ return {
     build = ":TSUpdate",
     opts = {
         -- A list of parser names, or "all"
-        ensure_installed = { "regex", "markdown_inline", "javascript", "typescript", "c", "lua", "rust", "go" },
+        ensure_installed = { "regex", "markdown_inline", "javascript", "typescript", "c", "lua", "rust", "go", "vim", "bash" },
 
         -- Install parsers synchronously (only applied to `ensure_installed`)
         sync_install = false,

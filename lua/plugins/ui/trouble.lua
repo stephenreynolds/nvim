@@ -1,7 +1,7 @@
 -- trouble: A pretty list of diagnostics.
 return {
 	"folke/trouble.nvim",
-	depencencies = { "nvim-tree/nvim-web-devicons" },
+	dependencies = { "nvim-tree/nvim-web-devicons" },
 	keys = {
 		{
 			"<leader>lq",

@@ -2,7 +2,7 @@
 return {
 	"nvim-telescope/telescope.nvim",
 	version = "0.1.x",
-	depencencies = { "nvim-lua/plenary.nvim" },
+	dependencies = { "nvim-lua/plenary.nvim" },
 	opts = {
 		defaults = {
 			vimgrep_arguments = {

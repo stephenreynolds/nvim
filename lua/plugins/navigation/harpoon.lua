@@ -1,7 +1,7 @@
 -- Harpoon: Getting you where you want with the fewest keystrokes.
 return {
 	"ThePrimeagen/harpoon",
-	depencencies = { "nvim-lua/plenary.nvim" },
+	dependencies = { "nvim-lua/plenary.nvim" },
 	config = function()
 		vim.api.nvim_create_autocmd({ "Filetype" }, {
 			pattern = "harpoon",
