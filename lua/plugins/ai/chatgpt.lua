@@ -42,6 +42,7 @@ return {
 		{
 			"<leader>iT",
 			"<cmd>ChatGPTRun translate<cr>",
+            mode = "v",
 			desc = "Translate",
 		},
 		{
