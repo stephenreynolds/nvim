@@ -7,9 +7,6 @@ return {
 		wk.register({
 			i = {
 				name = "AI",
-				C = {
-					name = "Copilot",
-				},
 			},
 			d = {
 				name = "Debugger",
