@@ -47,6 +47,8 @@ return {
 			end, { buffer = bufnr, remap = false, desc = "Format" })
 			vim.keymap.set("n", "gd", function()
 				vim.lsp.buf.definition()
+			end, { buffer = bufnr, remap = false, desc = "Go to definition" })
+			vim.keymap.set("n", "K", function()
 				vim.lsp.buf.hover()
 			end, { buffer = bufnr, remap = false, desc = "Hover" })
 			vim.keymap.set("n", "<leader>ld", function()
