@@ -50,14 +50,14 @@ return {
     end,
     keys = {
         {
-            "<leader>iCc",
+            "<leader>ip",
             function()
                 require("copilot.panel").open()
             end,
             desc = "Copilot Panel",
         },
         {
-            "<leader>iCt",
+            "<leader>iT",
             function()
                 require("copilot.suggestion").toggle_auto_trigger()
             end,
