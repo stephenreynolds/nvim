@@ -43,6 +43,9 @@ return {
 			T = {
 				name = "Task Runner",
 			},
+			z = {
+				name = "Zen Mode",
+			},
 			["["] = "Previous",
 			["]"] = "Next",
 			["<leader>"] = "Language",

@@ -9,7 +9,6 @@ return {
 	require("plugins.ui.indent-blankline"),
 	require("plugins.ui.lspkind"),
 	require("plugins.ui.lualine"),
-	require("plugins.ui.no-neck-pain"),
 	require("plugins.ui.noice"),
 	require("plugins.ui.notify"),
 	require("plugins.ui.nui"),
@@ -17,6 +16,7 @@ return {
 	require("plugins.ui.nvim-web-devicons"),
 	require("plugins.ui.todo-comments"),
 	require("plugins.ui.trouble"),
+	require("plugins.ui.true-zen"),
 	require("plugins.ui.undotree"),
 	require("plugins.ui.which-key"),
 }
