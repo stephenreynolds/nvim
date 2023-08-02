@@ -42,3 +42,6 @@ vim.opt.timeoutlen = 400
 
 -- Column ruler
 vim.opt.colorcolumn = "80,120"
+
+-- Mouse
+vim.opt.mouse = "a"
