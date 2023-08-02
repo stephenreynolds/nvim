@@ -16,16 +16,20 @@ vim.opt.softtabstop = 4
 -- Disable line wrap
 vim.opt.wrap = false
 
+-- Disable swap file and backup, and enable undo file
 vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
+-- Search highlighting
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
 
+-- Keep lines above and below the cursor
 vim.opt.scrolloff = 8
 
+-- Always show sign column
 vim.opt.signcolumn = "yes"
