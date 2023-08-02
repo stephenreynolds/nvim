@@ -1,6 +1,7 @@
 {
   "auto-session": { "branch": "main", "commit": "7afbb149f87be279778689596c781882014f7eef" },
   "catppuccin": { "branch": "main", "commit": "057c34f849cf21059487d849e2f3b3efcd4ee0eb" },
+  "gitsigns.nvim": { "branch": "main", "commit": "5d73da785a3c05fd63ac31769079db05169a6ec7" },
   "harpoon": { "branch": "master", "commit": "21f4c47c6803d64ddb934a5b314dcb1b8e7365dc" },
   "lazy.nvim": { "branch": "main", "commit": "3ad55ae678876516156cca2f361c51f7952a924b" },
   "leap.nvim": { "branch": "main", "commit": "5efe985cf68fac3b6a6dfe7a75fbfaca8db2af9c" },
