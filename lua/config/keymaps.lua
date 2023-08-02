@@ -43,3 +43,6 @@ vim.keymap.set("n", "<M-up>", "<cmd>lnext<cr>zz", { desc = "Next error (local)" 
 vim.keymap.set("n", "<M-k>", "<cmd>lnext<cr>zz", { desc = "Next error (local)" })
 vim.keymap.set("n", "<M-down>", "<cmd>lprev<cr>zz", { desc = "Previous error (local)" })
 vim.keymap.set("n", "<M-j>", "<cmd>lprev<cr>zz", { desc = "Previous error (local)" })
+
+-- Make Q do nothing
+vim.keymap.set("n", "Q", "<nop>", { desc = "[disabled]" })
