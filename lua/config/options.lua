@@ -54,3 +54,6 @@ vim.opt.fillchars = "eob: "
 
 -- Do not show mode
 vim.opt.showmode = false
+
+-- Disable annoying "hit enter" messages
+vim.opt.shortmess:append("sI")
