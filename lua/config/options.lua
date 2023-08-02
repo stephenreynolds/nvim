@@ -48,4 +48,3 @@ vim.opt.mouse = "a"
 
 -- Leader key
 vim.g.mapleader = " "
-vim.g.maplocalleader "  "
