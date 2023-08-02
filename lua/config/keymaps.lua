@@ -28,3 +28,6 @@ vim.keymap.set("n", "N", "Nzzzv", { desc = "Jump to previous search result"})
 -- Yank to system clipboard
 vim.keymap.set({ "n", "v" }, "<leader>y", '"+y', { desc = "Copy to system clipboard" })
 vim.keymap.set("n", "<leader>Y", '"+Y', { desc = "Copy line to system clipboard" })
+
+-- Delete to the void register
+vim.keymap.set({ "n", "v" }, "<leader>d", '"_d', { desc = "Delete without yanking" }) 
