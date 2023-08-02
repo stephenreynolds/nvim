@@ -16,3 +16,7 @@ vim.keymap.set("n", "<S-j>", "mzJ`z", { desc = "Join line down" })
 
 -- Paste over and delete selection, insead of copying the selection
 vim.keymap.set("x", "<leader>P", '"_dP', { desc = "Paste over selection" })
+
+-- Keep cursor centered vertically when jumping half page
+vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Jump half page down" })
+vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Jump half page up" })
