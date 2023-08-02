@@ -16,6 +16,9 @@ require("lazy").setup("plugins", {
     defaults = {
         lazy = true,
     },
+    install = {
+        colorscheme = { "catppuccin" },
+    },
     ui = {
 		border = "rounded",
 		title = "Plugins",
