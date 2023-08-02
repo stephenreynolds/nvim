@@ -17,3 +17,4 @@ vim.opt.softtabstop = 4
 vim.opt.wrap = false
 
 vim.opt.swapfile = false
+vim.opt.backup = false
