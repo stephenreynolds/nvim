@@ -20,3 +20,7 @@ vim.keymap.set("x", "<leader>P", '"_dP', { desc = "Paste over selection" })
 -- Keep cursor centered vertically when jumping half page
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Jump half page down" })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Jump half page up" })
+
+-- Keep cursor centered vertically when jumping between search results
+vim.keymap.set("n", "n", "nzzzv", { desc = "Jump to next search result"})
+vim.keymap.set("n", "N", "Nzzzv", { desc = "Jump to previous search result"})
