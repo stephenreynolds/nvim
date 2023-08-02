@@ -61,3 +61,10 @@ vim.opt.shortmess:append("sI")
 -- Splits
 vim.opt.splitbelow = true
 vim.opt.splitright = true
+
+-- Use the current window to open a file in netrw
+vim.g.netrw_browse_split = 0
+-- Hide the netrw banner
+vim.g.netrw_banner = 0
+-- Set the width of the netrw window
+vim.g.netrw_winsize = 25
