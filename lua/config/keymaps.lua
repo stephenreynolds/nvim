@@ -24,3 +24,7 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Jump half page up" })
 -- Keep cursor centered vertically when jumping between search results
 vim.keymap.set("n", "n", "nzzzv", { desc = "Jump to next search result"})
 vim.keymap.set("n", "N", "Nzzzv", { desc = "Jump to previous search result"})
+
+-- Yank to system clipboard
+vim.keymap.set({ "n", "v" }, "<leader>y", '"+y', { desc = "Copy to system clipboard" })
+vim.keymap.set("n", "<leader>Y", '"+Y', { desc = "Copy line to system clipboard" })
