@@ -16,6 +16,7 @@
   "deadcolumn.nvim": { "branch": "master", "commit": "b9b5e237371ae5379e280e4df9ecf62e4bc8d7a5" },
   "dressing.nvim": { "branch": "master", "commit": "829bc80400651aea31b03d8fc9a99135512fe67a" },
   "fidget.nvim": { "branch": "main", "commit": "0ba1e16d07627532b6cae915cc992ecac249fb97" },
+  "git-worktree.nvim": { "branch": "master", "commit": "d7f4e2584e81670154f07ca9fa5dd791d9c1b458" },
   "gitsigns.nvim": { "branch": "main", "commit": "5d73da785a3c05fd63ac31769079db05169a6ec7" },
   "harpoon": { "branch": "master", "commit": "21f4c47c6803d64ddb934a5b314dcb1b8e7365dc" },
   "lazy.nvim": { "branch": "main", "commit": "3ad55ae678876516156cca2f361c51f7952a924b" },
