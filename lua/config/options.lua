@@ -6,6 +6,8 @@ vim.opt.numberwidth = 2
 
 vim.opt.laststatus = 3
 
+vim.opt.clipboard = "unnamedplus"
+
 -- Indentation
 vim.opt.smartindent = true
 vim.opt.expandtab = true
