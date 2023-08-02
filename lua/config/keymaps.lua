@@ -46,3 +46,10 @@ vim.keymap.set("n", "<M-j>", "<cmd>lprev<cr>zz", { desc = "Previous error (local
 
 -- Make Q do nothing
 vim.keymap.set("n", "Q", "<nop>", { desc = "[disabled]" })
+
+
+-- Replace all instances of a word in the buffer
+vim.keymap.set("n", 
+               "<leader>rw", 
+               [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], 
+               { desc = "Replace word" })
