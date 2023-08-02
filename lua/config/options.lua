@@ -39,3 +39,6 @@ vim.opt.isfname:append("@-@")
 -- Timeouts
 vim.opt.updatetime = 50
 vim.opt.timeoutlen = 400
+
+-- Column ruler
+vim.opt.colorcolumn = "80,120"
