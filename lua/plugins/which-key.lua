@@ -8,6 +8,10 @@ return {
                 name = "Debugger",
                 b = "Breakpoints",
             },
+            F = {
+                name = "File",
+                y = "Copy",
+            },
             g = {
                 name = "Git",
                 w = "Worktree",
