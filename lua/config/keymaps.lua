@@ -58,3 +58,6 @@ vim.keymap.set("n",
 vim.keymap.set("n", "<leader>S", function()
 	vim.cmd("so")
 end, { desc = "Source file" })
+
+-- Terminal mode
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal" })
