@@ -4,6 +4,10 @@ return {
         local wk = require("which-key")
 
         wk.register({
+            d = {
+                name = "Debugger",
+                b = "Breakpoints",
+            },
             g = {
                 name = "Git",
                 w = "Worktree",
