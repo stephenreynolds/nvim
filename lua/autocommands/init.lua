@@ -12,3 +12,10 @@ autocmd("TextYankPost", {
         })
     end
 })
+
+-- Remove trailing whitespace on write
+autocmd("BufWritePre", {
+    group = augroup("BufWritePre", {}),
+    pattern = "*",
+    command = [[%s/\s\+$//e]],
+})
