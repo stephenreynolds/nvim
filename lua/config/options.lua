@@ -15,3 +15,5 @@ vim.opt.softtabstop = 4
 
 -- Disable line wrap
 vim.opt.wrap = false
+
+vim.opt.swapfile = false
