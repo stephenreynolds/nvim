@@ -1,5 +1,6 @@
 return {
     "nvim-treesitter/nvim-treesitter",
+    lazy = false,
     build = ":TSUpdate",
     opts = {
         -- A list of parser names, or "all"
