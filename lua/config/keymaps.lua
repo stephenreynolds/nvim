@@ -13,3 +13,6 @@ vim.keymap.set("v", "<S-k>", ":m '<-2<cr>gv=gv", { desc = "Move up out of block,
 -- Keep cursor in place when joining lines
 vim.keymap.set("n", "<S-down>", "mzJ`z", { desc = "Join line down" })
 vim.keymap.set("n", "<S-j>", "mzJ`z", { desc = "Join line down" })
+
+-- Paste over and delete selection, insead of copying the selection
+vim.keymap.set("x", "<leader>P", '"_dP', { desc = "Paste over selection" })
