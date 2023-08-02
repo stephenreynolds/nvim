@@ -53,3 +53,8 @@ vim.keymap.set("n",
                "<leader>rw", 
                [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], 
                { desc = "Replace word" })
+
+-- Source the current file
+vim.keymap.set("n", "<leader>S", function()
+	vim.cmd("so")
+end, { desc = "Source file" })
