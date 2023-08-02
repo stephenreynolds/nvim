@@ -7,6 +7,7 @@ My Neovim config, all in Lua.
 - Neovim
 - Git
 - ripgrep
+- fzf
 - make
 - gcc
 - A [Nerd Font](https://www.nerdfonts.com/) (optional)
