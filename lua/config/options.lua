@@ -46,9 +46,6 @@ vim.opt.colorcolumn = "80,120"
 -- Mouse
 vim.opt.mouse = "a"
 
--- Leader key
-vim.g.mapleader = " "
-
 -- Remove tildes in line column
 vim.opt.fillchars = "eob: "
 
