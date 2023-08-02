@@ -5,6 +5,7 @@ return {
 
         wk.register({
             g = "Git",
+            i = "AI",
             l = {
                 name = "LSP",
                 w = "Workspace",
