@@ -51,3 +51,6 @@ vim.g.mapleader = " "
 
 -- Remove tildes in line column
 vim.opt.fillchars = "eob: "
+
+-- Do not show mode
+vim.opt.showmode = false
