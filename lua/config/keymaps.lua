@@ -31,3 +31,15 @@ vim.keymap.set("n", "<leader>Y", '"+Y', { desc = "Copy line to system clipboard"
 
 -- Delete to the void register
 vim.keymap.set({ "n", "v" }, "<leader>d", '"_d', { desc = "Delete without yanking" }) 
+
+-- Move to next/previous error in quickfix list
+vim.keymap.set("n", "<C-up>", "<cmd>cnext<cr>zz", { desc = "Next error" })
+vim.keymap.set("n", "<C-k>", "<cmd>cnext<cr>zz", { desc = "Next error" })
+vim.keymap.set("n", "<C-down>", "<cmd>cprev<cr>zz", { desc = "Previous error" })
+vim.keymap.set("n", "<C-j>", "<cmd>cprev<cr>zz", { desc = "Previous error" })
+
+-- Move to next/prevous error in location list
+vim.keymap.set("n", "<M-up>", "<cmd>lnext<cr>zz", { desc = "Next error (local)" })
+vim.keymap.set("n", "<M-k>", "<cmd>lnext<cr>zz", { desc = "Next error (local)" })
+vim.keymap.set("n", "<M-down>", "<cmd>lprev<cr>zz", { desc = "Previous error (local)" })
+vim.keymap.set("n", "<M-j>", "<cmd>lprev<cr>zz", { desc = "Previous error (local)" })
