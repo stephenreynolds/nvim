@@ -33,3 +33,5 @@ vim.opt.scrolloff = 8
 
 -- Always show sign column
 vim.opt.signcolumn = "yes"
+
+vim.opt.isfname:append("@-@")
