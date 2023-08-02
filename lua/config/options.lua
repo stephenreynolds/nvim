@@ -45,3 +45,7 @@ vim.opt.colorcolumn = "80,120"
 
 -- Mouse
 vim.opt.mouse = "a"
+
+-- Leader key
+vim.g.mapleader = " "
+vim.g.maplocalleader "  "
