@@ -18,13 +18,28 @@ return {
                 w = "Workspace",
             },
             n = "Notifications",
-            r = "Refactor",
+            r = {
+                name = "Refactor",
+                e = "Extract",
+                i = "Inline",
+            },
             s = "Search",
             ["["] = "Previous",
-			["]"] = "Next",
-        }, { prefix = "<leader>" })
+            ["]"] = "Next",
+        }, { prefix = "<leader>", mode = "n" })
+
+        wk.register({
+            i = "AI",
+            r = {
+                name = "Refactor",
+                e = "Extract",
+            },
+        }, { prefix = "<leader>", mode = "v" })
     end,
     keys = {
-        { "<leader>" }
+        {
+            mode = { "n", "v" },
+            "<leader>"
+        }
     }
 }
