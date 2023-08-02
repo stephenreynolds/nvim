@@ -57,3 +57,7 @@ vim.opt.showmode = false
 
 -- Disable annoying "hit enter" messages
 vim.opt.shortmess:append("sI")
+
+-- Splits
+vim.opt.splitbelow = true
+vim.opt.splitright = true
