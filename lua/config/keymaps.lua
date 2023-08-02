@@ -30,7 +30,7 @@ vim.keymap.set({ "n", "v" }, "<leader>y", '"+y', { desc = "Copy to system clipbo
 vim.keymap.set("n", "<leader>Y", '"+Y', { desc = "Copy line to system clipboard" })
 
 -- Delete to the void register
-vim.keymap.set({ "n", "v" }, "<leader>d", '"_d', { desc = "Delete without yanking" }) 
+vim.keymap.set({ "n", "v" }, "<leader>d", '"_d', { desc = "Delete without yanking" })
 
 -- Move to next/previous error in quickfix list
 vim.keymap.set("n", "<C-up>", "<cmd>cnext<cr>zz", { desc = "Next error" })
@@ -49,15 +49,10 @@ vim.keymap.set("n", "Q", "<nop>", { desc = "[disabled]" })
 
 
 -- Replace all instances of a word in the buffer
-vim.keymap.set("n", 
-               "<leader>rw", 
-               [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], 
+vim.keymap.set("n",
+               "<leader>rw",
+               [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
                { desc = "Replace word" })
-
--- Source the current file
-vim.keymap.set("n", "<leader>S", function()
-	vim.cmd("so")
-end, { desc = "Source file" })
 
 -- Terminal mode
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal" })
