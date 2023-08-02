@@ -8,3 +8,4 @@ vim.opt.laststatus = 3
 
 -- Indentation
 vim.opt.smartindent = true
+vim.opt.expandtab = true
