@@ -9,3 +9,7 @@ vim.keymap.set("v", "<S-down>", ":m '>+1<cr>gv=gv", { desc = "Move down out of b
 vim.keymap.set("v", "<S-j>", ":m '>+1<cr>gv=gv", { desc = "Move down out of block, silent = true" })
 vim.keymap.set("v", "<S-up>", ":m '<-2<cr>gv=gv", { desc = "Move up out of block, silent = true" })
 vim.keymap.set("v", "<S-k>", ":m '<-2<cr>gv=gv", { desc = "Move up out of block, silent = true" })
+
+-- Keep cursor in place when joining lines
+vim.keymap.set("n", "<S-down>", "mzJ`z", { desc = "Join line down" })
+vim.keymap.set("n", "<S-j>", "mzJ`z", { desc = "Join line down" })
