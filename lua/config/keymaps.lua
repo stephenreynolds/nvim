@@ -2,7 +2,7 @@ vim.g.mapleader = " "
 
 -- Map write and quite from leader
 vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", { desc = "Write" })
-vim.keymap.set("n", "<leader>q", "<cmd>q<cr>", { desc = "Quit" })
+vim.keymap.set("n", "<leader>q", "<cmd>quit<cr>|<cmd>q<cr>", { desc = "Quit" })
 
 -- Move selection in and out of blocks
 vim.keymap.set("v", "<S-down>", ":m '>+1<cr>gv=gv", { desc = "Move down out of block, silent = true" })
