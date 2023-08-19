@@ -112,5 +112,7 @@ return {
                 lspconfig.tsserver.setup({ settings = require("servers.tsserver") })
             end,
         })
+
+        lspconfig.nil_ls.setup({ settings = require("servers.nil_ls") })
     end,
 }
