@@ -33,59 +33,9 @@ return {
         mason_lspconfig.setup(opts)
 
         local lspconfig = require("lspconfig")
-        local default_capabilities = require("cmp_nvim_lsp").default_capabilities()
-
-        local default_on_attach = function(_, bufnr)
-            vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
-
-            vim.keymap.set("n", "<leader>li", "<cmd>LspInfo<cr>", { buffer = bufnr, remap = false, desc = "Info" })
-            vim.keymap.set("n", "<leader>lh", function()
-                vim.lsp.buf.inlay_hint(bufnr)
-            end, { buffer = bufnr, remap = false, desc = "Toggle inlay hints" })
-            vim.keymap.set("n", "<leader>lf", function()
-                vim.lsp.buf.format()
-            end, { buffer = bufnr, remap = false, desc = "Format" })
-            vim.keymap.set("n", "gd", function()
-                vim.lsp.buf.definition()
-            end, { buffer = bufnr, remap = false, desc = "Go to definition" })
-            vim.keymap.set("n", "gD", function()
-                vim.lsp.buf.declaration()
-            end, { buffer = bufnr, remap = false, desc = "Go to declaration" })
-            vim.keymap.set("n", "gi", function()
-                vim.lsp.buf.declaration()
-            end, { buffer = bufnr, remap = false, desc = "Go to implementation" })
-            vim.keymap.set("n", "gr", function()
-                vim.lsp.buf.declaration()
-            end, { buffer = bufnr, remap = false, desc = "References" })
-            vim.keymap.set("n", "K", function()
-                vim.lsp.buf.hover()
-            end, { buffer = bufnr, remap = false, desc = "Hover" })
-            vim.keymap.set("n", "<leader>ld", function()
-                vim.diagnostic.open_float()
-            end, { buffer = bufnr, remap = false, desc = "Open diagnostics popup" })
-            vim.keymap.set("n", "<leader>[d", function()
-                vim.diagnostic.goto_prev()
-            end, { buffer = bufnr, remap = false, desc = "Go to previous diagnostic" })
-            vim.keymap.set("n", "<leader>]d", function()
-                vim.diagnostic.goto_next()
-            end, { buffer = bufnr, remap = false, desc = "Go to next diagnostic" })
-            vim.keymap.set({ "n", "v" }, "<leader>la", function()
-                vim.lsp.buf.code_action()
-            end, { buffer = bufnr, remap = false, desc = "Code action" })
-            vim.keymap.set("n", "<leader>ll", function()
-                vim.lsp.codelens.run()
-            end, { buffer = bufnr, remap = false, desc = "CodeLens" })
-            vim.keymap.set("n", "<leader>rn", function()
-                vim.lsp.buf.rename()
-            end, { buffer = bufnr, remap = false, desc = "Rename symbol" })
-            vim.keymap.set("i", "<C-h>", function()
-                vim.lsp.buf.signature_help()
-            end, { buffer = bufnr, remap = false, desc = "Signature help" })
-        end
 
         lspconfig.util.default_config = vim.tbl_extend("force", lspconfig.util.default_config, {
-            capabilities = default_capabilities,
-            on_attach = default_on_attach,
+            capabilities = require("cmp_nvim_lsp").default_capabilities(),
         })
 
         mason_lspconfig.setup_handlers({
