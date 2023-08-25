@@ -35,6 +35,9 @@ return {
 					warnings = { "underline" },
 					information = { "underline" },
 				},
+                inlay_hints = {
+                    background = true,
+                },
 			},
 			neotest = true,
 			notify = true,
@@ -42,7 +45,9 @@ return {
 			semantic_tokens = true,
 			treesitter = true,
 			treesitter_context = true,
-			telescope = true,
+			telescope = {
+                enabled = true,
+            },
 			lsp_trouble = true,
 			which_key = true,
 		},
