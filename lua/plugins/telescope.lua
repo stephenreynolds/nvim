@@ -22,19 +22,21 @@ return {
             selection_strategy = "reset",
             sorting_strategy = "ascending",
 
-            layout_strategy = "horizontal",
+            layout_strategy = "flex",
             layout_config = {
                 horizontal = {
-                    prompt_position = "top",
+                    prompt_position = "bottom",
                     preview_width = 0.55,
-                    results_width = 0.8,
                 },
                 vertical = {
-                    mirror = false,
+                    mirror = true,
+                    preview_height = 0.45,
+                },
+                flex = {
+                    flip_columns = 140,
                 },
                 width = 0.87,
                 height = 0.80,
-                preview_cutoff = 120,
             },
         },
         extensions = {
@@ -54,8 +56,9 @@ return {
             },
         },
     },
-    config = function()
+    config = function(_, opts)
         local telescope = require("telescope")
+        telescope.setup(opts)
         telescope.load_extension("fzf")
         telescope.load_extension("undo")
     end,
