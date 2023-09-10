@@ -51,6 +51,9 @@ return {
             ["lua_ls"] = function()
                 lspconfig.lua_ls.setup({ settings = require("servers.lua_ls") })
             end,
+            ["nil_ls"] = function()
+                lspconfig.nil_ls.setup({ settings = require("servers.nil_ls") })
+            end,
             ["rust_analyzer"] = function()
                 lspconfig.rust_analyzer.setup({
                     settings = require("servers.rust-analyzer"),

@@ -1,9 +1,11 @@
 return {
-    settings = {
-        ["nil"] = {
-            testSetting = 42,
-            formatting = {
-                command = { "nixpkgs-fmt" },
+    ["nil"] = {
+        formatting = {
+            command = { "nixpkgs-fmt" },
+        },
+        nix = {
+            flake = {
+                autoArchive = true,
             },
         },
     },
