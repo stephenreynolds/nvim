@@ -3,7 +3,7 @@ return {
     lazy = false,
     priority = 1000,
     config = function()
-        local f = assert(io.open(os.getenv("XDG_CONFG_HOME") .. "/colorscheme", "rb"))
+        local f = assert(io.open(os.getenv("XDG_CONFIG_HOME") .. "/colorscheme", "rb"))
         local content = f:read("*all")
         f:close()
 
