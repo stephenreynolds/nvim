@@ -64,8 +64,8 @@ return {
             ["tsserver"] = function()
                 lspconfig.tsserver.setup({ settings = require("servers.tsserver") })
             end,
-            ["cssls"] = function()
-                lspconfig.cssls.setup()
+            ["tailwindcss"] = function()
+                lspconfig.tailwindcss.setup()
             end,
         })
 
