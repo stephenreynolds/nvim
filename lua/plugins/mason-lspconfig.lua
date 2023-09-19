@@ -64,6 +64,9 @@ return {
             ["tsserver"] = function()
                 lspconfig.tsserver.setup({ settings = require("servers.tsserver") })
             end,
+            ["cssls"] = function()
+                lspconfig.cssls.setup()
+            end,
         })
 
         lspconfig.nil_ls.setup({ settings = require("servers.nil_ls") })
