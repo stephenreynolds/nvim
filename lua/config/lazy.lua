@@ -17,7 +17,7 @@ require("lazy").setup("plugins", {
         lazy = true,
     },
     install = {
-        colorscheme = { "catppuccin" },
+        colorscheme = { "rose-pine" },
     },
     ui = {
 		border = "rounded",
