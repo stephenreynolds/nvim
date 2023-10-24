@@ -35,7 +35,7 @@ vim.opt.smartcase = true
 vim.opt.termguicolors = true
 
 -- Keep lines above and below the cursor
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 10
 
 -- Always show sign column
 vim.opt.signcolumn = "yes"
