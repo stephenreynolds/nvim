@@ -28,6 +28,10 @@ vim.opt.undofile = true
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
+-- Searching
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
 vim.opt.termguicolors = true
 
 -- Keep lines above and below the cursor
