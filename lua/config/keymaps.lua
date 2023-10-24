@@ -12,6 +12,23 @@ vim.keymap.set("v", "<S-j>", ":m '>+1<cr>gv=gv", { desc = "Move down out of bloc
 vim.keymap.set("v", "<S-up>", ":m '<-2<cr>gv=gv", { desc = "Move up out of block, silent = true" })
 vim.keymap.set("v", "<S-k>", ":m '<-2<cr>gv=gv", { desc = "Move up out of block, silent = true" })
 
+-- Move lines up and down
+vim.keymap.set("n", "<M-j>", function()
+    if vim.opt.diff:get() then
+      vim.cmd [[normal! ]c]]
+    else
+      vim.cmd [[m .+1<cr>==]]
+    end
+end, { desc = "Move line down" })
+
+vim.keymap.set("n", "<M-k>", function()
+    if vim.opt.diff:get() then
+      vim.cmd [[normal! ]c]]
+    else
+      vim.cmd [[m .-2<cr>==]]
+    end
+end, { desc = "Move line up" })
+
 -- Keep cursor in place when joining lines
 vim.keymap.set("n", "<S-down>", "mzJ`z", { desc = "Join line down" })
 vim.keymap.set("n", "<S-j>", "mzJ`z", { desc = "Join line down" })
@@ -39,12 +56,6 @@ vim.keymap.set("n", "<C-up>", "<cmd>cnext<cr>zz", { desc = "Next error" })
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<cr>zz", { desc = "Next error" })
 vim.keymap.set("n", "<C-down>", "<cmd>cprev<cr>zz", { desc = "Previous error" })
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<cr>zz", { desc = "Previous error" })
-
--- Move to next/prevous error in location list
-vim.keymap.set("n", "<M-up>", "<cmd>lnext<cr>zz", { desc = "Next error (local)" })
-vim.keymap.set("n", "<M-k>", "<cmd>lnext<cr>zz", { desc = "Next error (local)" })
-vim.keymap.set("n", "<M-down>", "<cmd>lprev<cr>zz", { desc = "Previous error (local)" })
-vim.keymap.set("n", "<M-j>", "<cmd>lprev<cr>zz", { desc = "Previous error (local)" })
 
 -- Make Q do nothing
 vim.keymap.set("n", "Q", "<nop>", { desc = "[disabled]" })
