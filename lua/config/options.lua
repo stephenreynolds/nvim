@@ -17,12 +17,16 @@ vim.opt.softtabstop = 4
 
 -- Disable line wrap
 vim.opt.wrap = false
+vim.opt.breakindent = true;
+vim.opt.showbreak = string.rep(" ", 3)
+vim.opt.linebreak = true
 
 -- Disable swap file and backup, and enable undo file
 vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
+vim.opt.shada = { "!", "'1000", "<50", "s10", "h" }
 
 -- Search highlighting
 vim.opt.hlsearch = true
@@ -65,6 +69,20 @@ vim.opt.shortmess:append("sI")
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.equalalways = false
+
+-- Folds
+vim.opt.foldmethod = "marker"
+vim.opt.foldlevel = 0
+vim.opt.modelines = 1
+
+-- Do not unload buffers
+vim.opt.hidden = true;
+
+-- Show substitutions in split
+vim.opt.inccommand = "split"
+
+-- Diff mode
+vim.opt.diffopt = { "internal", "filler", "closeoff", "hiddenoff", "algorithm:minimal" }
 
 -- Use the current window to open a file in netrw
 vim.g.netrw_browse_split = 0
