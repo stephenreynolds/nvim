@@ -102,7 +102,7 @@ return {
     })
 
     lspconfig.bashls.setup {}
-    lspconfig.clangd.setup(require "servers.clangd")
+    lspconfig.ccls.setup {}
     lspconfig.codeqlls.setup {}
     lspconfig.cssls.setup {}
     lspconfig.emmet_ls.setup {}
