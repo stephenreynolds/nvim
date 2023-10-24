@@ -4,6 +4,8 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", { desc = "Write" })
 vim.keymap.set("n", "<leader>q", "<cmd>q<cr>", { desc = "Quit" })
 
+vim.keymap.set("n", "<Esc><Esc>", "<cmd>nohls<cr>", { desc = "Clear search", silent = true })
+
 -- Move selection in and out of blocks
 vim.keymap.set("v", "<S-down>", ":m '>+1<cr>gv=gv", { desc = "Move down out of block, silent = true" })
 vim.keymap.set("v", "<S-j>", ":m '>+1<cr>gv=gv", { desc = "Move down out of block, silent = true" })
