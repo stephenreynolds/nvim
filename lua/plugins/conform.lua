@@ -35,15 +35,15 @@ return {
     },
   },
   config = function(_, opts)
-    local conform = require "conform"
+    local conform = require("conform")
     conform.setup(opts)
 
     vim.keymap.set("n", "<leader>lf", function()
-      conform.format {
+      conform.format({
         lsp_fallback = true,
         async = false,
         timeout_ms = 500,
-      }
+      })
     end, { remap = false, desc = "Format" })
   end,
   init = function()

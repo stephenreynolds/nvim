@@ -17,7 +17,7 @@ vim.opt.softtabstop = 4
 
 -- Disable line wrap
 vim.opt.wrap = false
-vim.opt.breakindent = true;
+vim.opt.breakindent = true
 vim.opt.showbreak = string.rep(" ", 3)
 vim.opt.linebreak = true
 
@@ -76,7 +76,7 @@ vim.opt.foldlevel = 0
 vim.opt.modelines = 1
 
 -- Do not unload buffers
-vim.opt.hidden = true;
+vim.opt.hidden = true
 
 -- Show substitutions in split
 vim.opt.inccommand = "split"

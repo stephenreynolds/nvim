@@ -5,7 +5,7 @@ return {
   },
   event = "BufEnter",
   config = function()
-    local lspconfig = require "lspconfig"
+    local lspconfig = require("lspconfig")
 
     lspconfig.util.default_config = vim.tbl_extend("force", lspconfig.util.default_config, {
       capabilities = require("cmp_nvim_lsp").default_capabilities(),
@@ -21,14 +21,14 @@ return {
     lspSymbol("Hint", "󰌵")
     lspSymbol("Warn", "")
 
-    vim.diagnostic.config {
+    vim.diagnostic.config({
       virtual_text = {
         prefix = "",
       },
       signs = true,
       underline = true,
       update_in_insert = false,
-    }
+    })
 
     local autocmd = vim.api.nvim_create_autocmd
     local autocmd_clear = vim.api.nvim_clear_autocmds
@@ -43,7 +43,7 @@ return {
         vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
         if client.server_capabilities.documentHighlightProvider then
-          autocmd_clear { group = augroup_highlight, buffer = bufnr }
+          autocmd_clear({ group = augroup_highlight, buffer = bufnr })
           autocmd("CursorHold", {
             group = augroup_highlight,
             buffer = bufnr,
@@ -101,24 +101,24 @@ return {
       end,
     })
 
-    lspconfig.bashls.setup {}
-    lspconfig.clangd.setup(require "servers.clangd")
-    lspconfig.cssls.setup {}
-    lspconfig.emmet_ls.setup {}
-    lspconfig.eslint.setup {}
-    lspconfig.gopls.setup { settings = require "servers.gopls" }
-    lspconfig.html.setup {}
-    lspconfig.jsonls.setup {}
-    lspconfig.lua_ls.setup { settings = require "servers.lua_ls" }
-    lspconfig.marksman.setup {}
-    lspconfig.nil_ls.setup { settings = require "servers.nil_ls" }
-    lspconfig.ocamllsp.setup {}
-    lspconfig.pyright.setup {}
-    lspconfig.rust_analyzer.setup {
-      settings = require "servers.rust-analyzer",
+    lspconfig.bashls.setup({})
+    lspconfig.clangd.setup(require("servers.clangd"))
+    lspconfig.cssls.setup({})
+    lspconfig.emmet_ls.setup({})
+    lspconfig.eslint.setup({})
+    lspconfig.gopls.setup({ settings = require("servers.gopls") })
+    lspconfig.html.setup({})
+    lspconfig.jsonls.setup({})
+    lspconfig.lua_ls.setup({ settings = require("servers.lua_ls") })
+    lspconfig.marksman.setup({})
+    lspconfig.nil_ls.setup({ settings = require("servers.nil_ls") })
+    lspconfig.ocamllsp.setup({})
+    lspconfig.pyright.setup({})
+    lspconfig.rust_analyzer.setup({
+      settings = require("servers.rust-analyzer"),
       filetypes = { "rust" },
-      root_dir = require("lspconfig/util").root_pattern "Cargo.toml",
-    }
-    lspconfig.tsserver.setup { settings = require "servers.tsserver" }
+      root_dir = require("lspconfig/util").root_pattern("Cargo.toml"),
+    })
+    lspconfig.tsserver.setup({ settings = require("servers.tsserver") })
   end,
 }

@@ -14,26 +14,26 @@ vim.keymap.set("v", "<S-k>", ":m '<-2<cr>gv=gv", { desc = "Move up out of block,
 
 -- Move lines up and down
 vim.keymap.set("n", "<M-j>", function()
-    if vim.opt.diff:get() then
-      vim.cmd [[normal! ]c]]
-    else
-      vim.cmd [[m .+1<cr>==]]
-    end
+  if vim.opt.diff:get() then
+    vim.cmd([[normal! ]c]])
+  else
+    vim.cmd([[m .+1<cr>==]])
+  end
 end, { desc = "Move line down" })
 
 vim.keymap.set("n", "<M-k>", function()
-    if vim.opt.diff:get() then
-      vim.cmd [[normal! ]c]]
-    else
-      vim.cmd [[m .-2<cr>==]]
-    end
+  if vim.opt.diff:get() then
+    vim.cmd([[normal! ]c]])
+  else
+    vim.cmd([[m .-2<cr>==]])
+  end
 end, { desc = "Move line up" })
 
 -- Keep cursor in place when joining lines
 vim.keymap.set("n", "<S-down>", "mzJ`z", { desc = "Join line down" })
 vim.keymap.set("n", "<S-j>", "mzJ`z", { desc = "Join line down" })
 
--- Paste over and delete selection, insead of copying the selection
+-- Paste over and delete selection, instead of copying the selection
 vim.keymap.set("x", "<leader>P", '"_dP', { desc = "Paste over selection" })
 
 -- Keep cursor centered vertically when jumping half page
@@ -41,8 +41,8 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Jump half page down" })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Jump half page up" })
 
 -- Keep cursor centered vertically when jumping between search results
-vim.keymap.set("n", "n", "nzzzv", { desc = "Jump to next search result"})
-vim.keymap.set("n", "N", "Nzzzv", { desc = "Jump to previous search result"})
+vim.keymap.set("n", "n", "nzzzv", { desc = "Jump to next search result" })
+vim.keymap.set("n", "N", "Nzzzv", { desc = "Jump to previous search result" })
 
 -- Yank to system clipboard
 vim.keymap.set({ "n", "v" }, "<leader>y", '"+y', { desc = "Copy to system clipboard" })
@@ -60,12 +60,8 @@ vim.keymap.set("n", "<C-j>", "<cmd>cprev<cr>zz", { desc = "Previous error" })
 -- Make Q do nothing
 vim.keymap.set("n", "Q", "<nop>", { desc = "[disabled]" })
 
-
 -- Replace all instances of a word in the buffer
-vim.keymap.set("n",
-               "<leader>rw",
-               [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
-               { desc = "Replace word" })
+vim.keymap.set("n", "<leader>rw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Replace word" })
 
 -- Terminal mode
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal" })

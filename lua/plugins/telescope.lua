@@ -57,10 +57,10 @@ return {
     },
   },
   config = function(_, opts)
-    local telescope = require "telescope"
+    local telescope = require("telescope")
     telescope.setup(opts)
-    telescope.load_extension "fzf"
-    telescope.load_extension "undo"
+    telescope.load_extension("fzf")
+    telescope.load_extension("undo")
   end,
   keys = {
     {

@@ -54,9 +54,9 @@ return {
     },
   },
   config = function(_, opts)
-    local catppuccin = require "catppuccin"
+    local catppuccin = require("catppuccin")
     catppuccin.setup(opts)
     catppuccin.compile()
-    vim.cmd.colorscheme "catppuccin"
+    vim.cmd.colorscheme("catppuccin")
   end,
 }

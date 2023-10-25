@@ -1,13 +1,13 @@
 return {
-	"junegunn/gv.vim",
-    dependencies = {
-        "tpope/vim-fugitive",
+  "junegunn/gv.vim",
+  dependencies = {
+    "tpope/vim-fugitive",
+  },
+  keys = {
+    {
+      "<leader>gv",
+      "<cmd>GV<cr>",
+      desc = "Commit browser",
     },
-	keys = {
-		{
-			"<leader>gv",
-			"<cmd>GV<cr>",
-			desc = "Commit browser",
-		},
-	},
+  },
 }
