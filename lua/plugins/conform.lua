@@ -25,7 +25,6 @@ return {
       typescript = { { "prettierd", "prettier" } },
       typescriptreact = { { "prettierd", "prettier" } },
       yaml = { "yamlfmt" },
-      ["*"] = { "codespell" },
       ["_"] = { "trim_whitespace" },
     },
     format_on_save = {
