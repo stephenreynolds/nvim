@@ -15,7 +15,7 @@ return {
       json = { "jq" },
       lua = { "stylua" },
       markdown = { { "prettierd", "prettier" } },
-      nix = { "nixfmt" },
+      nix = { "nixpkgs-fmt" },
       ocaml = { "ocamlformat" },
       python = { "isort", "black" },
       rust = { "rustfmt" },
