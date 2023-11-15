@@ -6,6 +6,7 @@ return {
     "nvim-telescope/telescope.nvim",
   },
   opts = {
+    api_key_cmd = "cat /run/secrets/openai-api-key",
     popup_input = {
       submit = "<C-s>",
     },
