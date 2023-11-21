@@ -105,7 +105,14 @@ return {
     lspconfig.clangd.setup(require("servers.clangd"))
     lspconfig.cssls.setup({})
     lspconfig.emmet_ls.setup({})
-    lspconfig.eslint.setup({})
+    lspconfig.eslint.setup({
+      on_attach = function(_, bufnr)
+        vim.api.nvim_create_autocmd("BufWritePre", {
+          buffer = bufnr,
+          command = "EslintFixAll",
+        })
+      end,
+    })
     lspconfig.gopls.setup({ settings = require("servers.gopls") })
     lspconfig.html.setup({})
     lspconfig.jsonls.setup({})
