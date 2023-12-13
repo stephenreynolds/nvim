@@ -1,8 +1,8 @@
 vim.g.mapleader = " "
 
 -- Map write and quite from leader
-vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", { desc = "Write" })
-vim.keymap.set("n", "<leader>q", "<cmd>q<cr>", { desc = "Quit" })
+vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", { noremap = true, desc = "Write" })
+vim.keymap.set("n", "<leader>q", "<cmd>q<cr>", { noremap = true, desc = "Quit" })
 
 vim.keymap.set("n", "<Esc><Esc>", "<cmd>nohls<cr>", { desc = "Clear search", silent = true })
 
