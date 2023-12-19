@@ -122,6 +122,7 @@ return {
       },
     })
     lspconfig.gopls.setup({ settings = require("servers.gopls") })
+    lspconfig.hls.setup({})
     lspconfig.html.setup({})
     lspconfig.jsonls.setup({})
     lspconfig.lua_ls.setup({ settings = require("servers.lua_ls") })
