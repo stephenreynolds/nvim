@@ -94,6 +94,11 @@ return {
       desc = "Find highlight groups",
     },
     {
+      "<leader>sm",
+      "<cmd>Telescope marks<cr>",
+      desc = "Marks",
+    },
+    {
       "<leader>sM",
       "<cmd>Telescope man_pages<cr>",
       desc = "Manpages",
