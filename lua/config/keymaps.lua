@@ -1,4 +1,11 @@
 vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
+vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
+
+-- Remap for dealing with word wrapth
+vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- Map write and quite from leader
 vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", { desc = "Write" })
@@ -56,6 +63,10 @@ vim.keymap.set("n", "<C-up>", "<cmd>cnext<cr>zz", { desc = "Next error" })
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<cr>zz", { desc = "Next error" })
 vim.keymap.set("n", "<C-down>", "<cmd>cprev<cr>zz", { desc = "Previous error" })
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<cr>zz", { desc = "Previous error" })
+
+-- Diagnostic keymaps
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
 
 -- Make Q do nothing
 vim.keymap.set("n", "Q", "<nop>", { desc = "[disabled]" })

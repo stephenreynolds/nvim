@@ -1,85 +1,88 @@
 -- Line numbers
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.cursorline = true
-vim.opt.numberwidth = 2
+vim.wo.number = true
+vim.o.relativenumber = true
+vim.o.cursorline = true
+vim.o.numberwidth = 2
 
-vim.opt.laststatus = 3
+vim.o.laststatus = 3
 
-vim.opt.clipboard = "unnamedplus"
+vim.o.clipboard = "unnamedplus"
 
 -- Indentation
-vim.opt.smartindent = true
-vim.opt.expandtab = true
-vim.opt.shiftwidth = 4
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
+vim.o.smartindent = true
+vim.o.expandtab = true
+vim.o.shiftwidth = 4
+vim.o.tabstop = 4
+vim.o.softtabstop = 4
 
 -- Disable line wrap
-vim.opt.wrap = false
-vim.opt.breakindent = true
-vim.opt.showbreak = string.rep(" ", 3)
-vim.opt.linebreak = true
+vim.o.wrap = false
+vim.o.breakindent = true
+vim.o.showbreak = string.rep(" ", 3)
+vim.o.linebreak = true
 
 -- Disable swap file and backup, and enable undo file
-vim.opt.swapfile = false
-vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
-vim.opt.undofile = true
+vim.o.swapfile = false
+vim.o.backup = false
+vim.o.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.o.undofile = true
 vim.opt.shada = { "!", "'1000", "<50", "s10", "h" }
 
 -- Search highlighting
-vim.opt.hlsearch = true
-vim.opt.incsearch = true
+vim.o.hlsearch = true
+vim.o.incsearch = true
 
 -- Searching
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
+vim.o.ignorecase = true
+vim.o.smartcase = true
 
-vim.opt.termguicolors = true
+vim.o.termguicolors = true
 
 -- Keep lines above and below the cursor
-vim.opt.scrolloff = 10
+vim.o.scrolloff = 10
 
 -- Always show sign column
-vim.opt.signcolumn = "yes"
+vim.wo.signcolumn = "yes"
 
 vim.opt.isfname:append("@-@")
 
 -- Timeouts
-vim.opt.updatetime = 50
-vim.opt.timeoutlen = 400
+vim.o.updatetime = 50
+vim.o.timeoutlen = 400
+
+-- Set completeopt to have a better completion experience
+vim.o.completeopt = "menuone,noselect"
 
 -- Column ruler
-vim.opt.colorcolumn = "80,120"
+vim.o.colorcolumn = "80,120"
 
 -- Mouse
-vim.opt.mouse = "a"
+vim.o.mouse = "a"
 
 -- Remove tildes in line column
-vim.opt.fillchars = "eob: "
+vim.o.fillchars = "eob: "
 
 -- Do not show mode
-vim.opt.showmode = false
+vim.o.showmode = false
 
 -- Disable annoying "hit enter" messages
 vim.opt.shortmess:append("sI")
 
 -- Splits
-vim.opt.splitbelow = true
-vim.opt.splitright = true
-vim.opt.equalalways = false
+vim.o.splitbelow = true
+vim.o.splitright = true
+vim.o.equalalways = false
 
 -- Folds
-vim.opt.foldmethod = "marker"
-vim.opt.foldlevel = 0
-vim.opt.modelines = 1
+vim.o.foldmethod = "marker"
+vim.o.foldlevel = 0
+vim.o.modelines = 1
 
 -- Do not unload buffers
-vim.opt.hidden = true
+vim.o.hidden = true
 
 -- Show substitutions in split
-vim.opt.inccommand = "split"
+vim.o.inccommand = "split"
 
 -- Diff mode
 vim.opt.diffopt = { "internal", "filler", "closeoff", "hiddenoff", "algorithm:minimal" }

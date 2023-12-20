@@ -9,10 +9,6 @@ return {
         name = "Debugger",
         b = "Breakpoints",
       },
-      F = {
-        name = "File",
-        y = "Copy",
-      },
       g = {
         name = "Git",
         w = "Worktree",
@@ -29,6 +25,7 @@ return {
         i = "Inline",
       },
       s = "Search",
+      t = "Toggle",
       ["["] = "Previous",
       ["]"] = "Next",
     }, { prefix = "<leader>", mode = "n" })
