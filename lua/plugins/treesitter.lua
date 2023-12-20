@@ -3,6 +3,7 @@ return {
   lazy = false,
   dependencies = {
     "nvim-treesitter/nvim-treesitter-textobjects",
+    "luckasRanarison/tree-sitter-hypr"
   },
   build = ":TSUpdate",
   opts = {
