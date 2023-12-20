@@ -3,6 +3,9 @@ return {
   dependencies = { "nvim-tree/nvim-web-devicons" },
   cmd = "Oil",
   opts = {
+    columns = {
+      "icon",
+    },
     float = {
       win_options = {
         winblend = 0,
@@ -12,7 +15,7 @@ return {
   keys = {
     {
       "<leader>e",
-      "<cmd>Oil --float<cr>",
+      "<cmd>Oil<cr>",
       desc = "Open file explorer",
     },
   },
