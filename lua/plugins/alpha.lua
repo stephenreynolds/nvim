@@ -83,7 +83,6 @@ return {
         button("f", "  Find file", "<cmd>Telescope find_files<CR>"),
         button("n", "  New file", "<cmd>ene <CR>"),
         button("r", "  Recent files", "<cmd>Telescope oldfiles<CR>"),
-        button("q", "  Frecency/MRU", "<cmd>Telescope frecency<CR>"),
         button("w", "  Find word", "<cmd>Telescope live_grep<CR>"),
         button("b", "  Bookmarks", "<cmd>Telescope marks<CR>"),
         button("l", "  Last session", "<cmd>SessionRestore<CR>"),

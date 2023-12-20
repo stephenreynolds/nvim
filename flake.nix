@@ -17,8 +17,6 @@
         gnumake
         fzf
         unzip
-        sqlite
-        luajitPackages.sqlite
         wget
         go
         delve
