@@ -1,9 +1,13 @@
 return {
   "nvim-neorg/neorg",
+  ft = "norg",
   build = ":Neorg sync-parsers",
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-treesitter/nvim-treesitter",
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    "nvim-cmp",
+    "nvim-neorg/neorg-telescope",
   },
   cmd = "Neorg",
   config = function()
@@ -19,7 +23,7 @@ return {
         ["core.dirman"] = {
           config = {
             workspaces = {
-              notes = "~/Documents/Neorg",
+              notes = "~/Documents/Notes",
             },
             default_workspace = "notes",
           },
@@ -29,6 +33,16 @@ return {
             engine = "nvim-cmp",
           },
         },
+        ["core.keybinds"] = {
+          -- https://github.com/nvim-neorg/neorg/blob/main/lua/neorg/modules/core/keybinds/keybinds.lua
+          config = {
+            default_keybinds = true,
+            neorg_leader = "<Leader><Leader>",
+          },
+        },
+        ["core.integrations.nvim-cmp"] = {},
+        ["core.integrations.telescope"] = {},
+        ["external.context"] = {},
       },
     })
   end,
