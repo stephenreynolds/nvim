@@ -16,5 +16,8 @@ return {
       maxPreload = 100000,
       preloadFileSize = 10000,
     },
+    telemetry = {
+      enable = false,
+    },
   },
 }

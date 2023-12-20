@@ -64,79 +64,91 @@ return {
   end,
   keys = {
     {
+      "<leader>/",
+      function()
+        require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
+          winblend = 10,
+          previewer = false,
+        }))
+      end,
+      desc = "Fuzzy search in current buffer",
+    },
+    {
       "<leader>f",
       "<cmd>Telescope find_files<cr>",
+      require("telescope.builtin").find_files,
       desc = "Find file",
     },
     {
       "<leader>sf",
-      "<cmd>Telescope find_files<cr>",
+      require("telescope.builtin").find_files,
       desc = "Find file",
     },
     {
+      "<leader>sc",
+      function()
+        require("telescope.builtin").colorscheme({ enable_preview = true })
+      end,
+      desc = "Colorscheme with preview",
+    },
+    {
       "<leader>sb",
-      "<cmd>Telescope buffers<cr>",
+      require("telescope.builtin").buffers,
       desc = "Buffers",
     },
     {
-      "<leader>sc",
-      "<cmd>Telescope colorscheme<cr>",
-      desc = "Colorscheme",
-    },
-    {
       "<leader>sh",
-      "<cmd>Telescope help_tags<cr>",
+      require("telescope.builtin").help_tags,
       desc = "Find Help",
     },
     {
       "<leader>sH",
-      "<cmd>Telescope highlights<cr>",
+      require("telescope.builtin").highlights,
       desc = "Find highlight groups",
     },
     {
       "<leader>sm",
-      "<cmd>Telescope marks<cr>",
+      require("telescope.builtin").marks,
       desc = "Marks",
     },
     {
       "<leader>sM",
-      "<cmd>Telescope man_pages<cr>",
+      require("telescope.builtin").man_pages,
       desc = "Manpages",
     },
     {
       "<leader>sr",
-      "<cmd>Telescope oldfiles<cr>",
+      require("telescope.builtin").oldfiles,
       desc = "Open recent file",
     },
     {
+      "<leader>ss",
+      require("telescope.builtin").builtin,
+      desc = "Select telescope",
+    },
+    {
       "<leader>sR",
-      "<cmd>Telescope registers<cr>",
+      require("telescope.builtin").registers,
       desc = "Registers",
     },
     {
       "<leader>st",
-      "<cmd>Telescope live_grep<cr>",
+      require("telescope.builtin").live_grep,
       desc = "Text",
     },
     {
       "<leader>sk",
-      "<cmd>Telescope keymaps<cr>",
+      require("telescope.builtin").keymaps,
       desc = "Keymaps",
     },
     {
       "<leader>sC",
-      "<cmd>Telescope commands<cr>",
+      require("telescope.builtin").commands,
       desc = "Commands",
     },
     {
-      "<leader>sp",
-      "<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true},<cr>",
-      desc = "Colorscheme with preview",
-    },
-
-    {
       "<leader>gb",
-      "<cmd>Telescope git_branches<cr>",
+      require("telescope.builtin").git_branches,
       desc = "Checkout",
     },
     {
@@ -146,7 +158,7 @@ return {
     },
     {
       "<leader>lws",
-      "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
+      require("telescope.builtin").lsp_dynamic_workspace_symbols,
       desc = "Workspace symbols",
     },
   },

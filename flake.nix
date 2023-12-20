@@ -21,6 +21,7 @@
         luajitPackages.sqlite
         wget
         go
+        delve
         cargo
         luarocks
         tree-sitter

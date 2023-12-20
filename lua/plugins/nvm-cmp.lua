@@ -17,15 +17,21 @@ return {
     local cmp = require("cmp")
     local cmp_select = { behavior = cmp.SelectBehavior.Select }
     local lspkind = require("lspkind")
+    require("luasnip/loaders/from_vscode").lazy_load()
 
     local cmp_autopairs = require("nvim-autopairs.completion.cmp")
     cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
+
+    local luasnip = require("luasnip")
 
     cmp.setup({
       snippet = {
         expand = function(args)
           require("luasnip").lsp_expand(args.body)
         end,
+      },
+      completion = {
+        completeopt = "menu,menuone,noinsert",
       },
       formatting = {
         format = lspkind.cmp_format({
@@ -55,18 +61,15 @@ return {
         ["<Tab>"] = cmp.mapping(function(fallback)
           -- This little snippet will confirm with tab, and if no entry is selected, will confirm the first item
           if cmp.visible() then
-            local entry = cmp.get_selected_entry()
-            if not entry then
-              cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
-            else
-              cmp.confirm()
-            end
+            cmp.select_next_item()
+          elseif luasnip.expand_or_jumpable() then
+            luasnip.expand_or_jump()
           else
             fallback()
           end
         end, { "i", "s", "c" }),
         ["<cr>"] = cmp.mapping.confirm({
-          behavior = cmp.ConfirmBehavior.Insert,
+          behavior = cmp.ConfirmBehavior.Replace,
           select = true,
         }),
         ["<C-u>"] = cmp.mapping.scroll_docs(-4),

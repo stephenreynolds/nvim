@@ -13,6 +13,7 @@ return {
         name = "Git",
         w = "Worktree",
       },
+      h = "Hunk",
       i = "AI",
       l = {
         name = "LSP",
