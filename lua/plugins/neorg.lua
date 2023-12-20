@@ -42,7 +42,6 @@ return {
         },
         ["core.integrations.nvim-cmp"] = {},
         ["core.integrations.telescope"] = {},
-        ["external.context"] = {},
       },
     })
   end,
