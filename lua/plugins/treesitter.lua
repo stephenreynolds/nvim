@@ -1,6 +1,9 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   lazy = false,
+  dependencies = {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+  },
   build = ":TSUpdate",
   opts = {
     -- A list of parser names, or "all"
