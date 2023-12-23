@@ -1,7 +1,7 @@
 return {
   ["nil"] = {
     formatting = {
-      command = { "nixpkgs-fmt" },
+      command = { "alejandra" },
     },
     nix = {
       flake = {
