@@ -24,7 +24,7 @@
         luarocks
         tree-sitter
         nil
-        alejandra
+        nixpkgs-fmt
         lua-language-server
         stylua
         vscode-langservers-extracted
