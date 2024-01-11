@@ -12,41 +12,41 @@
       pkgs = genSystems (system: import nixpkgs { inherit system; });
 
       runtimeDependencies = genSystems (system: with pkgs.${system}; [
-        gcc
-        clang-tools
-        gnumake
-        fzf
-        unzip
-        wget
-        go
-        delve
+        black
         cargo
+        clang-tools
+        codespell
+        delve
+        emmet-ls
+        fzf
+        gcc
+        gnumake
+        go
+        haskell-language-server
+        isort
+        jq
+        lldb
+        lua-language-server
         luarocks
-        tree-sitter
+        marksman
         nil
         nixpkgs-fmt
-        lua-language-server
-        stylua
-        vscode-langservers-extracted
-        nodePackages.typescript-language-server
+        nixpkgs-fmt
         nodePackages.bash-language-server
-        haskell-language-server
-        prettierd
-        isort
-        black
-        emmet-ls
-        pyright
-        marksman
+        nodePackages.typescript-language-server
         ocamlPackages.ocaml-lsp
         ocamlformat
-        nixpkgs-fmt
-        rustfmt
+        prettierd
+        pyright
         rust-analyzer
+        rustfmt
         shellcheck
+        stylua
+        tree-sitter
+        unzip
+        vscode-langservers-extracted
+        wget
         yamlfmt
-        jq
-        codespell
-        lldb
       ]);
     in
     {
