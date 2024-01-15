@@ -38,6 +38,7 @@
         ocamlformat
         prettierd
         pyright
+        ripgrep
         rust-analyzer
         rustfmt
         shellcheck
