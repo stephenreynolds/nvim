@@ -76,3 +76,16 @@ vim.keymap.set("n", "<leader>rw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left>
 
 -- Terminal mode
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal" })
+
+-- Fix opening links since netrw is disabled
+local function url_repo()
+  local cursorword = vim.fn.expand('<cfile>')
+  if string.find(cursorword, '^[a-zA-Z0-9-_.]*/[a-zA-Z0-9-_.]*$') then
+    cursorword = 'https://github.com/' .. cursorword
+  end
+  return cursorword or ''
+end
+
+vim.keymap.set('n', 'gx', function()
+  vim.fn.jobstart({ "xdg-open", url_repo() }, { detach = true })
+end, { silent = true })
