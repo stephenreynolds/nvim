@@ -1,7 +1,12 @@
 return {
   "nvim-telescope/telescope.nvim",
   version = "0.1.x",
-  dependencies = { "nvim-lua/plenary.nvim" },
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    "nvim-telescope/telescope-fzf-native.nvim",
+    "nvim-telescope/telescope-ui-select.nvim",
+    "nvim-tree/nvim-web-devicons",
+  },
   opts = {
     defaults = {
       vimgrep_arguments = {
@@ -54,6 +59,9 @@ return {
           preview_height = 0.8,
         },
       },
+      ["ui-select"] = {
+        require("telescope.themes").get_dropdown(),
+      },
     },
   },
   config = function(_, opts)
@@ -61,6 +69,7 @@ return {
     telescope.setup(opts)
     telescope.load_extension("fzf")
     telescope.load_extension("undo")
+    telescope.load_extension("ui-select")
   end,
   keys = {
     {
@@ -116,9 +125,14 @@ return {
       desc = "Manpages",
     },
     {
-      "<leader>sr",
+      "<leader>s.",
       require("telescope.builtin").oldfiles,
       desc = "Open recent file",
+    },
+    {
+      "<leader>sr",
+      require("telescope.builtin").resume,
+      desc = "Resume",
     },
     {
       "<leader>ss",
@@ -144,6 +158,18 @@ return {
       "<leader>sC",
       require("telescope.builtin").commands,
       desc = "Commands",
+    },
+    {
+      "<leader>sw",
+      require("telescope.builtin").grep_string,
+      desc = "Current word",
+    },
+    {
+      "<leader>sN",
+      function()
+        require("telescope.builtin").find_files({ cwd = vim.fn.stdpath "config" })
+      end,
+      desc = "Neovim config",
     },
     {
       "<leader>gb",

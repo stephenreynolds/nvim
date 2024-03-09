@@ -18,7 +18,7 @@ require("lazy").setup("plugins", {
   },
   lockfile = vim.fn.expand("$HOME/src/repos/nvim/lazy-lock.json"),
   install = {
-    colorscheme = { "catppuccin" },
+    colorscheme = { "tokyonight" },
   },
   ui = {
     border = "rounded",
