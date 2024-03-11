@@ -1,59 +1,61 @@
 return {
-  "ThePrimeagen/harpoon",
-  dependencies = { "nvim-lua/plenary.nvim" },
+  'ThePrimeagen/harpoon',
+  branch = 'harpoon2',
+  dependencies = { 'nvim-lua/plenary.nvim' },
   config = function()
-    vim.api.nvim_create_autocmd({ "Filetype" }, {
-      pattern = "harpoon",
+    vim.api.nvim_create_autocmd({ 'Filetype' }, {
+      pattern = 'harpoon',
       callback = function()
         vim.opt.cursorline = true
-        vim.api.nvim_set_hl(0, "HarpoonWindow", { link = "Normal" })
-        vim.api.nvim_set_hl(0, "HarpoonBorder", { link = "Normal" })
+        vim.api.nvim_set_hl(0, 'HarpoonWindow', { link = 'Normal' })
+        vim.api.nvim_set_hl(0, 'HarpoonBorder', { link = 'Normal' })
       end,
     })
   end,
   keys = {
     {
-      "<leader>a",
+      '<leader>a',
       function()
-        require("harpoon.mark").add_file()
-        print("Added to harpoon.")
+        require('harpoon'):list():append()
+        print('Added to harpoon.')
       end,
-      desc = "Add to harpoon",
+      desc = 'Add to harpoon',
     },
     {
-      "<C-e>",
+      '<C-e>',
       function()
-        require("harpoon.ui").toggle_quick_menu()
+        local harpoon = require('harpoon')
+        harpoon.ui:toggle_quick_menu(harpoon:list())
       end,
-      desc = "Harpoon quick menu",
+      desc = 'Harpoon quick menu',
     },
     {
-      "<C-left>",
+      '<C-left>',
       function()
-        require("harpoon.ui").nav_file(1)
+        require('harpoon'):list():select(1)
       end,
-      desc = "Go to quick file 1",
+      desc = 'Go to quick file 1',
     },
     {
-      "<C-down>",
+      '<C-down>',
       function()
-        require("harpoon.ui").nav_file(2)
+        require('harpoon'):list():select(2)
       end,
-      desc = "Go to quick file 2",
+      desc = 'Go to quick file 2',
     },
     {
-      "<C-up>",
+      '<C-up>',
       function()
-        require("harpoon.ui").nav_file(3)
+        require('harpoon'):list():select(3)
       end,
-      desc = "Go to quick file 3",
+      desc = 'Go to quick file 3',
     },
     {
-      "<C-right>",
+      '<C-right>',
       function()
-        require("harpoon.ui").nav_file(4)
+        require('harpoon'):list():select(4)
       end,
-      desc = "Go to quick file 4",
+      desc = 'Go to quick file 4',
     },
   },
 }
