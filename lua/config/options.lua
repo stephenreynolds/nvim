@@ -1,95 +1,121 @@
--- Line numbers
-vim.wo.number = true
-vim.o.relativenumber = true
-vim.o.cursorline = true
-vim.o.numberwidth = 2
+local opt = vim.opt
 
-vim.o.laststatus = 3
+-- Line number
+opt.number = true
+opt.relativenumber = true
+opt.cursorline = true
+opt.numberwidth = 2
 
-vim.o.clipboard = "unnamedplus"
+-- Clipboard
+opt.clipboard = "unnamedplus"
 
 -- Indentation
-vim.o.smartindent = true
-vim.o.expandtab = true
-vim.o.shiftwidth = 4
-vim.o.tabstop = 4
-vim.o.softtabstop = 4
+opt.expandtab = true
+opt.shiftround = true
+opt.shiftwidth = 4
+opt.tabstop = 4
+opt.softtabstop = 4
 
 -- Disable line wrap
-vim.o.wrap = false
-vim.o.breakindent = true
-vim.o.showbreak = string.rep(" ", 3)
-vim.o.linebreak = true
-
--- Disable swap file and backup, and enable undo file
-vim.o.swapfile = false
-vim.o.backup = false
-vim.o.undodir = os.getenv("HOME") .. "/.vim/undodir"
-vim.o.undofile = true
-vim.opt.shada = { "!", "'1000", "<50", "s10", "h" }
-
--- Search highlighting
-vim.o.hlsearch = true
-vim.o.incsearch = true
-
--- Searching
-vim.o.ignorecase = true
-vim.o.smartcase = true
-
-vim.o.termguicolors = true
-
--- Keep lines above and below the cursor
-vim.o.scrolloff = 10
-
--- Always show sign column
-vim.wo.signcolumn = "yes"
-
-vim.opt.isfname:append("@-@")
-
--- Timeouts
-vim.o.updatetime = 50
-vim.o.timeoutlen = 400
+opt.wrap = false
+opt.breakindent = true
+opt.showbreak = string.rep(" ", 3)
+opt.linebreak = true
 
 -- Set completeopt to have a better completion experience
-vim.o.completeopt = "menuone,noselect"
+opt.completeopt = "menu,menuone,noselect"
 
--- Column ruler
-vim.o.colorcolumn = "80,120"
+opt.conceallevel = 2
 
--- Mouse
-vim.o.mouse = "a"
+-- Ask to save changes before exiting the buffer instead of refusing
+opt.confirm = true
 
--- Remove tildes in line column
-vim.o.fillchars = "eob: "
+-- Formatting
+opt.formatoptions = "jcroqlnt"
 
--- Do not show mode
-vim.o.showmode = false
+-- Disable swap file and backup, and enable undo file
+opt.swapfile = false
+opt.backup = false
+opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+opt.undofile = true
+opt.undolevels = 10000
+opt.shada = { "!", "'1000", "<50", "s10", "h" }
 
--- Disable annoying "hit enter" messages
-vim.opt.shortmess:append("sI")
+-- Searching
+opt.ignorecase = true
+opt.smartcase = true
+opt.grepformat = "%f:%l:%c:%m"
+opt.grepprg = "rg --vimgrep"
 
--- Splits
-vim.o.splitbelow = true
-vim.o.splitright = true
-vim.o.equalalways = false
+-- Search highlighting
+opt.hlsearch = true
+opt.incsearch = true
 
--- Folds
-vim.o.foldmethod = "marker"
-vim.o.foldlevel = 0
-vim.o.modelines = 1
-
--- Do not unload buffers
-vim.o.hidden = true
+-- True color support
+opt.termguicolors = true
 
 -- Show substitutions in split
-vim.o.inccommand = "split"
+opt.inccommand = "split"
+
+-- Show status line only for the last window
+opt.laststatus = 3
+
+-- Mouse
+opt.mouse = "a"
+
+opt.fillchars = {
+  foldopen = "",
+  foldclose = "",
+  fold = " ",
+  foldsep = " ",
+  diff = "╱",
+  eob = " ",
+}
+
+-- Keep lines above and below the cursor
+opt.scrolloff = 10
+opt.sidescrolloff = 8
+
+-- Always show sign column
+opt.signcolumn = "yes"
+
+opt.isfname:append("@-@")
+
+-- Timeouts
+opt.updatetime = 50
+opt.timeoutlen = 300
+
+-- Sessions
+opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp", "folds" }
+
+-- Modes
+opt.showmode = false
+opt.virtualedit = "block" -- Allow cursor to move where there is no text in visual block mode
+opt.wildmode = "longest:full,full" -- Command line completion mode
+
+opt.winminwidth = 5
+
+-- Disable some annoying messages
+opt.shortmess:append({ W = true, I = true, c = true, C = true, s = true })
+
+-- Splits
+opt.splitbelow = true
+opt.splitright = true
+opt.splitkeep = "screen"
+opt.equalalways = false
+
+-- Folds
+opt.foldmethod = "marker"
+opt.foldlevel = 99
+opt.modelines = 1
+
+-- Do not unload buffers
+opt.hidden = true
 
 -- Diff mode
-vim.opt.diffopt = { "internal", "filler", "closeoff", "hiddenoff", "algorithm:minimal" }
+opt.diffopt = { "internal", "filler", "closeoff", "hiddenoff", "algorithm:minimal" }
 
--- Use the current window to open a file in netrw
-vim.g.netrw_browse_split = 0
--- Hide the netrw banner
-vim.g.netrw_banner = 0
--- Set the width of the netrw window
-vim.g.netrw_winsize = 25
+-- netrw
+vim.g.netrw_browse_split = 0 -- Use the current window to open a file in netrw
+vim.g.netrw_banner = 0 -- Hide the netrw banner
+vim.g.netrw_winsize = 25 -- Set the width of the netrw window

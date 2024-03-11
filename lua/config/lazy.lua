@@ -12,57 +12,28 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("plugins", {
-  defaults = {
-    lazy = true,
+require("lazy").setup({
+  spec = {
+    { import = "plugins" },
   },
-  lockfile = vim.fn.expand("$HOME/src/repos/nvim/lazy-lock.json"),
+  defaults = {
+    lazy = false,
+    version = false,
+  },
+  lockfile = (vim.env.NVIM_SRC or vim.fn.stdpath("config")) .. "/lazy-lock.json",
   install = {
     colorscheme = { "tokyonight" },
   },
-  ui = {
-    border = "rounded",
-    title = "Plugins",
-    icons = {
-      ft = "",
-      lazy = "󰂠 ",
-      loaded = "",
-      not_loaded = "",
-    },
-  },
+  checker = { enabled = true },
   performance = {
     rtp = {
       disabled_plugins = {
-        "2html_plugin",
-        "tohtml",
-        "getscript",
-        "getscriptPlugin",
         "gzip",
-        "logipat",
-        "netrw",
-        "netrwPlugin",
-        "netrwSettings",
-        "netrwFileHandlers",
-        "matchit",
-        "tar",
         "tarPlugin",
-        "rrhelper",
-        "spellfile_plugin",
-        "vimball",
-        "vimballPlugin",
-        "zip",
-        "zipPlugin",
+        "tohtml",
         "tutor",
-        "rplugin",
-        "syntax",
-        "synmenu",
-        "optwin",
-        "compiler",
-        "bugreport",
-        "ftplugin",
+        "zipPlugin",
       },
     },
   },
 })
-
-vim.keymap.set("n", "<leader>p", "<cmd>Lazy<cr>", { desc = "Plugins" })
