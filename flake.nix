@@ -59,7 +59,7 @@
         default = mkShell {
           buildInputs = [
             (writeShellScriptBin "nvim-dev" ''
-              NVIM_APPNAME=nvim-dev nvim
+              NVIM_APPNAME=nvim-dev nvim $@
             '')
           ] ++ runtimeDependencies.${system};
           shellHook = ''
