@@ -1,25 +1,25 @@
 return {
-  "nvim-lualine/lualine.nvim",
+  'nvim-lualine/lualine.nvim',
   dependencies = {
-    { "nvim-tree/nvim-web-devicons", optional = true },
+    { 'nvim-tree/nvim-web-devicons', optional = true },
   },
   lazy = false,
   opts = function()
     return {
       options = {
-        theme = "auto",
+        theme = 'auto',
         disabled_filetypes = {
-          "packer",
-          "Undotree",
+          'packer',
+          'Undotree',
         },
         globalstatus = true,
       },
       sections = {
-        lualine_a = { "mode" },
+        lualine_a = { 'mode' },
         lualine_b = {
-          { "FugitiveHead", icon = "" },
+          { 'FugitiveHead', icon = '' },
           {
-            "diff",
+            'diff',
             source = function()
               local gitsigns = vim.b.gitsigns_status_dict
               if gitsigns then
@@ -31,39 +31,39 @@ return {
               end
             end,
           },
-          "diagnostics",
+          'diagnostics',
         },
         lualine_c = {
-          require("auto-session.lib").current_session_name,
-          { "filename", path = 1 },
+          require('auto-session.lib').current_session_name,
+          { 'filename', path = 1 },
         },
         lualine_x = {
           {
-            require("noice").api.status.message.get_hl,
-            cond = require("noice").api.status.message.has,
+            require('noice').api.status.message.get_hl,
+            cond = require('noice').api.status.message.has,
           },
           {
-            require("noice").api.status.command.get,
-            cond = require("noice").api.status.command.has,
-            color = { fg = "#ff9e64" },
+            require('noice').api.status.command.get,
+            cond = require('noice').api.status.command.has,
+            color = { fg = '#ff9e64' },
           },
           {
-            require("noice").api.status.mode.get,
-            cond = require("noice").api.status.mode.has,
-            color = { fg = "#ff9e64" },
+            require('noice').api.status.mode.get,
+            cond = require('noice').api.status.mode.has,
+            color = { fg = '#ff9e64' },
           },
           {
-            require("noice").api.status.search.get,
-            cond = require("noice").api.status.search.has,
-            color = { fg = "#ff9e64" },
+            require('noice').api.status.search.get,
+            cond = require('noice').api.status.search.has,
+            color = { fg = '#ff9e64' },
           },
-          "overseer",
-          "encoding",
-          "fileformat",
-          "filetype",
+          'overseer',
+          'encoding',
+          'fileformat',
+          'filetype',
         },
-        lualine_y = { "progress" },
-        lualine_z = { "location" },
+        lualine_y = { 'progress' },
+        lualine_z = { 'location' },
       },
     }
   end,
