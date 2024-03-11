@@ -55,9 +55,16 @@
 
       homeManagerModules.default = import ./nix/hm-module.nix self;
 
-      devShells = genSystems (system: {
-        default = pkgs.${system}.mkShell {
-          buildInputs = runtimeDependencies.${system};
+      devShells = genSystems (system: with pkgs.${system}; {
+        default = mkShell {
+          buildInputs = [
+            (writeShellScriptBin "nvim-dev" ''
+              NVIM_APPNAME=nvim-dev nvim
+            '')
+          ] ++ runtimeDependencies.${system};
+          shellHook = ''
+            ln -sfT $(git rev-parse --show-toplevel) "$XDG_CONFIG_HOME"/nvim-dev
+          '';
         };
       });
     };
