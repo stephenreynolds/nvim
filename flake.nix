@@ -47,6 +47,7 @@
         unzip
         vscode-langservers-extracted
         wget
+        yaml-language-server
         yamlfmt
       ]);
     in

@@ -1,91 +1,122 @@
+local opt = vim.opt
+
 -- Line numbers
-vim.wo.number = true
-vim.o.relativenumber = true
-vim.o.cursorline = true
-vim.o.numberwidth = 2
+opt.number = true
+opt.relativenumber = true
+opt.cursorline = true
+opt.numberwidth = 2
 
-vim.o.laststatus = 3
+opt.laststatus = 3
 
-vim.o.clipboard = "unnamedplus"
+opt.clipboard = "unnamedplus"
 
 -- Indentation
-vim.o.smartindent = true
-vim.o.expandtab = true
-vim.o.shiftwidth = 4
-vim.o.tabstop = 4
-vim.o.softtabstop = 4
+opt.smartindent = true
+opt.expandtab = true
+opt.shiftwidth = 4
+opt.tabstop = 4
+opt.softtabstop = 4
+opt.shiftround = true
 
 -- Disable line wrap
-vim.o.wrap = false
-vim.o.breakindent = true
-vim.o.showbreak = string.rep(" ", 3)
-vim.o.linebreak = true
+opt.wrap = false
+opt.breakindent = true
+opt.showbreak = string.rep(" ", 3)
+opt.linebreak = true
 
 -- Disable swap file and backup, and enable undo file
-vim.o.swapfile = false
-vim.o.backup = false
-vim.o.undodir = os.getenv("HOME") .. "/.vim/undodir"
-vim.o.undofile = true
-vim.opt.shada = { "!", "'1000", "<50", "s10", "h" }
+opt.swapfile = false
+opt.backup = false
+opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+opt.undofile = true
+opt.undolevels = 10000
+opt.shada = { "!", "'1000", "<50", "s10", "h" }
 
 -- Search highlighting
-vim.o.hlsearch = true
-vim.o.incsearch = true
+opt.hlsearch = true
+opt.incsearch = true
 
 -- Searching
-vim.o.ignorecase = true
-vim.o.smartcase = true
+opt.ignorecase = true
+opt.smartcase = true
+opt.grepformat = "%f:%l:%c:%m"
+opt.grepprg = "rg --vimgrep"
 
-vim.o.termguicolors = true
+opt.termguicolors = true
 
 -- Keep lines above and below the cursor
-vim.o.scrolloff = 10
+opt.scrolloff = 10
+opt.sidescrolloff = 8
 
 -- Always show sign column
-vim.wo.signcolumn = "yes"
+opt.signcolumn = "yes"
 
-vim.opt.isfname:append("@-@")
+opt.isfname:append("@-@")
 
 -- Timeouts
-vim.o.updatetime = 50
-vim.o.timeoutlen = 400
+opt.updatetime = 50
+opt.timeoutlen = 300
+
+-- Sessions
+opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp", "folds" }
 
 -- Set completeopt to have a better completion experience
-vim.o.completeopt = "menuone,noselect"
+opt.completeopt = "menu,menuone,noselect"
+
+opt.conceallevel = 2
+
+-- Ask to save changes before exiting the buffer instead of refusing
+opt.confirm = true
+
+-- Formatting
+opt.formatoptions = "jcroqlnt"
 
 -- Column ruler
-vim.o.colorcolumn = "80,120"
+opt.colorcolumn = "80,120"
 
 -- Mouse
-vim.o.mouse = "a"
+opt.mouse = "a"
 
 -- Remove tildes in line column
-vim.o.fillchars = "eob: "
+opt.fillchars = {
+  foldopen = "",
+  foldclose = "",
+  fold = " ",
+  foldsep = " ",
+  diff = "╱",
+  eob = " ",
+}
 
 -- Do not show mode
-vim.o.showmode = false
+opt.showmode = false
+opt.virtualedit = "block"          -- Allow cursor to move where there is no text in visual block mode
+opt.wildmode = "longest:full,full" -- Command line completion mode
+
+-- Minimum window width
+opt.winminwidth = 5
 
 -- Disable annoying "hit enter" messages
-vim.opt.shortmess:append("sI")
+opt.shortmess:append({ W = true, I = true, c = true, C = true, s = true })
 
 -- Splits
-vim.o.splitbelow = true
-vim.o.splitright = true
-vim.o.equalalways = false
+opt.splitbelow = true
+opt.splitright = true
+opt.splitkeep = "screen"
+opt.equalalways = false
 
 -- Folds
-vim.o.foldmethod = "marker"
-vim.o.foldlevel = 0
-vim.o.modelines = 1
+opt.foldmethod = "marker"
+opt.foldlevel = 99
+opt.modelines = 1
 
 -- Do not unload buffers
-vim.o.hidden = true
+opt.hidden = true
 
 -- Show substitutions in split
-vim.o.inccommand = "split"
+opt.inccommand = "split"
 
 -- Diff mode
-vim.opt.diffopt = { "internal", "filler", "closeoff", "hiddenoff", "algorithm:minimal" }
+opt.diffopt = { "internal", "filler", "closeoff", "hiddenoff", "algorithm:minimal" }
 
 -- Use the current window to open a file in netrw
 vim.g.netrw_browse_split = 0

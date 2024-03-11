@@ -1,59 +1,71 @@
 return {
-  "nvim-neorg/neorg",
-  ft = "norg",
-  build = ":Neorg sync-parsers",
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-    "nvim-treesitter/nvim-treesitter",
-    "nvim-treesitter/nvim-treesitter-textobjects",
-    "nvim-cmp",
-    "nvim-neorg/neorg-telescope",
-  },
-  cmd = "Neorg",
-  config = function()
-    require("neorg").setup({
-      load = {
-        ["core.defaults"] = {},
-        ["core.concealer"] = {
-          config = {
-            icon_preset = "diamond",
-          },
-        },
-        ["core.dirman"] = {
-          config = {
-            workspaces = {
-              notes = "~/Documents/Neorg",
+  {
+    "nvim-neorg/neorg",
+    ft = "norg",
+    build = ":Neorg sync-parsers",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-treesitter/nvim-treesitter-textobjects",
+      "nvim-cmp",
+      "nvim-neorg/neorg-telescope",
+    },
+    cmd = "Neorg",
+    config = function()
+      require("neorg").setup({
+        load = {
+          ["core.defaults"] = {},
+          ["core.concealer"] = {
+            config = {
+              icon_preset = "diamond",
             },
-            default_workspace = "notes",
           },
-        },
-        ["core.completion"] = {
-          config = {
-            engine = "nvim-cmp",
+          ["core.dirman"] = {
+            config = {
+              workspaces = {
+                notes = "$XDG_DOCUMENTS_DIR/Neorg",
+              },
+              default_workspace = "notes",
+            },
           },
-        },
-        ["core.keybinds"] = {
-          -- https://github.com/nvim-neorg/neorg/blob/main/lua/neorg/modules/core/keybinds/keybinds.lua
-          config = {
-            default_keybinds = true,
-            neorg_leader = "<Leader><Leader>",
+          ["core.completion"] = {
+            config = {
+              engine = "nvim-cmp",
+            },
           },
+          ["core.keybinds"] = {
+            -- https://github.com/nvim-neorg/neorg/blob/main/lua/neorg/modules/core/keybinds/keybinds.lua
+            config = {
+              default_keybinds = true,
+              neorg_leader = "<Leader><Leader>",
+            },
+          },
+          ["core.integrations.nvim-cmp"] = {},
+          ["core.integrations.telescope"] = {},
         },
-        ["core.integrations.nvim-cmp"] = {},
-        ["core.integrations.telescope"] = {},
+      })
+    end,
+    keys = {
+      {
+        "<leader>nn",
+        "<cmd>Neorg workspace notes<cr>",
+        desc = "Notes",
       },
-    })
-  end,
-  keys = {
-    {
-      "<leader>nn",
-      "<cmd>Neorg workspace notes<cr>",
-      desc = "Notes",
-    },
-    {
-      "<leader>nr",
-      "<cmd>Neorg return<cr>",
-      desc = "Return from notes",
+      {
+        "<leader>nr",
+        "<cmd>Neorg return<cr>",
+        desc = "Return from notes",
+      },
     },
   },
+
+  {
+    'folke/which-key.nvim',
+    optional = true,
+    opts = {
+      defaults = {
+        ['<leader>n'] = { name = '+neorg' },
+      }
+    }
+  }
 }

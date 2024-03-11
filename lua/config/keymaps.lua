@@ -1,26 +1,64 @@
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vim.g.maplocalleader = "\\"
 
-vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
+local map = vim.keymap.set
+
+map({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
 -- Remap for dealing with word wrapth
-vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+map("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+map("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- Map write and quite from leader
-vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", { desc = "Write" })
-vim.keymap.set("n", "<leader>q", "<cmd>q<cr>", { desc = "Quit" })
+map("n", "<leader>q", "<cmd>q<cr>", { desc = "Quit" })
+map("n", "<leader>w", "<cmd>w<cr>", { desc = "Write" })
+map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
 
-vim.keymap.set("n", "<Esc><Esc>", "<cmd>nohls<cr>", { desc = "Clear search", silent = true })
+-- Better up/down
+map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+map({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+map({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+map({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+
+-- Move to window using the <ctrl> hjkl keys
+map("n", "<C-h>", "<C-w>h", { desc = "Go to left window", remap = true })
+map("n", "<C-j>", "<C-w>j", { desc = "Go to lower window", remap = true })
+map("n", "<C-k>", "<C-w>k", { desc = "Go to upper window", remap = true })
+map("n", "<C-l>", "<C-w>l", { desc = "Go to right window", remap = true })
+
+-- Resize window using <ctrl> arrow keys
+map("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
+map("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
+map("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
+map("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
+
+-- Move Lines
+map("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move down" })
+map("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move up" })
+map("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move down" })
+map("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move up" })
+map("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move down" })
+map("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
+
+-- Buffers
+map("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
+map("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next buffer" })
+map("n", "[b", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
+map("n", "]b", "<cmd>bnext<cr>", { desc = "Next buffer" })
+map("n", "<leader>bb", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
+map("n", "<leader>`", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
+
+-- Clear search with <esc>
+map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
 
 -- Move selection in and out of blocks
-vim.keymap.set("v", "<S-down>", ":m '>+1<cr>gv=gv", { desc = "Move down out of block, silent = true" })
-vim.keymap.set("v", "<S-j>", ":m '>+1<cr>gv=gv", { desc = "Move down out of block, silent = true" })
-vim.keymap.set("v", "<S-up>", ":m '<-2<cr>gv=gv", { desc = "Move up out of block, silent = true" })
-vim.keymap.set("v", "<S-k>", ":m '<-2<cr>gv=gv", { desc = "Move up out of block, silent = true" })
+map("v", "<S-down>", ":m '>+1<cr>gv=gv", { desc = "Move down out of block, silent = true" })
+map("v", "<S-j>", ":m '>+1<cr>gv=gv", { desc = "Move down out of block, silent = true" })
+map("v", "<S-up>", ":m '<-2<cr>gv=gv", { desc = "Move up out of block, silent = true" })
+map("v", "<S-k>", ":m '<-2<cr>gv=gv", { desc = "Move up out of block, silent = true" })
 
 -- Move lines up and down
-vim.keymap.set("n", "<M-j>", function()
+map("n", "<M-j>", function()
   if vim.opt.diff:get() then
     vim.cmd([[normal! ]c]])
   else
@@ -28,7 +66,7 @@ vim.keymap.set("n", "<M-j>", function()
   end
 end, { desc = "Move line down" })
 
-vim.keymap.set("n", "<M-k>", function()
+map("n", "<M-k>", function()
   if vim.opt.diff:get() then
     vim.cmd([[normal! ]c]])
   else
@@ -37,55 +75,82 @@ vim.keymap.set("n", "<M-k>", function()
 end, { desc = "Move line up" })
 
 -- Keep cursor in place when joining lines
-vim.keymap.set("n", "<S-down>", "mzJ`z", { desc = "Join line down" })
-vim.keymap.set("n", "<S-j>", "mzJ`z", { desc = "Join line down" })
+map("n", "<S-down>", "mzJ`z", { desc = "Join line down" })
+map("n", "<S-j>", "mzJ`z", { desc = "Join line down" })
 
 -- Paste over and delete selection, instead of copying the selection
-vim.keymap.set("x", "<leader>P", '"_dP', { desc = "Paste over selection" })
+map("x", "<leader>P", '"_dP', { desc = "Paste over selection" })
 
 -- Keep cursor centered vertically when jumping half page
-vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Jump half page down" })
-vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Jump half page up" })
+map("n", "<C-d>", "<C-d>zz", { desc = "Jump half page down" })
+map("n", "<C-u>", "<C-u>zz", { desc = "Jump half page up" })
 
 -- Keep cursor centered vertically when jumping between search results
-vim.keymap.set("n", "n", "nzzzv", { desc = "Jump to next search result" })
-vim.keymap.set("n", "N", "Nzzzv", { desc = "Jump to previous search result" })
+map("n", "n", "nzzzv", { desc = "Jump to next search result" })
+map("n", "N", "Nzzzv", { desc = "Jump to previous search result" })
 
 -- Yank to system clipboard
-vim.keymap.set({ "n", "v" }, "<leader>y", '"+y', { desc = "Copy to system clipboard" })
-vim.keymap.set("n", "<leader>Y", '"+Y', { desc = "Copy line to system clipboard" })
-
--- Delete to the void register
-vim.keymap.set({ "n", "v" }, "<leader>d", '"_d', { desc = "Delete without yanking" })
+map({ "n", "v" }, "<leader>y", '"+y', { desc = "Copy to system clipboard" })
+map("n", "<leader>Y", '"+Y', { desc = "Copy line to system clipboard" })
 
 -- Move to next/previous error in quickfix list
-vim.keymap.set("n", "<C-up>", "<cmd>cnext<cr>zz", { desc = "Next error" })
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<cr>zz", { desc = "Next error" })
-vim.keymap.set("n", "<C-down>", "<cmd>cprev<cr>zz", { desc = "Previous error" })
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<cr>zz", { desc = "Previous error" })
+map("n", "<C-up>", "<cmd>cnext<cr>zz", { desc = "Next error" })
+map("n", "<C-k>", "<cmd>cnext<cr>zz", { desc = "Next error" })
+map("n", "<C-down>", "<cmd>cprev<cr>zz", { desc = "Previous error" })
+map("n", "<C-j>", "<cmd>cprev<cr>zz", { desc = "Previous error" })
 
--- Diagnostic keymaps
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
+-- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
+map("n", "n", "'Nn'[v:searchforward].'zv'", { expr = true, desc = "Next search result" })
+map("x", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
+map("o", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
+map("n", "N", "'nN'[v:searchforward].'zv'", { expr = true, desc = "Prev search result" })
+map("x", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
+map("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
+
+-- keywordprg
+map("n", "<leader>K", "<cmd>norm! K<cr>", { desc = "Keywordprg" })
+
+-- Better indenting
+map("v", "<", "<gv")
+map("v", ">", ">gv")
+
+-- Diagnostic
+local diagnostic_goto = function(next, severity)
+  local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
+  severity = severity and vim.diagnostic.severity[severity] or nil
+  return function()
+    go({ severity = severity })
+  end
+end
+map("n", "]d", diagnostic_goto(true), { desc = "Next Diagnostic" })
+map("n", "[d", diagnostic_goto(false), { desc = "Prev Diagnostic" })
+map("n", "]e", diagnostic_goto(true, "ERROR"), { desc = "Next Error" })
+map("n", "[e", diagnostic_goto(false, "ERROR"), { desc = "Prev Error" })
+map("n", "]w", diagnostic_goto(true, "WARN"), { desc = "Next Warning" })
+map("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })
+
+-- Move to next/previous error in quickfix list
+map("n", "[q", vim.cmd.cprev, { desc = "Previous quickfix" })
+map("n", "]q", vim.cmd.cnext, { desc = "Next quickfix" })
 
 -- Make Q do nothing
-vim.keymap.set("n", "Q", "<nop>", { desc = "[disabled]" })
+map("n", "Q", "<nop>", { desc = "[disabled]" })
 
 -- Replace all instances of a word in the buffer
-vim.keymap.set("n", "<leader>rw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Replace word" })
+map("n", "<leader>rw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Replace word" })
 
 -- Terminal mode
-vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal" })
+map("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal" })
 
 -- Fix opening links since netrw is disabled
 local function url_repo()
-  local cursorword = vim.fn.expand('<cfile>')
-  if string.find(cursorword, '^[a-zA-Z0-9-_.]*/[a-zA-Z0-9-_.]*$') then
-    cursorword = 'https://github.com/' .. cursorword
+  local cursorword = vim.fn.expand("<cfile>")
+  if string.find(cursorword, "^[a-zA-Z0-9-_.]*/[a-zA-Z0-9-_.]*$") then
+    cursorword = "https://github.com/" .. cursorword
   end
-  return cursorword or ''
+  return cursorword or ""
 end
 
-vim.keymap.set('n', 'gx', function()
+map("n", "gx", function()
   vim.fn.jobstart({ "xdg-open", url_repo() }, { detach = true })
 end, { silent = true })

@@ -12,11 +12,24 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("plugins", {
-  defaults = {
-    lazy = true,
+require("lazy").setup({
+  spec = {
+    { import = "plugins" },
+    { import = "plugins.ai" },
+    { import = "plugins.coding" },
+    { import = "plugins.colorscheme" },
+    { import = "plugins.editor" },
+    { import = "plugins.git" },
+    { import = "plugins.lang" },
+    { import = "plugins.linting" },
+    { import = "plugins.navigation" },
+    { import = "plugins.ui" },
   },
-  lockfile = vim.fn.expand("$HOME/src/repos/nvim/lazy-lock.json"),
+  defaults = {
+    lazy = false,
+    version = false,
+  },
+  lockfile = (vim.env.NVIM_SRC or vim.fn.stdpath("config")) .. "/lazy-lock.json",
   install = {
     colorscheme = { "tokyonight" },
   },
@@ -33,33 +46,11 @@ require("lazy").setup("plugins", {
   performance = {
     rtp = {
       disabled_plugins = {
-        "2html_plugin",
-        "tohtml",
-        "getscript",
-        "getscriptPlugin",
         "gzip",
-        "logipat",
-        "netrw",
-        "netrwPlugin",
-        "netrwSettings",
-        "netrwFileHandlers",
-        "matchit",
-        "tar",
         "tarPlugin",
-        "rrhelper",
-        "spellfile_plugin",
-        "vimball",
-        "vimballPlugin",
-        "zip",
-        "zipPlugin",
+        "tohtml",
         "tutor",
-        "rplugin",
-        "syntax",
-        "synmenu",
-        "optwin",
-        "compiler",
-        "bugreport",
-        "ftplugin",
+        "zipPlugin",
       },
     },
   },
