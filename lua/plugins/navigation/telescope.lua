@@ -9,7 +9,7 @@ return {
       "nvim-telescope/telescope-fzf-native.nvim",
       build = "make",
       enabled = vim.fn.executable("make") == 1,
-    }
+    },
   },
   opts = {
     defaults = {
@@ -171,7 +171,7 @@ return {
     {
       "<leader>sN",
       function()
-        require("telescope.builtin").find_files({ cwd = vim.fn.stdpath "config" })
+        require("telescope.builtin").find_files({ cwd = vim.fn.stdpath("config") })
       end,
       desc = "Neovim config",
     },
@@ -179,6 +179,16 @@ return {
       "<leader>gb",
       require("telescope.builtin").git_branches,
       desc = "Checkout",
+    },
+    {
+      "<leader>gc",
+      require("telescope.builtin").git_commits,
+      desc = "Commits",
+    },
+    {
+      "<leader>gs",
+      require("telescope.builtin").git_status,
+      desc = "Status",
     },
     {
       "<leader>ld",
