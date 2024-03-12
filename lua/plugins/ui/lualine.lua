@@ -28,6 +28,7 @@ return {
         globalstatus = true,
         component_separators = "",
         disabled_filetypes = { "packer", "Undotree" },
+        section_separators = { left = "", right = "" },
       },
       sections = {
         lualine_a = { "mode" },
