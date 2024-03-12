@@ -72,8 +72,8 @@ return {
     optional = true,
     opts = {
       defaults = {
-        ["<leader>h"] = '+hunk',
-      }
-    }
-  }
+        ["<leader>h"] = "+hunk",
+      },
+    },
+  },
 }
