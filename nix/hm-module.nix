@@ -1,4 +1,4 @@
-self: { config, pkgs, ... }:
+self: { config, pkgs, neovim, ... }:
 
 let
   system = pkgs.stdenv.hostPlatform.system;
@@ -6,6 +6,7 @@ in
 {
   config = {
     programs.neovim = {
+      package = neovim.defaultPackage.${system};
       withNodeJs = true;
       extraPackages = self.runtimeDependencies.${system};
     };

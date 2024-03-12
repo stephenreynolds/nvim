@@ -3,9 +3,13 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    neovim = {
+      url = "github:neovim/neovim/nightly?dir=contrib";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs }:
+  outputs = { self, nixpkgs, neovim }:
     let
       genSystems = nixpkgs.lib.genAttrs [ "x86_64-linux" ];
 
@@ -58,6 +62,7 @@
       devShells = genSystems (system: with pkgs.${system}; {
         default = mkShell {
           buildInputs = [
+            neovim.defaultPackage.${system}
             (writeShellScriptBin "nvim-dev" ''
               NVIM_APPNAME=nvim-dev nvim $@
             '')
