@@ -78,7 +78,7 @@ return {
           types = true,
         },
       },
-    }
+    },
   },
   event = "BufEnter",
   opts = {

@@ -5,13 +5,6 @@ return {
     cmd = { "TroubleToggle", "Trouble" },
     keys = {
       {
-        "<leader>xq",
-        "<cmd>TroubleToggle quickfix<cr>",
-        silent = true,
-        noremap = true,
-        desc = "Quickfix",
-      },
-      {
         "<leader>xr",
         "<cmd>TroubleToggle lsp_references<cr>",
         remap = false,
@@ -36,7 +29,7 @@ return {
         desc = "Workspace diagnostics",
       },
       {
-        "<leader>xL",
+        "<leader>xl",
         "<cmd>TroubleToggle loclist<cr>",
         remap = false,
         desc = "Location list",
@@ -45,13 +38,13 @@ return {
   },
 
   {
-    'folke/which-key.nvim',
+    "folke/which-key.nvim",
     optional = true,
     opts = {
       defaults = {
-        ['<leader>x'] = { name = '+trouble' },
-        ['<leader>xw'] = { name = '+workspace' }
-      }
-    }
-  }
+        ["<leader>x"] = { name = "+trouble" },
+        ["<leader>xw"] = { name = "+workspace" },
+      },
+    },
+  },
 }
