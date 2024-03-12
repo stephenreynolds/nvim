@@ -17,12 +17,13 @@
         clang-tools
         codespell
         delve
+        docker-compose-language-service
+        dockerfile-language-server-nodejs
         emmet-ls
         fzf
         gcc
         gnumake
         go
-        haskell-language-server
         isort
         jq
         lldb
@@ -34,8 +35,6 @@
         nixpkgs-fmt
         nodePackages.bash-language-server
         nodePackages.typescript-language-server
-        ocamlPackages.ocaml-lsp
-        ocamlformat
         prettierd
         pyright
         ripgrep
