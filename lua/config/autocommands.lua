@@ -3,17 +3,6 @@ local augroup = function(name)
   return vim.api.nvim_create_augroup("my_" .. name, { clear = true })
 end
 
--- Highlight on yank
-autocmd("TextYankPost", {
-  group = augroup("highlight_yank"),
-  callback = function()
-    vim.highlight.on_yank({
-      higroup = "IncSearch",
-      timeout = 40,
-    })
-  end,
-})
-
 -- Resize splits if window got resized
 vim.api.nvim_create_autocmd({ "VimResized" }, {
   group = augroup("resize_splits"),

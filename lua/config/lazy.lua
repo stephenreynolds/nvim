@@ -56,4 +56,4 @@ require("lazy").setup({
   },
 })
 
-vim.keymap.set("n", "<leader>p", "<cmd>Lazy<cr>", { desc = "Plugins" })
+vim.keymap.set("n", "<leader>P", "<cmd>Lazy<cr>", { desc = "Plugins" })
