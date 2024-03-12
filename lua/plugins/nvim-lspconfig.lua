@@ -136,10 +136,20 @@ return {
         end
 
         vim.keymap.set("n", "<leader>li", "<cmd>LspInfo<cr>", { buffer = bufnr, remap = false, desc = "Info" })
+
+        -- Inlay hints
         if client.server_capabilities.inlayHintProvider then
-          vim.keymap.set("n", "<leader>lh", function()
-            vim.lsp.inlay_hint(bufnr)
-          end, { buffer = bufnr, remap = false, desc = "Toggle inlay hints" })
+          if vim.lsp.buf.inlay_hint or vim.lsp.inlay_hint then
+            vim.keymap.set("n", "<leader>th", function()
+              local ih = vim.lsp.buf.inlay_hint or vim.lsp.inlay_hint
+              local value = not ih.is_enabled(bufnr)
+              if type(ih) == "function" then
+                ih(bufnr, value)
+              elseif type(ih) == "table" and ih.enable then
+                ih.enable(bufnr, value)
+              end
+            end, { buffer = bufnr, remap = false, desc = "Toggle inlay hints" })
+          end
         end
 
         -- Jump to the definition of the word under your cursor.
