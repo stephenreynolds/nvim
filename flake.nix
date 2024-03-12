@@ -9,7 +9,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, neovim }:
+  outputs = { self, nixpkgs, ... }@inputs:
     let
       genSystems = nixpkgs.lib.genAttrs [ "x86_64-linux" ];
 
@@ -62,7 +62,7 @@
       devShells = genSystems (system: with pkgs.${system}; {
         default = mkShell {
           buildInputs = [
-            neovim.defaultPackage.${system}
+            inputs.neovim.defaultPackage.${system}
             (writeShellScriptBin "nvim-dev" ''
               NVIM_APPNAME=nvim-dev nvim $@
             '')

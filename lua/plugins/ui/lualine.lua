@@ -78,8 +78,20 @@ return {
             color = utils.fg("Debug"),
           },
           "overseer",
-          "encoding",
-          "fileformat",
+          {
+            -- fileformat: show only when it is not utf-8
+            function()
+              local ret, _ = (vim.bo.fenc or vim.go.enc):gsub("^utf%-8$", "")
+              return ret
+            end,
+          },
+          {
+            -- encoding: show only when it is not unix
+            function()
+              local ret, _ = vim.bo.fileformat:gsub("^unix$", "")
+              return ret
+            end,
+          },
           "filetype",
         },
         lualine_y = { "progress" },

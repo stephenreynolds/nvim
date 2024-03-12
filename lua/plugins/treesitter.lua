@@ -117,6 +117,7 @@ return {
   -- Show context of the current symbol
   {
     "nvim-treesitter/nvim-treesitter-context",
+    enabled = false,
     event = "BufEnter",
     opts = { mode = "cursor", max_lines = 3 },
     keys = {
