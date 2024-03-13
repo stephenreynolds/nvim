@@ -6,8 +6,4 @@ return {
       n_lines = 500,
     },
   },
-
-  {
-    "echasnovski/mini.surround",
-  },
 }
