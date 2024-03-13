@@ -31,6 +31,7 @@
         isort
         jq
         lldb
+        luajit
         lua-language-server
         luarocks
         marksman
