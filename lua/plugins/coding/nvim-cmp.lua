@@ -51,7 +51,7 @@ return {
           end, { "i", "s" }),
         }),
         sources = cmp.config.sources({
-          { name = "copilot" },
+          -- { name = "copilot" },
           { name = "gh_issues" },
           { name = "nvim_lua" },
           { name = "nvim_lsp" },
