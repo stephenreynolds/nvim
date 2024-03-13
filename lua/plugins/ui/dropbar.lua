@@ -2,8 +2,8 @@ return {
   "Bekaboo/dropbar.nvim",
   event = "VeryLazy",
   dependencies = {
-    "telescope-fzf-native.nvim",
     "nvim-web-devicons",
+    { "nvim-telescope/telescope-fzf-native.nvim", optional = true },
   },
   config = function(_, opts)
     require("dropbar").setup(opts)
