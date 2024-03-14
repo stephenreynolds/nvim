@@ -1,6 +1,7 @@
 return {
   {
     "numToStr/Comment.nvim",
+    lazy = false,
     opts = {
       opleader = {
         line = "gc",
