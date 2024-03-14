@@ -17,6 +17,7 @@ return {
       -- A list of parser names, or "all"
       ensure_installed = {
         "bash",
+        "fish",
         "diff",
         "lua",
         "luadoc",
