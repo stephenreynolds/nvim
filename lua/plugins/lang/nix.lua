@@ -16,7 +16,7 @@ return {
           settings = {
             ["nil"] = {
               formatting = {
-                command = { "nixpkgs-fmt" },
+                command = { "nixfmt" },
               },
               nix = {
                 flake = {

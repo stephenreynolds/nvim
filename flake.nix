@@ -36,8 +36,7 @@
         luarocks
         marksman
         nil
-        nixpkgs-fmt
-        nixpkgs-fmt
+        nixfmt
         nodePackages.bash-language-server
         nodePackages.typescript-language-server
         prettierd
