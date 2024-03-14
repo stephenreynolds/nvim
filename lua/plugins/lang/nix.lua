@@ -19,8 +19,10 @@ return {
                 command = { "nixfmt" },
               },
               nix = {
+                maxMemoryMB = 6144,
                 flake = {
                   autoArchive = true,
+                  autoEvalInputs = true,
                 },
               },
             },
