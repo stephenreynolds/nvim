@@ -11,7 +11,8 @@ map("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- Quit and write
 map("n", "ZQ", "<cmd>q<cr>", { desc = "Quit" })
-map("n", "ZQ!", "ZQ", { desc = "Quit without checking for changes" })
+map("n", "ZX", "<cmd>q<cr>", { desc = "Quit" })
+map("n", "ZX!", "ZQ", { desc = "Quit without checking for changes" })
 map("n", "ZA", "<cmd>qa<cr>", { desc = "Quit all" })
 map("n", "ZA!", "<cmd>qa!<cr>", { desc = "Quit all without checking for changes" })
 map("n", "ZZ", "ZZ", { desc = "Write and quit" })
