@@ -109,6 +109,11 @@ return {
       desc = "Buffers",
     },
     {
+      "<leader>,",
+      require("telescope.builtin").buffers,
+      desc = "Buffers",
+    },
+    {
       "<leader>sh",
       require("telescope.builtin").help_tags,
       desc = "Find Help",
