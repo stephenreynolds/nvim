@@ -1,9 +1,8 @@
-self: { config, pkgs, ... }:
+self:
+{ config, pkgs, ... }:
 
-let
-  system = pkgs.stdenv.hostPlatform.system;
-in
-{
+let system = pkgs.stdenv.hostPlatform.system;
+in {
   config = {
     programs.neovim = {
       package = self.inputs.neovim.defaultPackage.${system};
