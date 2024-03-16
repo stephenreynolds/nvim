@@ -89,22 +89,18 @@ return {
           -- Jump to the definition of the word under your cursor.
           --  This is where a variable was first declared, or where a function is defined, etc.
           --  To jump back, press <C-T>.
-          vim.keymap.set("n", "gd", require("telescope.builtin").lsp_definitions,
-            { buffer = bufnr, remap = false, desc = "Go to definition" })
+          vim.keymap.set("n", "gd", require("telescope.builtin").lsp_definitions, { buffer = bufnr, remap = false, desc = "Go to definition" })
 
           -- WARN: This is not Goto Definition, this is Goto Declaration.
           --  For example, in C this would take you to the header
-          vim.keymap.set("n", "gD", vim.lsp.buf.declaration,
-            { buffer = bufnr, remap = false, desc = "Go to declaration" })
+          vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = bufnr, remap = false, desc = "Go to declaration" })
 
           -- Jump to the implementation of the word under your cursor.
           --  Useful when your language has ways of declaring types without an actual implementation.
-          vim.keymap.set("n", "gi", require("telescope.builtin").lsp_implementations,
-            { buffer = bufnr, remap = false, desc = "Go to implementation" })
+          vim.keymap.set("n", "gi", require("telescope.builtin").lsp_implementations, { buffer = bufnr, remap = false, desc = "Go to implementation" })
 
           -- Find references for the word under your cursor.
-          vim.keymap.set("n", "gr", require("telescope.builtin").lsp_references,
-            { buffer = bufnr, remap = false, desc = "References" })
+          vim.keymap.set("n", "gr", require("telescope.builtin").lsp_references, { buffer = bufnr, remap = false, desc = "References" })
 
           -- Opens a popup that displays documentation about the word under your cursor
           --  See `:help K` for why this keymap
@@ -114,13 +110,11 @@ return {
           vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format, { buffer = bufnr, remap = false, desc = "Hover" })
 
           -- Opens a popup that displays diagnostics for the current buffer
-          vim.keymap.set("n", "<leader>ld", vim.diagnostic.open_float,
-            { buffer = bufnr, remap = false, desc = "Open diagnostics popup" })
+          vim.keymap.set("n", "<leader>ld", vim.diagnostic.open_float, { buffer = bufnr, remap = false, desc = "Open diagnostics popup" })
 
           -- Execute a code action, usually your cursor needs to be on top of an error
           -- or a suggestion from your LSP for this to activate.
-          vim.keymap.set({ "n", "v" }, "<leader>la", vim.lsp.buf.code_action,
-            { buffer = bufnr, remap = false, desc = "Code action" })
+          vim.keymap.set({ "n", "v" }, "<leader>la", vim.lsp.buf.code_action, { buffer = bufnr, remap = false, desc = "Code action" })
 
           vim.keymap.set("n", "<leader>ll", vim.lsp.codelens.run, { buffer = bufnr, remap = false, desc = "CodeLens" })
 
@@ -128,8 +122,7 @@ return {
           vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { buffer = bufnr, remap = false, desc = "Rename symbol" })
 
           -- Show the signature help for the word under your cursor
-          vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help,
-            { buffer = bufnr, remap = false, desc = "Signature help" })
+          vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, { buffer = bufnr, remap = false, desc = "Signature help" })
         end,
       })
 
@@ -192,12 +185,6 @@ return {
     cmd = "Mason",
     keys = { { "<leader>lM", "<cmd>Mason<cr>", desc = "Mason" } },
     build = ":MasonUpdate",
-    opts = {
-      ensure_installed = {
-        "stylua",
-        "shfmt",
-      },
-    },
     config = function(_, opts)
       require("mason").setup(opts)
       local mr = require("mason-registry")
@@ -210,9 +197,14 @@ return {
         end, 100)
       end)
       local function ensure_installed()
+        local is_nixos = vim.fn.system("nixos-version") ~= ""
         for _, tool in ipairs(opts.ensure_installed) do
+          local should_install = true
+          if is_nixos and tool ~= "js-debug-adapter" then
+            should_install = false
+          end
           local p = mr.get_package(tool)
-          if not p:is_installed() then
+          if should_install and not p:is_installed() then
             p:install()
           end
         end

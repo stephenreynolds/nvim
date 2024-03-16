@@ -16,8 +16,7 @@
       pkgs = genSystems (system: import nixpkgs { inherit system; });
 
       runtimeDependencies = genSystems (system:
-        with pkgs.${system};
-        [
+        with pkgs.${system}; [
           black
           cargo
           clang-tools
