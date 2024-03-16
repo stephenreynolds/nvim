@@ -112,6 +112,13 @@ return {
         end, opts.ensure_installed)
       end
       require("nvim-treesitter.configs").setup(opts)
+
+      vim.filetype.add {
+        extension = { rasi = 'rasi' },
+        pattern = {
+          ['.*/hypr/.*%.conf'] = 'hyprlang',
+        },
+      }
     end,
   },
 
