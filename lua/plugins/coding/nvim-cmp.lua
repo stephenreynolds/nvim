@@ -56,7 +56,7 @@ return {
           { name = "path" },
           { name = "cmp_cmdline" },
           { name = "luasnip" },
-          { name = "buffer",     keyword_length = 5 },
+          { name = "buffer", keyword_length = 5 },
           { name = "neorg" },
           { name = "copilot" },
         }),
@@ -70,14 +70,14 @@ return {
               return vim_item
             end,
             -- Show source next to items
-            menu = {
-              buffer = "[buf]",
-              nvim_lsp = "[LSP]",
-              nvim_lua = "[api]",
-              path = "[path]",
-              luasnip = "[snip]",
-              gh_issues = "[issues]",
-            },
+            -- menu = {
+            --   buffer = "[buf]",
+            --   nvim_lsp = "[LSP]",
+            --   nvim_lua = "[api]",
+            --   path = "[path]",
+            --   luasnip = "[snip]",
+            --   gh_issues = "[issues]",
+            -- },
           }),
         },
         experimental = {
@@ -88,7 +88,6 @@ return {
         sorting = defaults.sorting,
       }
     end,
-    ---@param opts cmp.ConfigSchema
     config = function(_, opts)
       for _, source in ipairs(opts.sources) do
         source.group_index = source.group_index or 1
@@ -119,8 +118,7 @@ return {
 
   {
     "L3MON4D3/LuaSnip",
-    build = (not jit.os:find("Windows")) and
-    "echo 'NOTE: jsregexp is optional, so not a big deal if it fails to build'; make install_jsregexp" or nil,
+    build = (not jit.os:find("Windows")) and "echo 'NOTE: jsregexp is optional, so not a big deal if it fails to build'; make install_jsregexp" or nil,
     dependencies = {
       {
         "rafamadriz/friendly-snippets",

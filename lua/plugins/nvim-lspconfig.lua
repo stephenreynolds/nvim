@@ -1,3 +1,4 @@
+---@diagnostic disable: need-check-nil
 return {
   {
     "neovim/nvim-lspconfig",
@@ -57,7 +58,7 @@ return {
           --    See `:help CursorHold` for information about when this is executed
           --
           -- When you move your cursor, the highlights will be cleared (the second autocommand).
-          if client ~= nil and client.server_capabilities.documentHighlightProvider then
+          if client.server_capabilities.documentHighlightProvider then
             vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
               buffer = args.buf,
               callback = vim.lsp.buf.document_highlight,
@@ -72,7 +73,7 @@ return {
           vim.keymap.set("n", "<leader>li", "<cmd>LspInfo<cr>", { buffer = bufnr, remap = false, desc = "Info" })
 
           -- Inlay hints
-          if client ~= nil and client.server_capabilities.inlayHintProvider then
+          if client.server_capabilities.inlayHintProvider then
             if vim.lsp.buf.inlay_hint or vim.lsp.inlay_hint then
               vim.keymap.set("n", "<leader>Th", function()
                 local ih = vim.lsp.buf.inlay_hint or vim.lsp.inlay_hint

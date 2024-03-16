@@ -4,6 +4,10 @@ return {
   "nvim-lualine/lualine.nvim",
   event = "VeryLazy",
   dependencies = {
+    {
+      "SmiteshP/nvim-navic",
+      dependencies = { "neovim/nvim-lspconfig" },
+    },
     { "nvim-tree/nvim-web-devicons", optional = true },
   },
   init = function()
@@ -27,33 +31,25 @@ return {
         theme = "auto",
         globalstatus = true,
         component_separators = "",
-        disabled_filetypes = { "packer", "Undotree" },
+        disabled_filetypes = { "packer", "Undotree", "alpha" },
         section_separators = { left = "", right = "" },
       },
       sections = {
         lualine_a = { "mode" },
         lualine_b = {
           { "FugitiveHead", icon = "" },
-          {
-            "diff",
-            source = function()
-              local gitsigns = vim.b.gitsigns_status_dict
-              if gitsigns then
-                return {
-                  added = gitsigns.added,
-                  modified = gitsigns.changed,
-                  removed = gitsigns.removed,
-                }
-              end
-            end,
-          },
-          "diagnostics",
         },
         lualine_c = {
-          require("auto-session.lib").current_session_name,
+          { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
           { "filename", path = 1 },
+          {
+            "navic",
+            color_correction = nil,
+            navic_opts = nil,
+          },
         },
         lualine_x = {
+          "diagnostics",
           {
             require("noice").api.status.command.get,
             cond = function()
@@ -79,6 +75,19 @@ return {
           },
           "overseer",
           {
+            "diff",
+            source = function()
+              local gitsigns = vim.b.gitsigns_status_dict
+              if gitsigns then
+                return {
+                  added = gitsigns.added,
+                  modified = gitsigns.changed,
+                  removed = gitsigns.removed,
+                }
+              end
+            end,
+          },
+          {
             -- fileformat: show only when it is not utf-8
             function()
               local ret, _ = (vim.bo.fenc or vim.go.enc):gsub("^utf%-8$", "")
@@ -92,7 +101,6 @@ return {
               return ret
             end,
           },
-          "filetype",
         },
         lualine_y = { "progress" },
         lualine_z = { "location" },
