@@ -57,7 +57,7 @@ return {
           --    See `:help CursorHold` for information about when this is executed
           --
           -- When you move your cursor, the highlights will be cleared (the second autocommand).
-          if client.server_capabilities.documentHighlightProvider then
+          if client ~= nil and client.server_capabilities.documentHighlightProvider then
             vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
               buffer = args.buf,
               callback = vim.lsp.buf.document_highlight,
@@ -72,7 +72,7 @@ return {
           vim.keymap.set("n", "<leader>li", "<cmd>LspInfo<cr>", { buffer = bufnr, remap = false, desc = "Info" })
 
           -- Inlay hints
-          if client.server_capabilities.inlayHintProvider then
+          if client ~= nil and client.server_capabilities.inlayHintProvider then
             if vim.lsp.buf.inlay_hint or vim.lsp.inlay_hint then
               vim.keymap.set("n", "<leader>Th", function()
                 local ih = vim.lsp.buf.inlay_hint or vim.lsp.inlay_hint
@@ -91,8 +91,6 @@ return {
           --  To jump back, press <C-T>.
           vim.keymap.set("n", "gd", require("telescope.builtin").lsp_definitions, { buffer = bufnr, remap = false, desc = "Go to definition" })
 
-          -- WARN: This is not Goto Definition, this is Goto Declaration.
-          --  For example, in C this would take you to the header
           vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = bufnr, remap = false, desc = "Go to declaration" })
 
           -- Jump to the implementation of the word under your cursor.
