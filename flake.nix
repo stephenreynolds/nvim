@@ -15,62 +15,66 @@
 
       pkgs = genSystems (system: import nixpkgs { inherit system; });
 
-      runtimeDependencies = genSystems (system: with pkgs.${system}; [
-        black
-        cargo
-        clang-tools
-        codespell
-        delve
-        docker-compose-language-service
-        dockerfile-language-server-nodejs
-        emmet-ls
-        fzf
-        gcc
-        gnumake
-        go
-        isort
-        jq
-        lldb
-        luajit
-        lua-language-server
-        luarocks
-        marksman
-        nil
-        nixfmt
-        nodePackages.bash-language-server
-        nodePackages.typescript-language-server
-        prettierd
-        pyright
-        ripgrep
-        rust-analyzer
-        rustfmt
-        shellcheck
-        stylua
-        tree-sitter
-        unzip
-        vscode-langservers-extracted
-        wget
-        yaml-language-server
-        yamlfmt
-      ]);
-    in
-    {
+      runtimeDependencies = genSystems (system:
+        with pkgs.${system}; [
+          black
+          cargo
+          clang-tools
+          codespell
+          delve
+          docker-compose-language-service
+          dockerfile-language-server-nodejs
+          emmet-ls
+          fswatch
+          fzf
+          gcc
+          gnumake
+          go
+          isort
+          jq
+          lldb
+          luajit
+          lua-language-server
+          luarocks
+          marksman
+          nil
+          nixfmt
+          nodePackages.bash-language-server
+          nodePackages.neovim
+          nodePackages.typescript-language-server
+          prettierd
+          pyright
+          ripgrep
+          rust-analyzer
+          rustfmt
+          shellcheck
+          stylua
+          tree-sitter
+          unzip
+          vscode-langservers-extracted
+          wget
+          yaml-language-server
+          yamlfmt
+        ]);
+    in {
       inherit runtimeDependencies;
 
       homeManagerModules.default = import ./nix/hm-module.nix self;
 
-      devShells = genSystems (system: with pkgs.${system}; {
-        default = mkShell {
-          buildInputs = [
-            inputs.neovim.defaultPackage.${system}
-            (writeShellScriptBin "nvim-dev" ''
-              NVIM_APPNAME=nvim-dev nvim $@
-            '')
-          ] ++ runtimeDependencies.${system};
-          shellHook = ''
-            ln -sfT $(git rev-parse --show-toplevel) "$XDG_CONFIG_HOME"/nvim-dev
-          '';
-        };
-      });
+      devShells = genSystems (system:
+        with pkgs.${system}; {
+          default = mkShell {
+            buildInputs = [
+              inputs.neovim.defaultPackage.${system}
+              nodejs
+              (writeShellScriptBin "nvim-dev" ''
+                NVIM_APPNAME=nvim-dev nvim $@
+              '')
+            ] ++ runtimeDependencies.${system};
+            shellHook = ''
+              ln -sfT $(git rev-parse --show-toplevel) "$XDG_CONFIG_HOME"/nvim-dev
+            '';
+          };
+        });
     };
 }
