@@ -66,7 +66,7 @@ opt.completeopt = "menu,menuone,noselect"
 opt.conceallevel = 2
 
 -- Ask to save changes before exiting the buffer instead of refusing
-opt.confirm = true
+-- opt.confirm = true
 
 -- Formatting
 opt.formatoptions = "jcroqlnt"
