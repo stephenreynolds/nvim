@@ -30,17 +30,19 @@
           gcc
           gnumake
           go
+          gofumpt
+          gotools
           isort
           jq
           lldb
           luajit
           lua-language-server
           luarocks
+          markdownlint-cli
           marksman
           nil
           nixfmt
           nodePackages.bash-language-server
-          nodePackages.neovim
           nodePackages.typescript-language-server
           prettierd
           pyright
