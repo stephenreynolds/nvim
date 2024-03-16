@@ -153,3 +153,15 @@ end
 map("n", "gx", function()
   vim.fn.jobstart({ "xdg-open", url_repo() }, { detach = true })
 end, { silent = true })
+
+-- Tabs
+map("n", "<leader>tt", "<cmd>tab new<cr>", { desc = "Open new tab" })
+map("n", "<leader>ts", "<C-W><S-T>", { desc = "Move current buffer to new tab" })
+map("n", "<Right>", function()
+  pcall(vim.cmd, [[checktime]])
+  vim.api.nvim_feedkeys("gt", "n", true)
+end, { desc = "Go to next tab" })
+map("n", "<Left>", function()
+  pcall(vim.cmd, [[checktime]])
+  vim.api.nvim_feedkeys("gT", "n", true)
+end, { desc = "Go to previous tab" })
