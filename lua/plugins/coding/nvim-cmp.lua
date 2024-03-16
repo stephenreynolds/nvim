@@ -50,7 +50,6 @@ return {
           end, { "i", "s" }),
         }),
         sources = cmp.config.sources({
-          -- { name = "copilot" },
           { name = "gh_issues" },
           { name = "nvim_lua" },
           { name = "nvim_lsp" },
@@ -59,6 +58,7 @@ return {
           { name = "luasnip" },
           { name = "buffer",     keyword_length = 5 },
           { name = "neorg" },
+          { name = "copilot" },
         }),
         formatting = {
           format = lspkind.cmp_format({
