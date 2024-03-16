@@ -74,7 +74,7 @@ return {
           -- Inlay hints
           if client.server_capabilities.inlayHintProvider then
             if vim.lsp.buf.inlay_hint or vim.lsp.inlay_hint then
-              vim.keymap.set("n", "<leader>th", function()
+              vim.keymap.set("n", "<leader>Th", function()
                 local ih = vim.lsp.buf.inlay_hint or vim.lsp.inlay_hint
                 local value = not ih.is_enabled(bufnr)
                 if type(ih) == "function" then

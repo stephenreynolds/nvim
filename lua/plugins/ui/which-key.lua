@@ -13,7 +13,7 @@ return {
       ["<leader>N"] = { name = '+notifications' },
       ["<leader>r"] = { name = '+refactor' },
       ["<leader>s"] = { name = '+search' },
-      ["<leader>t"] = { name = '+toggle' },
+      ["<leader>T"] = { name = '+toggle' },
     }
   },
   config = function(_, opts)

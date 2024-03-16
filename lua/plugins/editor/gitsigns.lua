@@ -58,8 +58,8 @@ return {
         end, { desc = "Git diff against last commit" })
 
         -- Toggles
-        map("n", "<leader>tb", gs.toggle_current_line_blame, { desc = "Toggle git blame line" })
-        map("n", "<leader>td", gs.toggle_deleted, { desc = "Toggle git show deleted" })
+        map("n", "<leader>Tb", gs.toggle_current_line_blame, { desc = "Toggle git blame line" })
+        map("n", "<leader>Td", gs.toggle_deleted, { desc = "Toggle git show deleted" })
 
         -- Text object
         map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", { desc = "Select git hunk" })
