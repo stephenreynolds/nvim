@@ -50,7 +50,7 @@ return {
           local client = vim.lsp.get_client_by_id(args.data.client_id)
           local bufnr = args.buf
 
-          vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+          vim.api.nvim_set_option_value("omnifunc", "v:lua.vim.lsp.omnifunc", { buf = bufnr })
 
           -- The following two autocommands are used to highlight references of the
           -- word under your cursor when your cursor rests there for a little while.
