@@ -9,6 +9,7 @@ return {
       dependencies = { "neovim/nvim-lspconfig" },
     },
     { "nvim-tree/nvim-web-devicons", optional = true },
+    "folke/tokyonight.nvim",
   },
   init = function()
     vim.g.lualine_laststatus = vim.o.laststatus
@@ -38,13 +39,25 @@ return {
         lualine_a = { "mode" },
         lualine_b = {
           { "FugitiveHead", icon = "" },
+          {
+            "diff",
+            source = function()
+              local gitsigns = vim.b.gitsigns_status_dict
+              if gitsigns then
+                return {
+                  added = gitsigns.added,
+                  modified = gitsigns.changed,
+                  removed = gitsigns.removed,
+                }
+              end
+            end,
+          },
         },
         lualine_c = {
-          { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
           { "filename", path = 1 },
           {
             "navic",
-            color_correction = nil,
+            color_correction = "static",
             navic_opts = nil,
           },
         },
@@ -75,19 +88,6 @@ return {
           },
           "overseer",
           {
-            "diff",
-            source = function()
-              local gitsigns = vim.b.gitsigns_status_dict
-              if gitsigns then
-                return {
-                  added = gitsigns.added,
-                  modified = gitsigns.changed,
-                  removed = gitsigns.removed,
-                }
-              end
-            end,
-          },
-          {
             -- fileformat: show only when it is not utf-8
             function()
               local ret, _ = (vim.bo.fenc or vim.go.enc):gsub("^utf%-8$", "")
@@ -101,6 +101,7 @@ return {
               return ret
             end,
           },
+          "filetype",
         },
         lualine_y = { "progress" },
         lualine_z = { "location" },
