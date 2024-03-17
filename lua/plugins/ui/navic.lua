@@ -6,6 +6,7 @@ return {
   opts = {
     highlight = true,
     click = true,
+    depth_limit = 5,
     lsp = {
       auto_attach = true,
     },
