@@ -57,7 +57,7 @@ return {
           { "filename", path = 1 },
           {
             "navic",
-            color_correction = "static",
+            color_correction = "dynamic",
             navic_opts = nil,
           },
         },
