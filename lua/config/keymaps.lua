@@ -17,7 +17,7 @@ map("n", "ZA", "<cmd>qa<cr>", { desc = "Quit all" })
 map("n", "ZA!", "<cmd>qa!<cr>", { desc = "Quit all without checking for changes" })
 map("n", "ZZ", "ZZ", { desc = "Write and quit" })
 map("n", "ZZ!", "<cmd>xa<cr>", { desc = "Write and quit all" })
-map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr>", { desc = "Save file" })
+map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>up<cr>", { desc = "Save file" })
 
 -- Better up/down
 map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
@@ -39,8 +39,8 @@ map("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window wi
 map("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
 
 -- Scroll buffer
-map("n", '<Up>', '<C-y>', { desc = "Scroll up" })
-map("n", '<Down>', '<C-e>', { desc = "Scroll down", noremap = true })
+map("n", "<Up>", "<C-y>", { desc = "Scroll up" })
+map("n", "<Down>", "<C-e>", { desc = "Scroll down", noremap = true })
 
 -- Move Lines
 map("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move down" })
