@@ -152,19 +152,6 @@ map("n", "<leader>rw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], {
 -- Terminal mode
 map("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal" })
 
--- Fix opening links since netrw is disabled
-local function url_repo()
-  local cursorword = vim.fn.expand("<cfile>")
-  if string.find(cursorword, "^[a-zA-Z0-9-_.]*/[a-zA-Z0-9-_.]*$") then
-    cursorword = "https://github.com/" .. cursorword
-  end
-  return cursorword or ""
-end
-
-map("n", "gx", function()
-  vim.fn.jobstart({ "xdg-open", url_repo() }, { detach = true })
-end, { silent = true })
-
 -- Tabs
 map("n", "<leader>tt", "<cmd>tab new<cr>", { desc = "Open new tab" })
 map("n", "<leader>ts", "<C-W><S-T>", { desc = "Move current buffer to new tab" })
