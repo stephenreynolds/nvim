@@ -16,7 +16,7 @@ return {
           settings = {
             ["nil"] = {
               formatting = {
-                command = { "nixfmt" },
+                command = { "nix fmt || nixfmt" },
               },
               nix = {
                 maxMemoryMB = 6144,
