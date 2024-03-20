@@ -35,8 +35,8 @@
           isort
           jq
           lldb
-          luajit
           lua-language-server
+          luajit
           luarocks
           markdownlint-cli
           marksman
@@ -53,6 +53,7 @@
           shfmt
           stylua
           tailwindcss-language-server
+          taplo
           tree-sitter
           unzip
           vscode-langservers-extracted
