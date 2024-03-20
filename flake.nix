@@ -52,6 +52,7 @@
           shellcheck
           shfmt
           stylua
+          tailwindcss-language-server
           tree-sitter
           unzip
           vscode-langservers-extracted
