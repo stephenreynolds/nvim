@@ -40,7 +40,8 @@
           luarocks
           markdownlint-cli
           marksman
-          nil
+          # nil
+          nixd
           nixfmt
           nodePackages.bash-language-server
           nodePackages.typescript-language-server
