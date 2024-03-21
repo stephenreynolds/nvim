@@ -13,6 +13,12 @@ return {
       floats = "transparent",
     },
     lualine_bold = true,
+    on_highlights = function(hl)
+      hl.LspInlayHint = {
+        bg = nil,
+        fg = hl.LspInlayHint.fg,
+      }
+    end,
   },
   config = function(_, opts)
     require("tokyonight").setup(opts)
