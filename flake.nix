@@ -41,7 +41,7 @@
           markdownlint-cli
           marksman
           nil
-          nixfmt
+          nixpkgs-fmt
           nodePackages.bash-language-server
           nodePackages.typescript-language-server
           prettierd
