@@ -1,5 +1,6 @@
 return {
   "rcarriga/nvim-notify",
+  enabled = false,
   opts = {
     timeout = 3000,
     max_height = function()

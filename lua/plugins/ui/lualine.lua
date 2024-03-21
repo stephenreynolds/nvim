@@ -63,20 +63,20 @@ return {
         },
         lualine_x = {
           "diagnostics",
-          {
-            require("noice").api.status.command.get,
-            cond = function()
-              return package.loaded["noice"] and require("noice").api.status.search.has()
-            end,
-            color = utils.fg("Statement"),
-          },
-          {
-            require("noice").api.status.mode.get,
-            cond = function()
-              return package.loaded["noice"] and require("noice").api.status.search.has()
-            end,
-            color = utils.fg("Constant"),
-          },
+          -- {
+          --   require("noice").api.status.command.get,
+          --   cond = function()
+          --     return package.loaded["noice"] and require("noice").api.status.search.has()
+          --   end,
+          --   color = utils.fg("Statement"),
+          -- },
+          -- {
+          --   require("noice").api.status.mode.get,
+          --   cond = function()
+          --     return package.loaded["noice"] and require("noice").api.status.search.has()
+          --   end,
+          --   color = utils.fg("Constant"),
+          -- },
           {
             function()
               return "  " .. require("dap").status()

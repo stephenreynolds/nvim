@@ -1,6 +1,15 @@
 return {
   "folke/noice.nvim",
+  enabled = false,
   event = "VeryLazy",
+  dependencies = {
+    "MunifTanjim/nui.nvim",
+    "nvim-treesitter/nvim-treesitter",
+    {
+      "rcarriga/nvim-notify",
+      optional = true,
+    },
+  },
   opts = {
     lsp = {
       override = {
@@ -21,12 +30,24 @@ return {
         },
         view = "mini",
       },
+      {
+        view = "notify",
+        filter = { event = "msg_showmode" },
+      },
     },
     presets = {
       bottom_search = true,
       command_palette = true,
       long_message_to_split = true,
       inc_rename = true,
+    },
+    cmdline = {
+      enabled = true,
+      view = "cmdline",
+    },
+    hover = {
+      enabled = true,
+      silent = true,
     },
   },
   keys = {
