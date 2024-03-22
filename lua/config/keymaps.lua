@@ -150,6 +150,7 @@ map("n", "<leader>rw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], {
 
 -- Terminal mode
 map("n", "<leader>vv", "<cmd>terminal<cr>", { desc = "Open new terminal" })
+map("n", "<leader>vV", "<cmd>tab terminal<cr>", { desc = "Open new terminal in new tab" })
 map("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal" })
 
 -- Tabs
