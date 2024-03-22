@@ -9,16 +9,6 @@ map({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 map("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 map("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
--- Quit and write
-map("n", "ZQ", "<cmd>q<cr>", { desc = "Quit" })
-map("n", "ZX", "<cmd>q<cr>", { desc = "Quit" })
-map("n", "ZX!", "ZQ", { desc = "Quit without checking for changes" })
-map("n", "ZA", "<cmd>qa<cr>", { desc = "Quit all" })
-map("n", "ZA!", "<cmd>qa!<cr>", { desc = "Quit all without checking for changes" })
-map("n", "ZZ", "ZZ", { desc = "Write and quit" })
-map("n", "ZZ!", "<cmd>xa<cr>", { desc = "Write and quit all" })
-map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>up<cr>", { desc = "Save file" })
-
 -- Better up/down
 map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 map({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
