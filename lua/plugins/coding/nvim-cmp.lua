@@ -10,7 +10,11 @@ return {
       "hrsh7th/cmp-nvim-lua",
       "hrsh7th/cmp-cmdline",
       "saadparwaiz1/cmp_luasnip",
-      "petertriho/cmp-git",
+      {
+        "petertriho/cmp-git",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        opts = {},
+      },
       "onsails/lspkind.nvim",
       "nvim-autopairs",
     },
@@ -50,7 +54,7 @@ return {
           end, { "i", "s" }),
         }),
         sources = cmp.config.sources({
-          { name = "gh_issues" },
+          { name = "git" },
           { name = "nvim_lua" },
           { name = "nvim_lsp" },
           { name = "path" },
