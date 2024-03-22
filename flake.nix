@@ -32,11 +32,13 @@
           go
           gofumpt
           gotools
+          imagemagick
           isort
           jq
           lldb
           lua-language-server
           luajit
+          luajitPackages.magick
           luarocks
           markdownlint-cli
           marksman
@@ -61,7 +63,8 @@
           yaml-language-server
           yamlfmt
         ]);
-    in {
+    in
+    {
       inherit runtimeDependencies;
 
       homeManagerModules.default = import ./nix/hm-module.nix self;

@@ -8,6 +8,7 @@ in {
       package = self.inputs.neovim.defaultPackage.${system};
       withNodeJs = true;
       extraPackages = self.runtimeDependencies.${system};
+      extraLuaPackages = ps: [ ps.magick ];
     };
 
     home.sessionVariables = { NVIM_SQLITE_PATH = pkgs.sqlite.out; };
