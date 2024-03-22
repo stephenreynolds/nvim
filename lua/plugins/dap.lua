@@ -1,12 +1,12 @@
 return {
   {
-    'mfussenegger/nvim-dap',
+    "mfussenegger/nvim-dap",
     dependencies = {
-      'rcarriga/nvim-dap-ui',
+      { "rcarriga/nvim-dap-ui", dependencies = { "nvim-neotest/nvim-nio" } },
     },
     config = function(_, opts)
-      local dap = require('dap')
-      local dapui = require('dapui')
+      local dap = require("dap")
+      local dapui = require("dapui")
       dapui.setup(opts)
       dap.listeners.after.event_initialized["dapui_config"] = function()
         dapui.open({})
@@ -17,7 +17,7 @@ return {
       dap.listeners.before.event_exited["dapui_config"] = function()
         dapui.close({})
       end
-    end
+    end,
   },
 
   {
@@ -26,13 +26,13 @@ return {
   },
 
   {
-    'folke/which-key.nvim',
+    "folke/which-key.nvim",
     optional = true,
     opts = {
       defaults = {
-        ['<leader>d'] = { name = '+debug' },
-        ['<leader>db'] = { name = '+breakpoints' }
-      }
-    }
-  }
+        ["<leader>d"] = { name = "+debug" },
+        ["<leader>db"] = { name = "+breakpoints" },
+      },
+    },
+  },
 }
