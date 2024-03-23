@@ -4,16 +4,6 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
-      {
-        "folke/neodev.nvim",
-        ft = "lua",
-        opts = {
-          library = {
-            plugins = { "nvim-dap-ui" },
-            types = true,
-          },
-        },
-      },
     },
     event = "BufEnter",
     opts = {
