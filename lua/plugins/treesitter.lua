@@ -6,7 +6,6 @@ return {
     cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
     dependencies = {
       "nvim-treesitter/nvim-treesitter-textobjects",
-      "luckasRanarison/tree-sitter-hypr",
     },
     build = ":TSUpdate",
     init = function(plugin)
@@ -113,12 +112,9 @@ return {
       end
       require("nvim-treesitter.configs").setup(opts)
 
-      vim.filetype.add {
-        extension = { rasi = 'rasi' },
-        pattern = {
-          ['.*/hypr/.*%.conf'] = 'hyprlang',
-        },
-      }
+      vim.filetype.add({
+        pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
+      })
     end,
   },
 
