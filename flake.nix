@@ -30,6 +30,7 @@
           gnumake
           go
           gofumpt
+          gopls
           gotools
           imagemagick
           isort
