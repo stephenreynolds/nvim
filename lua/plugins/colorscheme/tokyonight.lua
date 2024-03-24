@@ -6,6 +6,7 @@ return {
   opts = {
     style = "night",
     transparent = true,
+    terminal_colors = false,
     styles = {
       comments = { italic = false },
       keywords = { italic = false },
