@@ -1,8 +1,8 @@
 return {
   {
     "nvim-neorg/neorg",
-    ft = "norg",
-    build = ":Neorg sync-parsers",
+    lazy = false,
+    version = "*",
     dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
@@ -10,6 +10,11 @@ return {
       "nvim-cmp",
       "nvim-neorg/neorg-telescope",
       { "3rd/image.nvim", opts = {} },
+      {
+        "vhyrro/luarocks.nvim",
+        priority = 1000,
+        config = true,
+      },
     },
     cmd = "Neorg",
     config = function()
