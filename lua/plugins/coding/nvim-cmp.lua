@@ -84,10 +84,6 @@ return {
             -- },
           }),
         },
-        window = {
-          completion = cmp.config.window.bordered(),
-          documentation = cmp.config.window.bordered(),
-        },
         experimental = {
           ghost_text = {
             hl_group = "CmpGhostText",
