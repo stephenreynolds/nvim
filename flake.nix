@@ -46,6 +46,7 @@
           nixpkgs-fmt
           nodePackages.bash-language-server
           nodePackages.typescript-language-server
+          phpactor
           prettierd
           pyright
           ripgrep
