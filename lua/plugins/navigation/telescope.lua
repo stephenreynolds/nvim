@@ -31,6 +31,12 @@ return {
       selection_strategy = "reset",
       sorting_strategy = "ascending",
 
+      file_ignore_patterns = {
+        ".git",
+        ".direnv",
+        "node_modules",
+      },
+
       layout_strategy = "flex",
       layout_config = {
         horizontal = {
@@ -79,9 +85,15 @@ return {
     },
     {
       "<leader>f",
-      "<cmd>Telescope find_files<cr>",
       require("telescope.builtin").find_files,
-      desc = "Find file",
+      desc = "Find files",
+    },
+    {
+      "<leader>F",
+      function()
+        require("telescope.builtin").find_files({ hidden = true, no_ignore = true })
+      end,
+      desc = "Find all files",
     },
     {
       "<leader>sf",
