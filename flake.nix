@@ -49,7 +49,6 @@
           php
           phpactor
           php83Packages.composer
-          php83Packages.php-cs-fixer
           prettierd
           pyright
           ripgrep

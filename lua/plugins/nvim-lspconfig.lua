@@ -189,8 +189,12 @@ return {
         local is_nixos = vim.fn.system("nixos-version") ~= ""
         for _, tool in ipairs(opts.ensure_installed) do
           local should_install = true
-          if is_nixos and tool ~= "js-debug-adapter" then
-            should_install = false
+          if is_nixos then
+            local tools = {
+              ["js-debug-adapter"] = true,
+              ["pint"] = true,
+            }
+            should_install = tools[tool]
           end
           local p = mr.get_package(tool)
           if should_install and not p:is_installed() then
