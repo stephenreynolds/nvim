@@ -11,6 +11,7 @@ return {
             "javascript",
             "javascriptreact",
             "less",
+            "php",
             "sass",
             "scss",
             "svelte",
