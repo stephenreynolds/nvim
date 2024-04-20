@@ -192,6 +192,7 @@ return {
           if is_nixos then
             local tools = {
               ["js-debug-adapter"] = true,
+              ["nginx-language-server"] = true,
               ["pint"] = true,
             }
             should_install = tools[tool]
