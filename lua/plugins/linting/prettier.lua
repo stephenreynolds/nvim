@@ -1,14 +1,5 @@
 return {
   {
-    "neovim/nvim-lspconfig",
-    opts = {
-      servers = {
-        prettierd = {},
-      },
-    },
-  },
-
-  {
     "williamboman/mason.nvim",
     optional = true,
     opts = function(_, opts)
