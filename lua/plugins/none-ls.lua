@@ -1,3 +1,4 @@
 return {
-  "nvimtools/none-ls.nvim"
+  "nvimtools/none-ls.nvim",
+  event = "VeryLazy",
 }
