@@ -16,6 +16,7 @@
 
       runtimeDependencies = genSystems (system:
         with pkgs.${system}; [
+          ansible-language-server
           black
           cargo
           clang-tools
