@@ -141,5 +141,12 @@ return {
   {
     "windwp/nvim-ts-autotag",
     event = { "BufEnter", "VeryLazy" },
+    ft = {
+      "html",
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact",
+    },
   },
 }
