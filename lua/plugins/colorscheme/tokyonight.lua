@@ -24,5 +24,6 @@ return {
   config = function(_, opts)
     require("tokyonight").setup(opts)
     vim.cmd.hi("Comment gui=none")
+    vim.cmd.colorscheme("tokyonight")
   end,
 }
