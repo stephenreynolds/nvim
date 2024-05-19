@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     neovim = {
-      url = "github:neovim/neovim/nightly?dir=contrib";
+      url = "github:neovim/neovim/stable?dir=contrib";
     };
   };
 
