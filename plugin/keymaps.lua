@@ -88,12 +88,6 @@ map("n", "N", "Nzzzv", { desc = "Jump to previous search result" })
 map({ "n", "v" }, "<leader>y", '"+y', { desc = "Copy to system clipboard" })
 map("n", "<leader>Y", '"+Y', { desc = "Copy line to system clipboard" })
 
--- Move to next/previous error in quickfix list
-map("n", "<C-up>", "<cmd>cnext<cr>zz", { desc = "Next error" })
-map("n", "<C-k>", "<cmd>cnext<cr>zz", { desc = "Next error" })
-map("n", "<C-down>", "<cmd>cprev<cr>zz", { desc = "Previous error" })
-map("n", "<C-j>", "<cmd>cprev<cr>zz", { desc = "Previous error" })
-
 -- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
 map("n", "n", "'Nn'[v:searchforward].'zv'", { expr = true, desc = "Next search result" })
 map("x", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
