@@ -26,16 +26,16 @@ return {
     },
   },
 
-  -- {
-  --   "stevearc/conform.nvim",
-  --   enable = false,
-  --   optional = true,
-  --   opts = {
-  --     formatters_by_ft = {
-  --       php = { "pint" },
-  --     },
-  --   },
-  -- },
+  {
+    "stevearc/conform.nvim",
+    enable = false,
+    optional = true,
+    opts = {
+      formatters_by_ft = {
+        php = { "pint" },
+      },
+    },
+  },
 
   {
     "mfussenegger/nvim-dap",
