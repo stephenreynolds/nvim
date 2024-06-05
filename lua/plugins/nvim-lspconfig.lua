@@ -183,7 +183,7 @@ return {
         end, 100)
       end)
       local function ensure_installed()
-        local is_nixos = vim.fn.system("nixos-version") ~= ""
+        local is_nixos = vim.fn.executable("nixos-version") == 1
         for _, tool in ipairs(opts.ensure_installed) do
           local should_install = true
           if is_nixos then
