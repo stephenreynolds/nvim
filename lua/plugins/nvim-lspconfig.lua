@@ -96,7 +96,7 @@ return {
           vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = bufnr, remap = false, desc = "Hover" })
 
           -- Format the current buffer
-          vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format, { buffer = bufnr, remap = false, desc = "Hover" })
+          vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format, { buffer = bufnr, remap = false, desc = "Format" })
 
           -- Opens a popup that displays diagnostics for the current buffer
           vim.keymap.set("n", "<leader>ld", vim.diagnostic.open_float, { buffer = bufnr, remap = false, desc = "Open diagnostics popup" })
