@@ -135,8 +135,8 @@ map("n", "<leader>vV", "<cmd>tab terminal<cr>", { desc = "Open new terminal in n
 map("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal" })
 
 -- Tabs
-map("n", "<leader>tt", "<cmd>tab new<cr>", { desc = "Open new tab" })
-map("n", "<leader>ts", "<C-W><S-T>", { desc = "Move current buffer to new tab" })
+map("n", "<leader>bt", "<cmd>tab new<cr>", { desc = "Open new tab" })
+map("n", "<leader>bs", "<C-W><S-T>", { desc = "Move current buffer to new tab" })
 map("n", "<Right>", function()
   pcall(vim.cmd, [[checktime]])
   vim.api.nvim_feedkeys("gt", "n", true)
