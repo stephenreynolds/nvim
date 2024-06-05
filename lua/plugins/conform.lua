@@ -29,45 +29,52 @@ return {
       if args.bang then
         -- FormatDisable! will disable formatting just for this buffer
         vim.b.disable_autoformat = true
+        print("Disabled format on save for this buffer.")
       else
         vim.g.disable_autoformat = true
+        print("Disabled format on save.")
       end
     end, {
-      desc = "Disable autoformat-on-save",
+      desc = "Disable format on save",
       bang = true,
     })
     vim.api.nvim_create_user_command("FormatEnable", function()
       vim.b.disable_autoformat = false
       vim.g.disable_autoformat = false
+      print("Enabled format on save.")
     end, {
-      desc = "Re-enable autoformat-on-save",
+      desc = "Enable format on save",
     })
-  end,
-  keys = {
-    {
-      "<leader>lFF",
-      function()
-        vim.g.disable_autoformat = not vim.g.disable_autoformat
-
-        if vim.g.disable_autoformat then
-          print("Disabled format on save.")
-        else
-          print("Enabled format on save.")
-        end
-      end,
-      desc = "Toggle format on save",
-    },
-    {
-      "<leader>lFb",
-      function()
+    vim.api.nvim_create_user_command("FormatToggle", function(args)
+      if args.bang then
         vim.b.disable_autoformat = not vim.b.disable_autoformat
-
         if vim.b.disable_autoformat then
           print("Disabled format on save for this buffer.")
         else
           print("Enabled format on save for this buffer.")
         end
-      end,
+      else
+        vim.g.disable_autoformat = not vim.g.disable_autoformat
+        if vim.g.disable_autoformat then
+          print("Disabled format on save.")
+        else
+          print("Enabled format on save.")
+        end
+      end
+    end, {
+      desc = "Toggle format on save",
+      bang = true,
+    })
+  end,
+  keys = {
+    {
+      "<leader>lft",
+      "<cmd>FormatToggle<cr>",
+      desc = "Toggle format on save",
+    },
+    {
+      "<leader>lfb",
+      "<cmd>FormatToggle!<cr>",
       desc = "Toggle format on save for this buffer",
     },
   },
