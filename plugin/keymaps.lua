@@ -132,6 +132,13 @@ map("n", "<leader>rw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], {
 -- Terminal mode
 map("n", "<leader>vv", "<cmd>terminal<cr>", { desc = "Open new terminal" })
 map("n", "<leader>vV", "<cmd>tab terminal<cr>", { desc = "Open new terminal in new tab" })
+map("n", "<leader>vb", function()
+  vim.cmd.new()
+  vim.cmd.wincmd("J")
+  vim.api.nvim_win_set_height(0, 12)
+  vim.wo.winfixheight = true
+  vim.cmd.term()
+end, { desc = "Open new terminal at bottom" })
 map("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal" })
 
 -- Tabs
