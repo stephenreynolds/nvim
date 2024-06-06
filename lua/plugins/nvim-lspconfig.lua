@@ -35,6 +35,56 @@ return {
         update_in_insert = false,
       })
 
+      local function setup_highlight_under_cursor(client, bufnr)
+        if client.server_capabilities.documentHighlightProvider then
+          vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+            buffer = bufnr,
+            callback = vim.lsp.buf.document_highlight,
+          })
+
+          vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
+            buffer = bufnr,
+            callback = vim.lsp.buf.clear_references,
+          })
+        end
+      end
+
+      local function setup_inlay_hints(client, bufnr)
+        if client.server_capabilities.inlayHintProvider then
+          vim.keymap.set("n", "<leader>Th", function()
+            vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ nil }))
+          end, { buffer = bufnr, remap = false, desc = "Toggle inlay hints" })
+        end
+      end
+
+      local function setup_codelens_refresh(client, bufnr)
+        local status_ok, codelens_supported = pcall(function()
+          return client.supports_method("textDocument/codeLens")
+        end)
+        if not status_ok or not codelens_supported then
+          return
+        end
+        local group = "lsp_code_lens_refresh"
+        local cl_events = { "BufEnter", "InsertLeave" }
+        local ok, cl_autocmds = pcall(vim.api.nvim_get_autocmds, {
+          group = group,
+          buffer = bufnr,
+          event = cl_events,
+        })
+
+        if ok and #cl_autocmds > 0 then
+          return
+        end
+        vim.api.nvim_create_augroup(group, { clear = false })
+        vim.api.nvim_create_autocmd(cl_events, {
+          group = group,
+          buffer = bufnr,
+          callback = function()
+            vim.lsp.codelens.refresh({ bufnr = bufnr })
+          end,
+        })
+      end
+
       vim.api.nvim_create_autocmd("LspAttach", {
         group = vim.api.nvim_create_augroup("UserLspConfig", {}),
         callback = function(args)
@@ -43,31 +93,13 @@ return {
 
           vim.api.nvim_set_option_value("omnifunc", "v:lua.vim.lsp.omnifunc", { buf = bufnr })
 
-          -- The following two autocommands are used to highlight references of the
-          -- word under your cursor when your cursor rests there for a little while.
-          --    See `:help CursorHold` for information about when this is executed
-          --
-          -- When you move your cursor, the highlights will be cleared (the second autocommand).
-          if client.server_capabilities.documentHighlightProvider then
-            vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
-              buffer = args.buf,
-              callback = vim.lsp.buf.document_highlight,
-            })
+          setup_highlight_under_cursor(client, bufnr)
 
-            vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
-              buffer = args.buf,
-              callback = vim.lsp.buf.clear_references,
-            })
-          end
+          setup_inlay_hints(client, bufnr)
+
+          setup_codelens_refresh(client, bufnr)
 
           vim.keymap.set("n", "<leader>li", "<cmd>LspInfo<cr>", { buffer = bufnr, remap = false, desc = "Info" })
-
-          -- Inlay hints
-          if client.server_capabilities.inlayHintProvider then
-            vim.keymap.set("n", "<leader>Th", function()
-              vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-            end, { buffer = bufnr, remap = false, desc = "Toggle inlay hints" })
-          end
 
           -- Jump to the definition of the word under your cursor.
           --  This is where a variable was first declared, or where a function is defined, etc.
