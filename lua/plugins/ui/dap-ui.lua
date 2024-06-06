@@ -39,35 +39,51 @@ return {
     },
     -- Continue
     {
-      "<F5>",
+      "<F1>",
       function()
         require("dap").continue()
       end,
       desc = "Continue",
     },
-    -- Step over
-    {
-      "<F10>",
-      function()
-        require("dap").step_over()
-      end,
-      desc = "Step over",
-    },
     -- Step into
     {
-      "<F11>",
+      "<F2>",
       function()
         require("dap").step_into()
       end,
       desc = "Step into",
     },
+    -- Step over
+    {
+      "<F3>",
+      function()
+        require("dap").step_over()
+      end,
+      desc = "Step over",
+    },
     -- Step out
     {
-      "<F12>",
+      "<F4>",
       function()
         require("dap").step_out()
       end,
       desc = "Step out",
+    },
+    -- Step back
+    {
+      "<F5>",
+      function()
+        require("dap").step_back()
+      end,
+      desc = "Step back",
+    },
+    -- Step back
+    {
+      "<F12>",
+      function()
+        require("dap").restart()
+      end,
+      desc = "Restart",
     },
     -- Run last session
     {
