@@ -14,6 +14,12 @@ return {
         winblend = 0,
       },
     },
+    keymaps = {
+      ["<C-h>"] = false,
+      ["<M-h>"] = "actions.select_split",
+      ["<C-l>"] = false,
+      ["<M-l>"] = "actions.refresh",
+    },
   },
   keys = {
     {
