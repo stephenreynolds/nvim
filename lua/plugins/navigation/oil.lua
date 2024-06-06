@@ -23,7 +23,7 @@ return {
   },
   keys = {
     {
-      "<leader>e",
+      "-",
       "<cmd>Oil<cr>",
       desc = "Open file explorer",
     },
