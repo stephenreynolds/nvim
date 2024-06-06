@@ -7,29 +7,15 @@ return {
 
     dapui.setup(opts)
 
-    vim.fn.sign_define(
-      "DapBreakpoint",
-      { text = "", texthl = "DapBreakpoint", linehl = "DapBreakpointLine", numhl = "DapBreakpoint" }
-    )
-    vim.fn.sign_define(
-      "DapBreakpointRejected",
-      { text = "", texthl = "DapBreakpointRejected", linehl = "DapBreakpointLine", numhl = "DapBreakpoint" }
-    )
-    vim.fn.sign_define(
-      "DapStopped",
-      { text = "", texthl = "DapStopped", linehl = "DapStoppedLine", numhl = "DapStopped" }
-    )
-    vim.fn.sign_define(
-      "DapBreakpointCondition",
-      { text = "", texthl = "DapBreakpointCondition", linehl = "", numhl = "" }
-    )
-    vim.fn.sign_define(
-      "DapLogPoint",
-      { text = "◆", texthl = "DapLogPoint", linehl = "DapLogPointLine", numhl = "DapLogPoint" }
-    )
+    vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DapBreakpoint", linehl = "DapBreakpointLine", numhl = "DapBreakpoint" })
+    vim.fn.sign_define("DapBreakpointRejected", { text = "", texthl = "DapBreakpointRejected", linehl = "DapBreakpointLine", numhl = "DapBreakpoint" })
+    vim.fn.sign_define("DapStopped", { text = "", texthl = "DapStopped", linehl = "DapStoppedLine", numhl = "DapStopped" })
+    vim.fn.sign_define("DapBreakpointCondition", { text = "", texthl = "DapBreakpointCondition", linehl = "", numhl = "" })
+    vim.fn.sign_define("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "DapLogPointLine", numhl = "DapLogPoint" })
 
     -- Open and close when debugger is run/terminated.
-    dap.listeners.after.event_initialized["dapui_config"] = dapui.open
+    dap.listeners.before.attach["dapui_config"] = dapui.open
+    dap.listeners.before.launch["dapui_config"] = dapui.open
     dap.listeners.before.event_terminated["dapui_config"] = dapui.close
     dap.listeners.before.event_exited["dapui_config"] = dapui.close
   end,
