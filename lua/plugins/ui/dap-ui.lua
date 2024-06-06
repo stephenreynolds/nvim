@@ -32,10 +32,9 @@ return {
     {
       "<leader>de",
       function()
-        require("dapui").eval()
+        require("dapui").eval(nil, { enter = true })
       end,
       desc = "Evaluate expression",
-      mode = "v",
     },
     -- Continue
     {
