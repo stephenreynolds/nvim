@@ -1,6 +1,6 @@
 return {
   "j-hui/fidget.nvim",
-  enabled = false,
+  enabled = true,
   lazy = false,
   opts = {
     notification = {
