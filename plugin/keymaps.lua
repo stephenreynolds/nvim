@@ -143,6 +143,7 @@ map("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal" })
 
 -- Tabs
 map("n", "<leader>bt", "<cmd>tab new<cr>", { desc = "Open new tab" })
+map("n", "<leader>bc", "<cmd>tab close<cr>", { desc = "Close tab" })
 map("n", "<leader>bs", "<C-W><S-T>", { desc = "Move current buffer to new tab" })
 map("n", "<Right>", function()
   pcall(vim.cmd, [[checktime]])
