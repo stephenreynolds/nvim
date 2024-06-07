@@ -50,11 +50,12 @@ return {
       end
 
       local function setup_inlay_hints(client, bufnr)
-        if client.server_capabilities.inlayHintProvider then
-          vim.keymap.set("n", "<leader>Th", function()
-            vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ nil }))
-          end, { buffer = bufnr, remap = false, desc = "Toggle inlay hints" })
+        if not client.server_capabilities.inlayHintProvider then
+          return
         end
+        vim.keymap.set("n", "<leader>Th", function()
+          vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ nil }))
+        end, { buffer = bufnr, remap = false, desc = "Inlay hints" })
       end
 
       local function setup_codelens_refresh(client, bufnr)
