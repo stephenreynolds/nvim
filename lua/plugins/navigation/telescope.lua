@@ -32,8 +32,8 @@ return {
       sorting_strategy = "ascending",
 
       file_ignore_patterns = {
-        ".git",
-        ".direnv",
+        "\\.git",
+        "\\.direnv",
         "node_modules",
       },
 
