@@ -1,14 +1,10 @@
 return {
   "folke/noice.nvim",
-  enabled = false,
   event = "VeryLazy",
   dependencies = {
     "MunifTanjim/nui.nvim",
     "nvim-treesitter/nvim-treesitter",
-    {
-      "rcarriga/nvim-notify",
-      optional = true,
-    },
+    "rcarriga/nvim-notify",
   },
   opts = {
     lsp = {
@@ -40,6 +36,7 @@ return {
       command_palette = true,
       long_message_to_split = true,
       inc_rename = true,
+      lsp_doc_border = true,
     },
     cmdline = {
       enabled = true,
@@ -68,9 +65,7 @@ return {
     },
     {
       "<leader>Nh",
-      function()
-        require("noice").cmd("history")
-      end,
+      "<cmd>Telescope notify<cr>",
       desc = "Notification history",
     },
     {

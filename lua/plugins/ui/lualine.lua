@@ -52,6 +52,7 @@ return {
               end
             end,
           },
+          "diagnostics",
         },
         lualine_c = {
           { "filename", path = 1 },
@@ -62,21 +63,11 @@ return {
           },
         },
         lualine_x = {
-          "diagnostics",
-          -- {
-          --   require("noice").api.status.command.get,
-          --   cond = function()
-          --     return package.loaded["noice"] and require("noice").api.status.search.has()
-          --   end,
-          --   color = utils.fg("Statement"),
-          -- },
-          -- {
-          --   require("noice").api.status.mode.get,
-          --   cond = function()
-          --     return package.loaded["noice"] and require("noice").api.status.search.has()
-          --   end,
-          --   color = utils.fg("Constant"),
-          -- },
+          {
+            require("noice").api.statusline.mode.get,
+            cond = require("noice").api.statusline.mode.has,
+            color = { fg = "#ff9e64" },
+          },
           {
             function()
               return "  " .. require("dap").status()
