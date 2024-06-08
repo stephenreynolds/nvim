@@ -28,7 +28,6 @@ return {
 
   {
     "stevearc/conform.nvim",
-    enable = false,
     optional = true,
     opts = {
       formatters_by_ft = {
@@ -71,6 +70,28 @@ return {
           },
         }
       end
+    end,
+  },
+
+  {
+    "nvim-neotest/neotest",
+    optional = true,
+    dependencies = {
+      "V13Axel/neotest-pest",
+    },
+    opts = function(_, opts)
+      opts.adapters = opts.adapters or {}
+      table.insert(
+        opts.adapters,
+        require("neotest-pest")({
+          pest_cmd = function()
+            return "vendor/bin/pest"
+          end,
+          sail_enabled = function()
+            return false
+          end,
+        })
+      )
     end,
   },
 }
