@@ -12,6 +12,7 @@ return {
       vim.api.nvim_win_set_config(win, { zindex = 100 })
     end,
     render = "wrapped-compact",
+    top_down = false,
   },
   keys = {
     {
