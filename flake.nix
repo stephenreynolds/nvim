@@ -50,6 +50,7 @@
           phpactor
           php83
           php83Packages.composer
+          php83Extensions.xdebug
           prettierd
           pyright
           ripgrep
