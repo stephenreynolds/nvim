@@ -88,6 +88,12 @@ return {
           },
           "overseer",
           {
+            -- tab size
+            function()
+              return "Spaces: " .. vim.bo.shiftwidth
+            end,
+          },
+          {
             -- fileformat: show only when it is not utf-8
             function()
               local ret, _ = (vim.bo.fenc or vim.go.enc):gsub("^utf%-8$", "")
