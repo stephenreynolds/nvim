@@ -13,7 +13,7 @@ return {
     optional = true,
     opts = function(_, opts)
       opts.ensure_installed = opts.ensure_installed or {}
-      vim.list_extend(opts.ensure_installed, { "phpactor", "pint" })
+      vim.list_extend(opts.ensure_installed, { "phpactor", "php-cs-fixer" })
     end,
   },
 
@@ -31,7 +31,24 @@ return {
     optional = true,
     opts = {
       formatters_by_ft = {
-        php = { "pint" },
+        php = { "php-cs-fixer" },
+      },
+      formatters = {
+        ["php-cs-fixer"] = {
+          command = "php-cs-fixer",
+          args = function(_, ctx)
+            local args = { "fix", "$FILENAME", "--quiet", "--no-interaction", "--using-cache=no" }
+            local found = vim.fs.find(".php-cs-fixer.dist.php", { upward = true, path = ctx.dirname })[1]
+            if found then
+              vim.list_extend(args, { "--config=" .. found })
+            else
+              vim.list_extend(args, { "--rules=@PER-CS" })
+            end
+
+            return args
+          end,
+          stdin = false,
+        },
       },
     },
   },

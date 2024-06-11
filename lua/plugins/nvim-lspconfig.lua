@@ -216,7 +216,6 @@ return {
               ["js-debug-adapter"] = true,
               ["php-debug-adapter"] = true,
               ["nginx-language-server"] = true,
-              ["pint"] = true,
             }
             should_install = tools[tool]
           end
