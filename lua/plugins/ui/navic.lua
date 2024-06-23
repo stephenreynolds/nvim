@@ -9,6 +9,12 @@ return {
     depth_limit = 5,
     lsp = {
       auto_attach = true,
+      lsp = {
+        preference = {
+          "nixd",
+          "nil_ls",
+        },
+      },
     },
     icons = {
       File = " ",
