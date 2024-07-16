@@ -18,6 +18,7 @@ return {
             "pug",
             "typescriptreact",
             "vue",
+            "blade",
           },
           init_options = {
             html = {
