@@ -1,11 +1,10 @@
 self:
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 let system = pkgs.stdenv.hostPlatform.system;
 in {
   config = {
     programs.neovim = {
-      package = self.inputs.neovim.defaultPackage.${system};
       withNodeJs = true;
       extraPackages = self.runtimeDependencies.${system};
       extraLuaPackages = ps: [ ps.magick ];

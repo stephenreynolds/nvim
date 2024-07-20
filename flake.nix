@@ -3,9 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    neovim = {
-      url = "github:neovim/neovim/stable?dir=contrib";
-    };
   };
 
   outputs = { self, nixpkgs, ... }@inputs:
@@ -80,7 +77,7 @@
         with pkgs.${system}; {
           default = mkShell {
             buildInputs = [
-              inputs.neovim.defaultPackage.${system}
+              neovim
               nodejs
               (writeShellScriptBin "nvim-dev" ''
                 NVIM_APPNAME=nvim-dev nvim $@
