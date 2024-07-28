@@ -6,7 +6,10 @@ return {
     ring = { storage = jit.os:find("Windows") and "shada" or "sqlite" },
   },
   config = function(_, opts)
-    vim.g.sqlite_clib_path = os.getenv("NVIM_SQLITE_PATH") .. "/lib/libsqlite3.so"
+    local is_nixos = vim.fn.executable("nixos-version") == 1
+    if is_nixos then
+      vim.g.sqlite_clib_path = os.getenv("NVIM_SQLITE_PATH") .. "/lib/libsqlite3.so"
+    end
     require("yanky").setup(opts)
   end,
   keys = {
