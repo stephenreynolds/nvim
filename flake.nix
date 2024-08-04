@@ -43,6 +43,7 @@
           nil
           nixd
           nixpkgs-fmt
+          nodejs
           nodePackages.bash-language-server
           nodePackages.typescript-language-server
           phpactor
