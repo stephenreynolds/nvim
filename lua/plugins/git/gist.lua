@@ -38,8 +38,8 @@ return {
     "folke/which-key.nvim",
     optional = true,
     opts = {
-      defaults = {
-        ["<leader>gG"] = { name = "+gist" },
+      {
+        { "<leader>gG", group = "+gist" },
       },
     },
   },

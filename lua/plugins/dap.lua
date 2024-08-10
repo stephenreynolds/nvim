@@ -28,15 +28,4 @@ return {
     "theHamsta/nvim-dap-virtual-text",
     opts = {},
   },
-
-  {
-    "folke/which-key.nvim",
-    optional = true,
-    opts = {
-      defaults = {
-        ["<leader>d"] = { name = "+debug" },
-        ["<leader>db"] = { name = "+breakpoints" },
-      },
-    },
-  },
 }

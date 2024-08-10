@@ -30,8 +30,8 @@ return {
     "folke/which-key.nvim",
     optional = true,
     opts = {
-      defaults = {
-        ["<leader>gw"] = { name = "+worktree" },
+      {
+        { "<leader>gw", group = "+worktree" },
       },
     },
   },

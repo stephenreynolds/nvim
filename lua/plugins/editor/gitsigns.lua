@@ -66,14 +66,4 @@ return {
       end,
     },
   },
-
-  {
-    "folke/which-key.nvim",
-    optional = true,
-    opts = {
-      defaults = {
-        ["<leader>h"] = "+hunk",
-      },
-    },
-  },
 }

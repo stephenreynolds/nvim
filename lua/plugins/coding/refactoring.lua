@@ -130,13 +130,16 @@ return {
   },
 
   {
-    'folke/which-key.nvim',
+    "folke/which-key.nvim",
     optional = true,
-    opts = {
-      defaults = {
-        ['<leader>re'] = { name = '+extract' },
-        ['<leader>ri'] = { name = '+inline' },
-      }
-    }
-  }
+    config = function()
+      require("which-key").add({
+        {
+          mode = { "n", "v" },
+          { "<leader>re", group = "+extract" },
+          { "<leader>ri", group = "+inline" },
+        },
+      })
+    end,
+  },
 }

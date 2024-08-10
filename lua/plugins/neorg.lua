@@ -85,8 +85,8 @@ return {
     "folke/which-key.nvim",
     optional = true,
     opts = {
-      defaults = {
-        ["<leader>n"] = { name = "+neorg" },
+      {
+        { "<learder>n", group = "+neorg" },
       },
     },
   },
