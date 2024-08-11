@@ -1,13 +1,13 @@
 return {
   "jackMort/ChatGPT.nvim",
-  enabled = false,
+  enabled = true,
   dependencies = {
     "MunifTanjim/nui.nvim",
     "nvim-lua/plenary.nvim",
     "nvim-telescope/telescope.nvim",
   },
   opts = {
-    api_key_cmd = "cat /run/secrets/openai-api-key",
+    api_key_cmd = vim.fn.executable("nixos-version") == 1 and "cat /run/secrets/openai-api-key" or os.getenv("OPENAI_API_KEY"),
     popup_input = {
       submit = "<C-s>",
     },
