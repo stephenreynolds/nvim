@@ -21,7 +21,7 @@
           delve
           docker-compose-language-service
           dockerfile-language-server-nodejs
-          emmet-ls
+          emmet-language-server
           fswatch
           fzf
           gcc

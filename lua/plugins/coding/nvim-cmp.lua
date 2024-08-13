@@ -17,6 +17,7 @@ return {
       },
       "onsails/lspkind.nvim",
       "nvim-autopairs",
+      "lukas-reineke/cmp-under-comparator",
     },
     opts = function()
       local cmp = require("cmp")
@@ -55,11 +56,11 @@ return {
         }),
         sources = cmp.config.sources({
           { name = "git" },
+          { name = "luasnip" },
           { name = "nvim_lua" },
           { name = "nvim_lsp" },
           { name = "path" },
           { name = "cmp_cmdline" },
-          { name = "luasnip" },
           { name = "buffer", keyword_length = 5 },
           { name = "neorg" },
           { name = "copilot" },
@@ -89,7 +90,21 @@ return {
             hl_group = "CmpGhostText",
           },
         },
-        sorting = defaults.sorting,
+        sorting = {
+          comparators = {
+            cmp.config.compare.offset,
+            cmp.config.compare.exact,
+            cmp.config.compare.score,
+            cmp.config.compare.recently_used,
+            require("cmp-under-comparator").under,
+            cmp.config.compare.kind,
+          },
+        },
+        snippet = {
+          expand = function(args)
+            vim.snippet.expand(args.body)
+          end,
+        },
       }
     end,
     config = function(_, opts)
@@ -147,6 +162,8 @@ return {
     opts = {
       history = true,
       delete_check_events = "TextChanged",
+      updateevents = "TextChanged,TextChangedI",
+      override_builtin = true,
     },
   },
 }
