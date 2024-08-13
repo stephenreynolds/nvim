@@ -60,74 +60,32 @@ return {
       desc = "Harpoon quick menu",
     },
     {
-      "<C-1>",
+      "<C-left>",
       function()
         require("harpoon"):list():select(1)
       end,
       desc = "Go to quick file 1",
     },
     {
-      "<C-2>",
+      "<C-up>",
       function()
         require("harpoon"):list():select(2)
       end,
       desc = "Go to quick file 2",
     },
     {
-      "<C-3>",
+      "<C-down>",
       function()
         require("harpoon"):list():select(3)
       end,
       desc = "Go to quick file 3",
     },
     {
-      "<C-4>",
+      "<C-right>",
       function()
         require("harpoon"):list():select(4)
       end,
       desc = "Go to quick file 4",
-    },
-    {
-      "<C-5>",
-      function()
-        require("harpoon"):list():select(4)
-      end,
-      desc = "Go to quick file 5",
-    },
-    {
-      "<C-6>",
-      function()
-        require("harpoon"):list():select(4)
-      end,
-      desc = "Go to quick file 6",
-    },
-    {
-      "<C-7>",
-      function()
-        require("harpoon"):list():select(4)
-      end,
-      desc = "Go to quick file 7",
-    },
-    {
-      "<C-8>",
-      function()
-        require("harpoon"):list():select(4)
-      end,
-      desc = "Go to quick file 8",
-    },
-    {
-      "<C-9>",
-      function()
-        require("harpoon"):list():select(4)
-      end,
-      desc = "Go to quick file 9",
-    },
-    {
-      "<C-0>",
-      function()
-        require("harpoon"):list():select(4)
-      end,
-      desc = "Go to quick file 10",
     },
   },
 }
