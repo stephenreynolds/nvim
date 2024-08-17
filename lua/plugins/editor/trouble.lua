@@ -31,4 +31,15 @@ return {
       },
     },
   },
+
+  {
+    "folke/which-key.nvim",
+    optional = true,
+    opts = function()
+      local wk = require("which-key")
+      wk.add({
+        { "<leader>x", group = "+trouble" },
+      })
+    end,
+  },
 }

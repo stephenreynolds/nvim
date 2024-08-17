@@ -28,4 +28,15 @@ return {
     "theHamsta/nvim-dap-virtual-text",
     opts = {},
   },
+
+  {
+    "folke/which-key.nvim",
+    optional = true,
+    opts = function()
+      require("which-key").add({
+        { "<leader>d", group = "+debug" },
+        { "<leader>db", group = "+breakpoints" },
+      })
+    end,
+  },
 }

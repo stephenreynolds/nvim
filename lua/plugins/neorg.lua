@@ -84,10 +84,10 @@ return {
   {
     "folke/which-key.nvim",
     optional = true,
-    opts = {
-      {
+    opts = function()
+      require("which-key").add({
         { "<learder>n", group = "+neorg" },
-      },
-    },
+      })
+    end,
   },
 }

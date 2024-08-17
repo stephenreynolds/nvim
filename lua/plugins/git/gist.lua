@@ -37,10 +37,10 @@ return {
   {
     "folke/which-key.nvim",
     optional = true,
-    opts = {
-      {
+    opts = function()
+      require("which-key").add({
         { "<leader>gG", group = "+gist" },
-      },
-    },
+      })
+    end,
   },
 }

@@ -66,4 +66,14 @@ return {
       end,
     },
   },
+
+  {
+    "folke/which-key.nvim",
+    optional = true,
+    opts = function()
+      require("which-key").add({
+        { "<leader>h", group = "+hunk" },
+      })
+    end,
+  },
 }

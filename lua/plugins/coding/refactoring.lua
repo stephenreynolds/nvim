@@ -132,13 +132,11 @@ return {
   {
     "folke/which-key.nvim",
     optional = true,
-    config = function()
+    opts = function()
       require("which-key").add({
-        {
-          mode = { "n", "v" },
-          { "<leader>re", group = "+extract" },
-          { "<leader>ri", group = "+inline" },
-        },
+        { "<leader>r", group = "+refactor" },
+        { "<leader>re", group = "+extract" },
+        { "<leader>ri", group = "+inline" },
       })
     end,
   },
