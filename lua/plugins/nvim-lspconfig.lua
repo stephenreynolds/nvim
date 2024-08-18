@@ -213,6 +213,7 @@ return {
           local should_install = true
           if is_nixos then
             local tools = {
+              ["emmet-language-server"] = true,
               ["js-debug-adapter"] = true,
               ["php-debug-adapter"] = true,
               ["nginx-language-server"] = true,
