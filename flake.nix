@@ -37,6 +37,7 @@
           lua-language-server
           luajit
           luajitPackages.magick
+          luajitPackages.tiktoken_core
           luarocks
           markdownlint-cli
           marksman

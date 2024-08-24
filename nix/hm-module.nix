@@ -7,7 +7,7 @@ in {
     programs.neovim = {
       withNodeJs = true;
       extraPackages = self.runtimeDependencies.${system};
-      extraLuaPackages = ps: [ ps.magick ];
+      extraLuaPackages = ps: [ ps.magick ps.tiktoken_core ];
     };
 
     home.sessionVariables = { NVIM_SQLITE_PATH = pkgs.sqlite.out; };
@@ -43,5 +43,7 @@ in {
         categories = [ "Utility" "TextEditor" ];
       };
     };
+
+    programs.git.ignores = [ ".avante_chat_history" ];
   };
 }
