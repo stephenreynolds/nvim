@@ -124,3 +124,9 @@ vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 -- Set the width of the netrw window
 vim.g.netrw_winsize = 25
+
+local netrw_list_hide = vim.fn["netrw_gitignore#Hide"]()
+vim.g.netrw_list_hide = netrw_list_hide
+
+local wildignore = vim.fn.substitute(netrw_list_hide .. ",**/.git/*", "/,", "/*,", "g")
+vim.opt.wildignore:append(wildignore)
