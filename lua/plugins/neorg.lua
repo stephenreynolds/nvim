@@ -77,6 +77,12 @@ return {
         "<cmd>Telescope neorg switch_workspace<cr>",
         desc = "Switch workspace",
       },
+      {
+        "gf",
+        "<Plug>(neorg.esupports.hop.hop-link)",
+        desc = "Go to link under cursor",
+        ft = "norg",
+      },
     },
   },
 
