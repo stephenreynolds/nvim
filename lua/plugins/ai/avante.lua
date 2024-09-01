@@ -30,10 +30,15 @@ return {
     },
   },
   opts = {
+    hints = { enabled = false },
     mappings = {
       ask = "<leader>ia",
       edit = "<leader>ie",
       refresh = "<leader>ir",
+      toggle = {
+        debug = "<leader>iTd",
+        hint = "<leader>iTh",
+      },
     },
   },
 }

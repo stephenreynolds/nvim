@@ -47,11 +47,13 @@
           nodejs
           nodePackages.bash-language-server
           nodePackages.typescript-language-server
+          openssl
           phpactor
           php83
           php83Packages.composer
           php83Packages.php-cs-fixer
           php83Extensions.xdebug
+          pkg-config
           prettierd
           pyright
           ripgrep
