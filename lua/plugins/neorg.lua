@@ -29,7 +29,7 @@ return {
           ["core.dirman"] = {
             config = {
               workspaces = {
-                notes = "$XDG_DOCUMENTS_DIR/Neorg",
+                notes = "~/Documents/Neorg",
               },
               default_workspace = "notes",
             },
