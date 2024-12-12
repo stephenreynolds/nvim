@@ -155,3 +155,9 @@ map("n", "<Left>", function()
 end, { desc = "Go to previous tab" })
 map("n", "<S-Right>", "<cmd>tabmove +<cr>", { desc = "Move tab right" })
 map("n", "<S-Left>", "<cmd>tabmove -<cr>", { desc = "Move tab right" })
+
+-- LSP
+-- TODO: remove when these arse built into Neovim stable
+map('n', 'grn', vim.lsp.buf.rename)
+map('n', 'gra', vim.lsp.buf.code_action)
+map('n', 'grr', vim.lsp.buf.references)
