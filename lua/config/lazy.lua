@@ -22,6 +22,7 @@ require("lazy").setup({
     { import = "plugins" },
     { import = "plugins.coding" },
     { import = "plugins.lang" },
+    { import = "plugins.navigation" },
   },
   defaults = {
     lazy = false,
