@@ -92,7 +92,7 @@ opt.fillchars = {
 
 -- Do not show mode
 opt.showmode = false
-opt.virtualedit = "block" -- Allow cursor to move where there is no text in visual block mode
+opt.virtualedit = "block"          -- Allow cursor to move where there is no text in visual block mode
 opt.wildmode = "longest:full,full" -- Command line completion mode
 
 -- Minimum window width
