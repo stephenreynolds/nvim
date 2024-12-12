@@ -11,14 +11,6 @@ return {
         extensions = {
           fzf = {}
         },
-        pickers = {
-          find_files = {
-            theme = "ivy"
-          },
-          help_tags = {
-            theme = "ivy"
-          }
-        }
       })
 
       require("telescope").load_extension("fzf")
