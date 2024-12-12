@@ -1,5 +1,8 @@
 local opt = vim.opt
 
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+
 -- Line numbers
 opt.number = true
 opt.relativenumber = true
@@ -129,4 +132,4 @@ local netrw_list_hide = vim.fn["netrw_gitignore#Hide"]()
 vim.g.netrw_list_hide = netrw_list_hide
 
 local wildignore = vim.fn.substitute(netrw_list_hide .. ",**/.git/*", "/,", "/*,", "g")
-vim.opt.wildignore:append(wildignore)
+opt.wildignore:append(wildignore)
