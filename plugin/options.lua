@@ -129,4 +129,6 @@ local netrw_list_hide = vim.fn["netrw_gitignore#Hide"]()
 vim.g.netrw_list_hide = netrw_list_hide
 
 local wildignore = vim.fn.substitute(netrw_list_hide .. ",**/.git/*", "/,", "/*,", "g")
-vim.opt.wildignore:append(wildignore)
+opt.wildignore:append(wildignore)
+
+opt.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"

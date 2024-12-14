@@ -60,32 +60,18 @@ return {
       desc = "Harpoon quick menu",
     },
     {
-      "<C-h>",
+      "<M-p>",
       function()
-        require("harpoon"):list():select(1)
+        require("harpoon"):list():prev()
       end,
-      desc = "Go to quick file 1",
+      desc = "Go to next Harpoon item",
     },
     {
-      "<C-j>",
+      "<M-n>",
       function()
-        require("harpoon"):list():select(2)
+        require("harpoon"):list():next()
       end,
-      desc = "Go to quick file 2",
-    },
-    {
-      "<C-k>",
-      function()
-        require("harpoon"):list():select(3)
-      end,
-      desc = "Go to quick file 3",
-    },
-    {
-      "<C-l>",
-      function()
-        require("harpoon"):list():select(4)
-      end,
-      desc = "Go to quick file 4",
+      desc = "Go to next Harpoon item",
     },
   },
 }
