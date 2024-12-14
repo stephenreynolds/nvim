@@ -27,9 +27,6 @@ return {
             "vue",
             "blade",
           },
-          init_options = {
-            showExpandedAbbreviation = "never",
-          },
         },
       },
     },
