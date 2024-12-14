@@ -2,6 +2,7 @@ return {
   {
     "neovim/nvim-lspconfig",
     dependencies = {
+      "saghen/blink.cmp",
       {
         "folke/lazydev.nvim",
         ft = "lua",
@@ -101,7 +102,7 @@ return {
         end
       end
 
-      local function setup_keymaps()
+      local function setup_keymaps(bufnr)
         vim.keymap.set("n", "<leader>li", "<cmd>LspInfo<cr>", { buffer = bufnr, remap = false, desc = "Info" })
 
         -- Jump to the definition of the word under your cursor.
@@ -161,17 +162,19 @@ return {
 
           setup_format_on_save(client, bufnr)
 
-          setup_keymaps()
+          setup_keymaps(bufnr)
         end,
       })
 
       local servers = opts.servers
       local has_cmp, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+      local has_blink, blink_cmp = pcall(require, "blink.cmp")
       local capabilities = vim.tbl_deep_extend(
         "force",
         {},
         vim.lsp.protocol.make_client_capabilities(),
         has_cmp and cmp_nvim_lsp.default_capabilities() or {},
+        has_blink and blink_cmp.get_lsp_capabilities() or {},
         opts.capabilities or {}
       )
 

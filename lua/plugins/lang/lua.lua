@@ -8,7 +8,7 @@ return {
     end,
   },
 
-   {
+  {
     "williamboman/mason.nvim",
     optional = true,
     opts = function(_, opts)
@@ -61,7 +61,7 @@ return {
 
   {
     "folke/lazydev.nvim",
-    ft = "lua", 
+    ft = "lua",
     opts = {
       library = {
         { path = "${3rd}/luv/library", words = { "vim%.uv" } },
