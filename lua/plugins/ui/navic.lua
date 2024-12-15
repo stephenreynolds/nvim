@@ -13,6 +13,8 @@ return {
         preference = {
           "nixd",
           "nil_ls",
+          "phpactor",
+          "intelephense",
         },
       },
     },

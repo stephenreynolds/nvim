@@ -26,7 +26,7 @@ return {
     optional = true,
     opts = function(_, opts)
       opts.ensure_installed = opts.ensure_installed or {}
-      vim.list_extend(opts.ensure_installed, { "phpactor", "php-cs-fixer" })
+      vim.list_extend(opts.ensure_installed, { "intelephense", "phpactor", "php-cs-fixer" })
     end,
   },
 
@@ -34,6 +34,9 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
+        intelephense = {
+          licenceKey = vim.fn.executable("nixos-version") == 1 and "cat /run/secrets/intelephense-key" or os.getenv("INTELEPHENSE_KEY"),
+        },
         phpactor = {},
       },
     },
