@@ -26,7 +26,11 @@ return {
     optional = true,
     opts = function(_, opts)
       opts.ensure_installed = opts.ensure_installed or {}
-      vim.list_extend(opts.ensure_installed, { "intelephense", "phpactor", "php-cs-fixer" })
+      vim.list_extend(opts.ensure_installed, {
+        -- "intelephense",
+        "phpactor",
+        "php-cs-fixer",
+      })
     end,
   },
 
@@ -34,10 +38,15 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
-        intelephense = {
-          licenceKey = vim.fn.executable("nixos-version") == 1 and "cat /run/secrets/intelephense-key" or os.getenv("INTELEPHENSE_KEY"),
+        -- intelephense = {
+        --   licenceKey = vim.fn.executable("nixos-version") == 1 and "cat /run/secrets/intelephense-key" or os.getenv("INTELEPHENSE_KEY"),
+        -- },
+        phpactor = {
+          ["language_server_phpstan.enabled"] = true,
+          ["language_server_php_cs_fixer.enabled"] = false,
+          ["language_server.diagnostics_on_update"] = false,
+          ["worse_reflection.stub_dir"] = "%application_root%",
         },
-        phpactor = {},
       },
     },
   },
@@ -141,9 +150,20 @@ return {
     opts = {},
     config = true,
     keys = {
-      { "<localleader>a", ":Laravel artisan<cr>" },
-      { "<localleader>r", ":Laravel routes<cr>" },
-      { "<localleader>m", ":Laravel related<cr>" },
+      { "<localleader>a", "<cmd>Laravel artisan<cr>", desc = "Artisan" },
+      { "<localleader>r", "<cmd>Laravel routes<cr>", desc = "Routes" },
+      { "<localleader>m", "<cmd>Laravel related<cr>", desc = "Related" },
     },
+  },
+
+  {
+    "ccaglak/phptools.nvim",
+    config = function()
+      require("phptools").setup({
+        ui = {
+          enable = true,
+        },
+      })
+    end,
   },
 }
