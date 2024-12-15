@@ -12,11 +12,4 @@ return {
       auto_attach = true,
     },
   },
-  keys = {
-    {
-      "<leader>ls",
-      "<cmd>Navbuddy<cr>",
-      desc = "Symbol outline",
-    },
-  },
 }

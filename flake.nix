@@ -9,12 +9,7 @@
     let
       genSystems = nixpkgs.lib.genAttrs [ "x86_64-linux" ];
 
-      pkgs = genSystems (system: import nixpkgs {
-        inherit system;
-        config.allowUnfreePredicate = pkg: builtins.elem (nixpkgs.lib.getName pkg) [
-          "intelephense"
-        ];
-      });
+      pkgs = genSystems (system: import nixpkgs { inherit system; });
 
       runtimeDependencies = genSystems (system:
         with pkgs.${system}; [
@@ -36,7 +31,6 @@
           gopls
           gotools
           imagemagick
-          intelephense
           isort
           jq
           lldb

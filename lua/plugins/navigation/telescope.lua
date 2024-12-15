@@ -205,6 +205,11 @@ return {
       desc = "Buffer Diagnostics",
     },
     {
+      "<leader>ls",
+      require("telescope.builtin").lsp_document_symbols,
+      desc = "Symbols",
+    },
+    {
       "<leader>lws",
       require("telescope.builtin").lsp_dynamic_workspace_symbols,
       desc = "Workspace symbols",
