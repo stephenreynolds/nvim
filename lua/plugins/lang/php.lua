@@ -145,19 +145,20 @@ return {
       "MunifTanjim/nui.nvim",
       "kevinhwang91/promise-async",
     },
+    ft = { "php" },
     cmd = { "Laravel" },
     event = { "VeryLazy" },
     opts = {},
-    config = true,
-    keys = {
-      { "<localleader>a", "<cmd>Laravel artisan<cr>", desc = "Artisan" },
-      { "<localleader>r", "<cmd>Laravel routes<cr>", desc = "Routes" },
-      { "<localleader>m", "<cmd>Laravel related<cr>", desc = "Related" },
-    },
+    config = function()
+      vim.keymap.set("n", "<localleader>a", "<cmd>Laravel artisan<cr>", { desc = "Artisan" })
+      vim.keymap.set("n", "<localleader>r", "<cmd>Laravel routes<cr>", { desc = "Routes" })
+      vim.keymap.set("n", "<localleader>m", "<cmd>Laravel related<cr>", { desc = "Related" })
+    end,
   },
 
   {
     "ccaglak/phptools.nvim",
+    ft = { "php" },
     config = function()
       require("phptools").setup({
         ui = {
