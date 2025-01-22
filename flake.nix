@@ -49,10 +49,10 @@
           nodePackages.typescript-language-server
           openssl
           phpactor
-          php83
-          php83Packages.composer
-          php83Packages.php-cs-fixer
-          php83Extensions.xdebug
+          php84
+          php84Packages.composer
+          php84Packages.php-cs-fixer
+          php84Extensions.xdebug
           pkg-config
           prettierd
           pyright
