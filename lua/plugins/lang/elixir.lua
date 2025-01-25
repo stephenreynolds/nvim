@@ -12,7 +12,13 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
-        elixirls = {},
+        elixirls = {
+          cmd = { "elixir-ls" },
+          autoBuild = true,
+          dialyzerEnabled = true,
+          suggestSpecs = true,
+          enableTestLenses = true,
+        },
       },
     },
   },

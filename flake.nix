@@ -14,6 +14,8 @@
       runtimeDependencies = genSystems (system:
         with pkgs.${system}; [
           ansible-language-server
+          beam27Packages.elixir
+          beam27Packages.elixir-ls
           black
           cargo
           clang-tools
