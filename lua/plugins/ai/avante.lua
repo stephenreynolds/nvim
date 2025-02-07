@@ -2,11 +2,14 @@ return {
   "yetone/avante.nvim",
   event = "VeryLazy",
   build = "make",
+  version = false,
   dependencies = {
     "stevearc/dressing.nvim",
     "nvim-lua/plenary.nvim",
     "MunifTanjim/nui.nvim",
     "nvim-tree/nvim-web-devicons",
+    "nvim-telescope/telescope.nvim",
+    "hrsh7th/nvim-cmp",
     {
       "HakonHarnes/img-clip.nvim",
       event = "VeryLazy",
@@ -30,7 +33,10 @@ return {
     },
   },
   opts = {
-    hints = { enabled = false },
+    behaviour = {
+      auto_suggestions = true,
+    },
+    hints = { enabled = true },
     mappings = {
       ask = "<leader>ia",
       edit = "<leader>ie",

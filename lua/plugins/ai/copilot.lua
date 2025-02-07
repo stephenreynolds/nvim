@@ -59,7 +59,7 @@ return {
         desc = "Copilot Panel",
       },
       {
-        "<leader>iT",
+        "<leader>iTs",
         function()
           require("copilot.suggestion").toggle_auto_trigger()
         end,
