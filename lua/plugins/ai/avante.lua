@@ -34,7 +34,7 @@ return {
   },
   opts = {
     behaviour = {
-      auto_suggestions = true,
+      auto_suggestions = false,
     },
     hints = { enabled = true },
     mappings = {
