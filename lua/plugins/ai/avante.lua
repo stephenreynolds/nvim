@@ -37,6 +37,9 @@ return {
       auto_suggestions = false,
     },
     hints = { enabled = true },
+    file_selector = {
+      provider = "telescope",
+    },
     mappings = {
       ask = "<leader>ia",
       edit = "<leader>ie",
