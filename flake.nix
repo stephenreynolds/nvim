@@ -64,6 +64,7 @@
           shellcheck
           shfmt
           stylua
+          svelte-language-server
           tailwindcss-language-server
           taplo
           tree-sitter
