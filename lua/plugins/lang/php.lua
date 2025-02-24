@@ -30,6 +30,7 @@ return {
         -- "intelephense",
         "phpactor",
         "php-cs-fixer",
+        "pint",
       })
     end,
   },
@@ -56,7 +57,7 @@ return {
     optional = true,
     opts = {
       formatters_by_ft = {
-        php = { "php-cs-fixer" },
+        php = { "pint", "php-cs-fixer", stop_after_first = true },
       },
       formatters = {
         ["php-cs-fixer"] = {
@@ -72,6 +73,18 @@ return {
 
             return args
           end,
+          stdin = false,
+        },
+        pint = {
+          meta = {
+            url = "https://github.com/laravel/pint",
+            description = "Laravel Pint is an opinionated PHP code style fixer for minimalists. Pint is built on top of PHP-CS-Fixer and makes it simple to ensure that your code style stays clean and consistent.",
+          },
+          command = require("conform.util").find_executable({
+            vim.fn.stdpath("data") .. "/mason/bin/pint",
+            "vendor/bin/pint",
+          }, "pint"),
+          args = { "$FILENAME" },
           stdin = false,
         },
       },
