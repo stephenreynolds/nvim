@@ -69,6 +69,7 @@
           taplo
           tree-sitter
           unzip
+          vue-language-server
           vscode-langservers-extracted
           wget
           yaml-language-server

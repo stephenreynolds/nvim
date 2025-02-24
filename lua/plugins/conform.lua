@@ -40,6 +40,7 @@ return {
       typescript = { "prettierd", "prettier", stop_after_first = true },
       typescriptreact = { "prettierd", "prettier", stop_after_first = true },
       svelte = { "prettierd", "prettier", stop_after_first = true },
+      vue = { "prettierd", "prettier", stop_after_first = true },
     },
   },
   config = function(_, opts)
