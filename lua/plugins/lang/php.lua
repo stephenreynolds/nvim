@@ -111,7 +111,7 @@ return {
           type = "executable",
           command = "node",
           args = {
-            require("mason-registry").get_package("php-debug-adapter"):get_install_path() .. "/extension/out/phpDebug.js",
+            vim.fn.expand("$MASON/packages/php-debug-adapter/extension/out/phpDebug.js"),
           },
         }
       end
