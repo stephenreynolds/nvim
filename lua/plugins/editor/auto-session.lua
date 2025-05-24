@@ -4,8 +4,8 @@ return {
     lazy = false,
     opts = {
       log_level = "error",
-      auto_restore = true,
-      auto_restore_last_session = vim.loop.cwd() == vim.loop.os_homedir(),
+      auto_restore = false,
+      auto_restore_last_session = false,
       use_git_branch = true,
       cwd_change_handling = {
         post_cwd_changed_hook = function()
