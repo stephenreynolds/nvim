@@ -4,6 +4,7 @@ return {
   build = "make",
   version = false,
   dependencies = {
+    "nvim-treesitter/nvim-treesitter",
     "stevearc/dressing.nvim",
     "nvim-lua/plenary.nvim",
     "MunifTanjim/nui.nvim",
@@ -33,8 +34,11 @@ return {
     },
   },
   opts = {
+    provider = "claude",
+    cursor_applying_provider = "claude",
     behaviour = {
       auto_suggestions = false,
+      enable_cursor_planning_mode = true,
     },
     hints = { enabled = true },
     file_selector = {
