@@ -6,6 +6,9 @@ return {
       n_lines = 500,
     },
   },
+
+  { "echasnovski/mini.pairs", version = "*" },
+
   --
   -- {
   --   "echasnovski/mini.surround",
