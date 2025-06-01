@@ -17,7 +17,8 @@ return {
         },
       },
     },
-    version = "^4", -- Recommended
+    version = "^6", -- Recommended
+    lazy = false,
     ft = { "rust" },
     opts = {
       tools = {
@@ -78,11 +79,7 @@ return {
               runBuildScripts = true,
             },
             -- Add clippy lints for Rust.
-            checkOnSave = {
-              allFeatures = true,
-              command = "clippy",
-              extraArgs = { "--no-deps" },
-            },
+            checkOnSave = true,
             procMacro = {
               enable = true,
               ignored = {
@@ -137,6 +134,17 @@ return {
         "Saecki/crates.nvim",
         event = { "BufRead Cargo.toml" },
         opts = {
+          completion = {
+            crates = {
+              enabled = true,
+            },
+          },
+          lsp = {
+            enabled = true,
+            actions = true,
+            completion = true,
+            hover = true,
+          },
           null_ls = {
             enabled = true,
             name = "crates.nvim",
@@ -155,7 +163,7 @@ return {
     optional = true,
     opts = function(_, opts)
       opts.ensure_installed = opts.ensure_installed or {}
-      vim.list_extend(opts.ensure_installed, { "codelldb", "taplo" })
+      vim.list_extend(opts.ensure_installed, { "codelldb", "rust-analyzer", "taplo" })
     end,
   },
 
