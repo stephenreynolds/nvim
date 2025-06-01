@@ -147,7 +147,6 @@ return {
     },
     ft = { "php" },
     cmd = { "Laravel" },
-    event = { "VeryLazy" },
     opts = {},
     config = function()
       vim.keymap.set("n", "<localleader>a", "<cmd>Laravel artisan<cr>", { desc = "Artisan" })
