@@ -22,7 +22,6 @@ return {
     opts = function()
       local cmp = require("cmp")
       local cmp_select = { behavior = cmp.SelectBehavior.Insert }
-      local defaults = require("cmp.config.default")()
 
       local lspkind = require("lspkind")
 
@@ -63,6 +62,7 @@ return {
           { name = "cmp_cmdline" },
           { name = "buffer", keyword_length = 5 },
           { name = "neorg" },
+          { name = "supermaven" },
           { name = "copilot" },
         }),
         formatting = {
@@ -71,6 +71,7 @@ return {
             preset = "default",
             maxwidth = 50,
             ellipsis_char = "...",
+            symbol_map = { Supermaven = "" },
             before = function(_, vim_item)
               return vim_item
             end,

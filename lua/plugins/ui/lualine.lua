@@ -4,10 +4,6 @@ return {
   "nvim-lualine/lualine.nvim",
   event = "VeryLazy",
   dependencies = {
-    {
-      "SmiteshP/nvim-navic",
-      dependencies = { "neovim/nvim-lspconfig" },
-    },
     { "nvim-tree/nvim-web-devicons", optional = true },
     "folke/tokyonight.nvim",
   },
@@ -56,11 +52,6 @@ return {
         },
         lualine_c = {
           { "filename", path = 1 },
-          {
-            "navic",
-            color_correction = "dynamic",
-            navic_opts = nil,
-          },
         },
         lualine_x = {
           -- {

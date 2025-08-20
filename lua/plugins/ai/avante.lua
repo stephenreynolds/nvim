@@ -1,6 +1,5 @@
 return {
   "yetone/avante.nvim",
-  enabled = false,
   event = "VeryLazy",
   build = "make",
   version = false,
@@ -35,8 +34,18 @@ return {
     },
   },
   opts = {
-    provider = "claude",
-    cursor_applying_provider = "claude",
+    provider = "openai",
+    providers = {
+      openai = {
+        endpoint = "https://api.x.ai/v1",
+        api_key_name = "XAI_API_KEY",
+        model = "grok-4-latest",
+        extra_request_body = {
+          temperature = 1,
+          max_tokens = 256000,
+        },
+      },
+    },
     behaviour = {
       auto_suggestions = false,
       enable_cursor_planning_mode = true,

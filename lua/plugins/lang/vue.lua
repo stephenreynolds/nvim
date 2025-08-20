@@ -24,16 +24,8 @@ return {
           },
           filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
         },
-        vuels = {
-          vetur = {
-            completions = {
-              autoImport = true,
-              useScaffoldSnippets = true,
-            },
-          },
-        },
         volar = {
-          nit_options = {
+          init_options = {
             vue = {
               hybridMode = false,
             },
