@@ -41,9 +41,6 @@ return {
     opts = {
       servers = {
         clangd = {
-          keys = {
-            { "<leader><leader>h", "<cmd>ClangdSwitchSourceHeader<cr>", desc = "Switch source/header" },
-          },
           root_markers = {
             "compile_commands.json",
             "compile_flags.txt",
@@ -89,6 +86,9 @@ return {
           return false
         end,
       },
+    },
+    keys = {
+      { "<localleader>h", "<cmd>LspClangdSwitchSourceHeader<cr>", desc = "Switch source/header", ft = { "c", "cpp" } },
     },
   },
 
