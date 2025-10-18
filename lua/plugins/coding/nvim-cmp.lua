@@ -61,7 +61,6 @@ return {
           { name = "path" },
           { name = "cmp_cmdline" },
           { name = "buffer", keyword_length = 5 },
-          { name = "neorg" },
           { name = "supermaven" },
           { name = "copilot" },
         }),
