@@ -13,9 +13,6 @@ return {
     lazy = true,
     config = function() end,
     opts = {
-      inlay_hints = {
-        inline = false,
-      },
       ast = {
         --These require codicons (https://github.com/microsoft/vscode-codicons)
         role_icons = {
@@ -47,19 +44,19 @@ return {
           keys = {
             { "<leader><leader>h", "<cmd>ClangdSwitchSourceHeader<cr>", desc = "Switch source/header" },
           },
-          root_dir = function(fname)
-            return require("lspconfig.util").root_pattern(
-              "Makefile",
-              "configure.ac",
-              "configure.in",
-              "config.h.in",
-              "meson.build",
-              "meson_options.txt",
-              "build.ninja"
-            )(fname) or require("lspconfig.util").root_pattern("compile_commands.json", "compile_flags.txt")(fname) or require("lspconfig.util").find_git_ancestor(
-              fname
-            )
-          end,
+          root_markers = {
+            "compile_commands.json",
+            "compile_flags.txt",
+            "configure.ac", -- AutoTools
+            "Makefile",
+            "configure.ac",
+            "configure.in",
+            "config.h.in",
+            "meson.build",
+            "meson_options.txt",
+            "build.ninja",
+            ".git",
+          },
           capabilities = {
             offsetEncoding = { "utf-16" },
           },
@@ -93,13 +90,6 @@ return {
         end,
       },
     },
-  },
-
-  {
-    "nvim-cmp",
-    opts = function(_, opts)
-      table.insert(opts.sorting.comparators, 1, require("clangd_extensions.cmp_scores"))
-    end,
   },
 
   -- Debugger
@@ -152,6 +142,15 @@ return {
           },
         }
       end
+    end,
+  },
+
+  {
+    "mason-org/mason.nvim",
+    optional = true,
+    opts = function(_, opts)
+      opts.ensure_installed = opts.ensure_installed or {}
+      vim.list_extend(opts.ensure_installed, { "clangd" })
     end,
   },
 }

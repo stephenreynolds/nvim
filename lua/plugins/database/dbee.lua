@@ -42,7 +42,7 @@ return {
 
   -- Extend auto completion
   {
-    "hrsh7th/nvim-cmp",
+    "saghen/blink.cmp",
     dependencies = {
       {
         "MattiasMTS/cmp-dbee",

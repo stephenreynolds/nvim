@@ -2,13 +2,15 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     opts = function(_, opts)
-      vim.list_extend(opts.ensure_installed, {
-        "go",
-        "gomod",
-        "gowork",
-        "gosum",
-        "gotmpl",
-      })
+      if type(opts.ensure_installed) == "table" then
+        vim.list_extend(opts.ensure_installed, {
+          "go",
+          "gomod",
+          "gowork",
+          "gosum",
+          "gotmpl",
+        })
+      end
     end,
   },
 
@@ -91,7 +93,7 @@ return {
     optional = true,
     dependencies = {
       {
-        "williamboman/mason.nvim",
+        "mason-org/mason.nvim",
         optional = true,
         opts = function(_, opts)
           opts.ensure_installed = opts.ensure_installed or {}
@@ -121,7 +123,7 @@ return {
   },
 
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     optional = true,
     opts = function(_, opts)
       opts.ensure_installed = opts.ensure_installed or {}

@@ -85,7 +85,7 @@ return {
         button("r", "  Recent files", "<cmd>Telescope oldfiles<CR>"),
         button("w", "  Find word", "<cmd>Telescope live_grep<CR>"),
         button("b", "  Bookmarks", "<cmd>Telescope marks<CR>"),
-        button("l", "  Last session", "<cmd>SessionRestore<CR>"),
+        button("l", "  Last session", "<cmd>AutoSession restore<CR>"),
       },
       opts = {
         spacing = 1,

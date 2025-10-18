@@ -34,7 +34,7 @@ return {
   },
 
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     optional = true,
     opts = function(_, opts)
       if vim.fn.executable("nix") == 1 then

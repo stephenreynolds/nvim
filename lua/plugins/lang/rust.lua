@@ -126,40 +126,30 @@ return {
     },
   },
 
-  -- Extend auto completion
   {
-    "hrsh7th/nvim-cmp",
-    dependencies = {
-      {
-        "Saecki/crates.nvim",
-        event = { "BufRead Cargo.toml" },
-        opts = {
-          completion = {
-            crates = {
-              enabled = true,
-            },
-          },
-          lsp = {
-            enabled = true,
-            actions = true,
-            completion = true,
-            hover = true,
-          },
-          null_ls = {
-            enabled = true,
-            name = "crates.nvim",
-          },
+    "Saecki/crates.nvim",
+    event = { "BufRead Cargo.toml" },
+    opts = {
+      completion = {
+        crates = {
+          enabled = true,
         },
       },
+      lsp = {
+        enabled = true,
+        actions = true,
+        completion = true,
+        hover = true,
+      },
+      null_ls = {
+        enabled = true,
+        name = "crates.nvim",
+      },
     },
-    opts = function(_, opts)
-      opts.sources = opts.sources or {}
-      table.insert(opts.sources, { name = "crates" })
-    end,
   },
 
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     optional = true,
     opts = function(_, opts)
       opts.ensure_installed = opts.ensure_installed or {}
