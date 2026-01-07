@@ -1,12 +1,11 @@
 -- colorizer: A high-performance color highlighter.
 return {
-  "norcalli/nvim-colorizer.lua",
+  "catgoose/nvim-colorizer.lua",
   event = { "BufReadPre", "BufNewFile" },
   opts = {
-    "css",
-    "scss",
-    html = { names = false },
-    javascript = { names = false },
-    lua = { names = false },
+    filetypes = { "css", "scss", "html", "javascript", "lua" },
+    user_default_options = {
+      names = false,
+    },
   },
 }
