@@ -9,21 +9,18 @@ return {
     setup = {},
   },
   config = function(_, opts)
-    local function lspSymbol(name, icon)
-      local hl = "DiagnosticSign" .. name
-      vim.fn.sign_define(hl, { text = icon, numhl = hl, texthl = hl })
-    end
-
-    lspSymbol("Error", "󰅙")
-    lspSymbol("Info", "󰋼")
-    lspSymbol("Hint", "󰌵")
-    lspSymbol("Warn", "")
-
     vim.diagnostic.config({
       virtual_text = {
-        prefix = "",
+        prefix = "",
       },
-      signs = true,
+      signs = {
+        text = {
+          [vim.diagnostic.severity.ERROR] = "󰅙",
+          [vim.diagnostic.severity.INFO] = "󰋼",
+          [vim.diagnostic.severity.HINT] = "󰌵",
+          [vim.diagnostic.severity.WARN] = "",
+        },
+      },
       underline = true,
       update_in_insert = false,
     })
@@ -146,7 +143,7 @@ return {
     )
 
     local servers = opts.servers
-    
+
     local function setup(server)
       local server_opts = vim.tbl_deep_extend("force", {
         capabilities = vim.deepcopy(capabilities),
